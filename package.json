@@ -1,7 +1,11 @@
 {
-  "name": "registry-template",
+  "name": "mc-ui",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "bin": {
+    "mc-ui": "./cli/index.ts"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
