@@ -4,6 +4,8 @@ import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import ora from "ora";
+import chalk from "chalk";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -36,15 +38,26 @@ if (command === "init") {
 function handleInit() {
   console.log("Initializing shadcn/ui with mc-ui styling...");
   
-  // Run shadcn init
-  execSync("npx shadcn@latest init", {
-    stdio: "inherit",
-  });
+  // Check if components.json already exists
+  const componentsJsonPath = join(process.cwd(), "components.json");
+  
+  if (existsSync(componentsJsonPath)) {
+    const skipSpinner = ora("components.json found, skipping shadcn init...").start();
+    skipSpinner.succeed("components.json found, skipping shadcn init");
+  } else {
+    console.log("Running shadcn init...");
+    // Run shadcn init
+    execSync("npx shadcn@latest init", {
+      stdio: "inherit",
+    });
+  }
   
   // Copy mc-ui globals.css content
+  const copySpinner = ora("Copying mc-ui globals.css content...").start();
   const mcUiGlobalsPath = join(__dirname, "..", "app", "globals.css");
   
   if (!existsSync(mcUiGlobalsPath)) {
+    copySpinner.fail("mc-ui globals.css file not found");
     console.error("Error: mc-ui globals.css file not found");
     process.exit(1);
   }
@@ -52,6 +65,7 @@ function handleInit() {
   const mcUiGlobalsContent = readFileSync(mcUiGlobalsPath, "utf8");
   
   // Try to find the target globals.css file
+  const findSpinner = ora("Looking for target globals.css file...").start();
   const possiblePaths = [
     join(process.cwd(), "app", "globals.css"),
     join(process.cwd(), "src", "app", "globals.css"),
@@ -66,14 +80,20 @@ function handleInit() {
   }
   
   if (!targetPath) {
+    findSpinner.fail("Could not find app/globals.css or src/app/globals.css in the current project");
     console.error("Error: Could not find app/globals.css or src/app/globals.css in the current project");
     process.exit(1);
   }
   
+  findSpinner.succeed(`Found target file: ${chalk.cyan(targetPath)}`);
+  
   // Override the target globals.css file
+  copySpinner.text = "Overriding target globals.css file...";
   writeFileSync(targetPath, mcUiGlobalsContent);
-  console.log(`Successfully copied mc-ui styling to ${targetPath}`);
-  console.log("mc-ui initialization complete!");
+  copySpinner.succeed(`Successfully copied mc-ui styling to ${chalk.cyan(targetPath)}`);
+  
+  const completeSpinner = ora("Finalizing mc-ui initialization...").start();
+  completeSpinner.succeed("mc-ui initialization complete!");
 }
 
 function handleAdd(packageNames: string[]) {
@@ -87,13 +107,20 @@ function handleAdd(packageNames: string[]) {
       continue;
     }
 
-    console.log(`Adding ${packageName} component...`);
+    const addSpinner = ora(`Adding ${chalk.yellow(packageName)} component...`).start();
 
-    // TODO: Need to change the website URL once hosted
-    const url = new URL(`r/${packageName}.json`, "http://localhost:3000");
+    try {
+      // TODO: Need to change the website URL once hosted
+      const url = new URL(`r/${packageName}.json`, "http://localhost:3000");
 
-    execSync(`npx shadcn@latest add ${url.toString()}`, {
-      stdio: "inherit",
-    });
+      execSync(`npx shadcn@latest add ${url.toString()}`, {
+        stdio: "inherit",
+      });
+      
+      addSpinner.succeed(`Successfully added ${chalk.green(packageName)} component`);
+    } catch (error) {
+      addSpinner.fail(`Failed to add ${chalk.red(packageName)} component`);
+      console.error(`Error adding ${chalk.red(packageName)}:`, error instanceof Error ? error.message : String(error));
+    }
   }
 }
