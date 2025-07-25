@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function OpenInV0Button({
   name,
@@ -9,8 +9,8 @@ export function OpenInV0Button({
     <Button
       aria-label="Open in v0"
       className={cn(
-        "h-7 gap-1 rounded-lg shadow-none bg-black px-3 text-xs text-white hover:bg-black hover:text-white dark:bg-white dark:text-black",
-        className
+        "h-7 gap-1 rounded-lg shadow-none bg-primary text-primary-foreground px-3 text-xs hover:bg-primary/80",
+        className,
       )}
       asChild
     >
@@ -37,5 +37,5 @@ export function OpenInV0Button({
         </svg>
       </a>
     </Button>
-  )
+  );
 }
