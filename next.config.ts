@@ -1,10 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
+import { createMDX } from 'fumadocs-mdx/next';
+
+const withMDX = createMDX();
 
 const nextConfig: NextConfig = {
-  outputFileTracingIncludes: {
-    registry: ["./registry/**/*"],
-  },
   /* config options here */
 };
 
-export default nextConfig;
+export default withMDX(nextConfig);

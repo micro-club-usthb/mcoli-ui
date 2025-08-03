@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { execSync } from "node:child_process";
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import ora from "ora";
@@ -37,12 +37,14 @@ if (command === "init") {
 
 function handleInit() {
   console.log("Initializing shadcn/ui with mc-ui styling...");
-  
+
   // Check if components.json already exists
   const componentsJsonPath = join(process.cwd(), "components.json");
-  
+
   if (existsSync(componentsJsonPath)) {
-    const skipSpinner = ora("components.json found, skipping shadcn init...").start();
+    const skipSpinner = ora(
+      "components.json found, skipping shadcn init...",
+    ).start();
     skipSpinner.succeed("components.json found, skipping shadcn init");
   } else {
     console.log("Running shadcn init...");
@@ -51,47 +53,24 @@ function handleInit() {
       stdio: "inherit",
     });
   }
-  
-  // Copy mc-ui globals.css content
-  const copySpinner = ora("Copying mc-ui globals.css content...").start();
-  const mcUiGlobalsPath = join(__dirname, "..", "app", "globals.css");
-  
-  if (!existsSync(mcUiGlobalsPath)) {
-    copySpinner.fail("mc-ui globals.css file not found");
-    console.error("Error: mc-ui globals.css file not found");
+
+  // TODO: Change from clean-slate to mc-ui custom tweakcn theme later
+  // Add color theme
+  const themeSpinner = ora("Adding mc-ui theme...").start();
+  try {
+    execSync(
+      "npx shadcn@latest add https://tweakcn.com/r/themes/clean-slate.json",
+      {
+        stdio: "inherit",
+      },
+    );
+    themeSpinner.succeed("Successfully added mc-ui theme");
+  } catch (error) {
+    themeSpinner.fail("Failed to add mc-ui theme");
+    console.error("Error adding mc-ui theme:", error);
     process.exit(1);
   }
-  
-  const mcUiGlobalsContent = readFileSync(mcUiGlobalsPath, "utf8");
-  
-  // Try to find the target globals.css file
-  const findSpinner = ora("Looking for target globals.css file...").start();
-  const possiblePaths = [
-    join(process.cwd(), "app", "globals.css"),
-    join(process.cwd(), "src", "app", "globals.css"),
-  ];
-  
-  let targetPath = null;
-  for (const path of possiblePaths) {
-    if (existsSync(path)) {
-      targetPath = path;
-      break;
-    }
-  }
-  
-  if (!targetPath) {
-    findSpinner.fail("Could not find app/globals.css or src/app/globals.css in the current project");
-    console.error("Error: Could not find app/globals.css or src/app/globals.css in the current project");
-    process.exit(1);
-  }
-  
-  findSpinner.succeed(`Found target file: ${chalk.cyan(targetPath)}`);
-  
-  // Override the target globals.css file
-  copySpinner.text = "Overriding target globals.css file...";
-  writeFileSync(targetPath, mcUiGlobalsContent);
-  copySpinner.succeed(`Successfully copied mc-ui styling to ${chalk.cyan(targetPath)}`);
-  
+
   const completeSpinner = ora("Finalizing mc-ui initialization...").start();
   completeSpinner.succeed("mc-ui initialization complete!");
 }
@@ -107,7 +86,9 @@ function handleAdd(packageNames: string[]) {
       continue;
     }
 
-    const addSpinner = ora(`Adding ${chalk.yellow(packageName)} component...`).start();
+    const addSpinner = ora(
+      `Adding ${chalk.yellow(packageName)} component...`,
+    ).start();
 
     try {
       // TODO: Need to change the website URL once hosted
@@ -116,11 +97,16 @@ function handleAdd(packageNames: string[]) {
       execSync(`npx shadcn@latest add ${url.toString()}`, {
         stdio: "inherit",
       });
-      
-      addSpinner.succeed(`Successfully added ${chalk.green(packageName)} component`);
+
+      addSpinner.succeed(
+        `Successfully added ${chalk.green(packageName)} component`,
+      );
     } catch (error) {
       addSpinner.fail(`Failed to add ${chalk.red(packageName)} component`);
-      console.error(`Error adding ${chalk.red(packageName)}:`, error instanceof Error ? error.message : String(error));
+      console.error(
+        `Error adding ${chalk.red(packageName)}:`,
+        error instanceof Error ? error.message : String(error),
+      );
     }
   }
 }
