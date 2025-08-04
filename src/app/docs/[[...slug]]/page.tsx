@@ -9,7 +9,7 @@ import {
 
 import { source } from "@/lib/source";
 import { getMDXComponents } from "@/components/mdx";
-import { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 
 export default async function Page({
   params,
