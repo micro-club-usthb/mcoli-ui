@@ -27,7 +27,6 @@ export default async function Page({
 
   return (
     <DocsPage toc={page.data.toc}>
-      <title>{`MC UI - ${page.data.title}`}</title>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
       <DocsBody>
