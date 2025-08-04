@@ -59,7 +59,7 @@ function handleInit() {
   const themeSpinner = ora("Adding mc-ui theme...").start();
   try {
     execSync(
-      "npx shadcn@latest add https://tweakcn.com/r/themes/clean-slate.json",
+      "npx shadcn@latest add https://tweakcn.com/r/themes/cmdwgqc1m000004lb3zxvaygo",
       {
         stdio: "inherit",
       },
