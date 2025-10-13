@@ -21,6 +21,22 @@ export const Index: Record<string, any> ={`;
 
   for (const item of registry.items) {
     console.log(`Adding ${item.name} to registry...`);
+
+    // Handle registry:theme items
+    if (item.type === "registry:theme") {
+      index += `
+  "${item.name}": {
+    name: "${item.name}",
+    description: "${item.description ?? ""}",
+    type: "${item.type}",
+    title: "${item.title ?? ""}",
+    css: ${JSON.stringify(item.css ?? {})},
+    cssVars: ${JSON.stringify(item.cssVars ?? {})},
+  },`;
+      continue;
+    }
+    
+    // Handle items with files
     if (!Array.isArray(item.files) || !item.files?.length) {
       continue;
     }
@@ -75,19 +91,34 @@ export const Index: Record<string, any> ={`;
       homepage: registry.homepage,
       items: registry.items
         .filter((item) => item.type !== "registry:example")
-        .map((item) => ({
-          ...item,
-          files:
-            item.files?.map((file) => {
-              if (file.path.startsWith("src/")) {
-                return file;
-              }
-              return {
-                ...file,
-                path: `src/registry/${file.path}`,
-              };
-            }) ?? [],
-        })),
+        .map((item) => {
+          // Handle registry:theme items
+          if (item.type === "registry:theme") {
+            return {
+              name: item.name,
+              type: item.type,
+              title: item.title,
+              description: item.description,
+              css: item.css,
+              cssVars: item.cssVars,
+            };
+          }
+          
+          // Handle component items with files
+          return {
+            ...item,
+            files:
+              item.files?.map((file) => {
+                if (file.path.startsWith("src/")) {
+                  return file;
+                }
+                return {
+                  ...file,
+                  path: `src/registry/${file.path}`,
+                };
+              }) ?? [],
+          };
+        }),
     },
     null,
     2,

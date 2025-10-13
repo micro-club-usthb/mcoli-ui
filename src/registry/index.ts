@@ -1,9 +1,10 @@
 import { type Registry } from "shadcn/schema";
 import { ui } from "./registry-ui";
 import { examples } from "./registry-examples";
+import { themes } from "./registry-themes";
 
 export const registry = {
-  name: "HADJ ARAB Adel",
+  name: "mc-ui-registry",
   homepage: "https://mc-ui.microclub.info/",
-  items: [...ui, ...examples],
+  items: [...themes, ...ui, ...examples],
 } satisfies Registry;

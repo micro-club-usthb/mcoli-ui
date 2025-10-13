@@ -39,7 +39,7 @@ function handleInit() {
 
   if (existsSync(componentsJsonPath)) {
     const skipSpinner = ora(
-      "components.json found, skipping shadcn init...",
+      "components.json found, skipping shadcn init..."
     ).start();
     skipSpinner.succeed("components.json found, skipping shadcn init");
   } else {
@@ -50,15 +50,15 @@ function handleInit() {
     });
   }
 
-  // TODO: Change from clean-slate to mc-ui custom tweakcn theme later
   // Add color theme
   const themeSpinner = ora("Adding mc-ui theme...").start();
   try {
+    // TODO: Need to change the website URL once hosted and apply multi-theme support
     execSync(
-      "npx shadcn@latest add https://tweakcn.com/r/themes/cmdwgqc1m000004lb3zxvaygo",
+      "npx shadcn@latest add http://localhost:3000/r/primary-theme.json",
       {
         stdio: "inherit",
-      },
+      }
     );
     themeSpinner.succeed("Successfully added mc-ui theme");
   } catch (error) {
@@ -83,7 +83,7 @@ function handleAdd(packageNames: string[]) {
     }
 
     const addSpinner = ora(
-      `Adding ${chalk.yellow(packageName)} component...`,
+      `Adding ${chalk.yellow(packageName)} component...`
     ).start();
 
     try {
@@ -95,13 +95,13 @@ function handleAdd(packageNames: string[]) {
       });
 
       addSpinner.succeed(
-        `Successfully added ${chalk.green(packageName)} component`,
+        `Successfully added ${chalk.green(packageName)} component`
       );
     } catch (error) {
       addSpinner.fail(`Failed to add ${chalk.red(packageName)} component`);
       console.error(
         `Error adding ${chalk.red(packageName)}:`,
-        error instanceof Error ? error.message : String(error),
+        error instanceof Error ? error.message : String(error)
       );
     }
   }
