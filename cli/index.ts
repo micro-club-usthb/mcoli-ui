@@ -3,6 +3,7 @@
 import { execSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import inquirer from "inquirer";
 import ora from "ora";
 import chalk from "chalk";
 
@@ -39,36 +40,63 @@ function handleInit() {
 
   if (existsSync(componentsJsonPath)) {
     const skipSpinner = ora(
-      "components.json found, skipping shadcn init..."
+      "components.json found, skipping shadcn init...",
     ).start();
     skipSpinner.succeed("components.json found, skipping shadcn init");
   } else {
+    // shadcn initialization
     console.log("Running shadcn init...");
-    // Run shadcn init
     execSync("npx shadcn@latest init", {
       stdio: "inherit",
     });
   }
 
-  // Add color theme
-  const themeSpinner = ora("Adding mc-ui theme...").start();
-  try {
-    // TODO: Need to change the website URL once hosted and apply multi-theme support
-    execSync(
-      "npx shadcn@latest add http://localhost:3000/r/primary-theme.json",
+  // Prompt user to select a theme
+  inquirer
+    .prompt([
       {
-        stdio: "inherit",
-      }
-    );
-    themeSpinner.succeed("Successfully added mc-ui theme");
-  } catch (error) {
-    themeSpinner.fail("Failed to add mc-ui theme");
-    console.error("Error adding mc-ui theme:", error);
-    process.exit(1);
-  }
+        type: "list",
+        name: "theme",
+        message: "Select your MC theme:",
+        choices: [
+          { name: "Primary", value: "primary" },
+          { name: "Light Purple", value: "light-purple" },
+          { name: "Dark Purple", value: "dark-purple" },
+        ],
+        default: "primary",
+      },
+    ])
+    .then((answers) => {
+      const selectedTheme = answers.theme;
 
-  const completeSpinner = ora("Finalizing mc-ui initialization...").start();
-  completeSpinner.succeed("mc-ui initialization complete!");
+      // Add the selected color theme
+      const themeSpinner = ora(
+        `Adding ${chalk.yellow(selectedTheme)} theme...`,
+      ).start();
+      try {
+        // TODO: Need to change the website URL once hosted
+        execSync(
+          `npx shadcn@latest add http://localhost:3000/r/${selectedTheme}.json`,
+          {
+            stdio: "inherit",
+          },
+        );
+        themeSpinner.succeed(
+          `Successfully added ${chalk.green(selectedTheme)} theme`,
+        );
+      } catch (error) {
+        themeSpinner.fail(`Failed to add ${chalk.red(selectedTheme)} theme`);
+        console.error(`Error adding ${selectedTheme} theme:`, error);
+        process.exit(1);
+      }
+
+      const completeSpinner = ora("Finalizing mc-ui initialization...").start();
+      completeSpinner.succeed("mc-ui initialization complete!");
+    })
+    .catch((error) => {
+      console.error("Error during theme selection:", error);
+      process.exit(1);
+    });
 }
 
 function handleAdd(packageNames: string[]) {
@@ -83,7 +111,7 @@ function handleAdd(packageNames: string[]) {
     }
 
     const addSpinner = ora(
-      `Adding ${chalk.yellow(packageName)} component...`
+      `Adding ${chalk.yellow(packageName)} component...`,
     ).start();
 
     try {
@@ -95,13 +123,13 @@ function handleAdd(packageNames: string[]) {
       });
 
       addSpinner.succeed(
-        `Successfully added ${chalk.green(packageName)} component`
+        `Successfully added ${chalk.green(packageName)} component`,
       );
     } catch (error) {
       addSpinner.fail(`Failed to add ${chalk.red(packageName)} component`);
       console.error(
         `Error adding ${chalk.red(packageName)}:`,
-        error instanceof Error ? error.message : String(error)
+        error instanceof Error ? error.message : String(error),
       );
     }
   }

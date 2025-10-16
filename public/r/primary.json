@@ -1,8 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "primary-theme",
+  "name": "primary",
   "type": "registry:theme",
-  "title": "Primary Theme",
+  "title": "Primary",
   "description": "A theme based on the Primary color palette.",
   "cssVars": {
     "theme": {
