@@ -8,7 +8,7 @@ export const ui: Registry['items'] = [
     description: 'Material UI floating label input',
     files: [
       {
-        path: 'default/ui/floating-label-input.tsx',
+        path: 'ui/floating-label-input.tsx',
         type: 'registry:component',
       },
     ],

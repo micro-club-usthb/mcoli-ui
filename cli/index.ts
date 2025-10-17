@@ -57,7 +57,7 @@ function handleInit() {
       {
         type: "list",
         name: "theme",
-        message: "Select your MC theme:",
+        message: "Select a theme:",
         choices: [
           { name: "Primary", value: "primary" },
           { name: "Light Purple", value: "light-purple" },
@@ -69,7 +69,7 @@ function handleInit() {
     .then((answers) => {
       const selectedTheme = answers.theme;
 
-      // Add the selected color theme
+      // Add color theme
       const themeSpinner = ora(
         `Adding ${chalk.yellow(selectedTheme)} theme...`,
       ).start();

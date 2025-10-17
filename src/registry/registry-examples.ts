@@ -8,7 +8,7 @@ export const examples: Registry["items"] = [
     description: "Material UI floating label input",
     files: [
       {
-        path: "default/examples/floating-label-input-demo.tsx",
+        path: "examples/floating-label-input-demo.tsx",
         type: "registry:example",
       },
     ],
