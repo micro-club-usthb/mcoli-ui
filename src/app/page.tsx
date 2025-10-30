@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-6xl font-bold">Hello world</h1>
         <Link
           href={"/docs/introduction"}
-          className="flex gap-1 text-xl font-medium hover:underline hover:text-gray-300"
+          className="flex gap-1 text-xl font-medium hover:underline hover:text-primary-700"
         >
           Go to docs
           <ArrowRight />
