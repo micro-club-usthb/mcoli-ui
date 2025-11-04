@@ -1,24 +1,25 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import MCLogo from "@/components/MCLogo";
+import BackgroundBlur from "@/components/sections/BackgroundBlur";
+import Blur from "@/components/sections/Blur";
+import BorderRadius from "@/components/sections/BorderRadius";
+import Colors from "@/components/sections/Colors";
+import Hero from "@/components/sections/Hero";
+import Shadow from "@/components/sections/Shadow";
+import Stroke from "@/components/sections/Stroke";
+import TextStyles from "@/components/sections/TextStyles";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="flex flex-col items-center gap-10">
-        <div className="space-y-1">
-          <h1 className="header-lg font-bold">Hello world</h1>
-          <p className="paragraph-md">
-            This is a test paragraph to test new styles
-          </p>
-        </div>
-        <Link
-          href={"/docs/introduction"}
-          className="flex gap-1 text-xl font-medium hover:underline hover:text-primary-700"
-        >
-          Go to docs
-          <ArrowRight />
-        </Link>
-      </div>
+    <div className="min-h-screen flex flex-col items-center gap-10">
+      <Hero />
+      <MCLogo />
+      <Colors />
+      <TextStyles />
+      <Shadow />
+      <Stroke />
+      <BorderRadius />
+      <Blur />
+      <BackgroundBlur />
     </div>
   );
 }
