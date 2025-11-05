@@ -1,4 +1,3 @@
-import MCLogo from "@/components/MCLogo";
 import BackgroundBlur from "@/components/sections/BackgroundBlur";
 import Blur from "@/components/sections/Blur";
 import BorderRadius from "@/components/sections/BorderRadius";
@@ -10,8 +9,7 @@ import TextStyles from "@/components/sections/TextStyles";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col items-center gap-10">
-      <MCLogo />
+    <div className="px-2 md:px-10 xl:px-16 min-h-screen flex flex-col items-center gap-20">
       <Hero />
       <Colors />
       <TextStyles />
