@@ -11,8 +11,8 @@ import TextStyles from "@/components/sections/TextStyles";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center gap-10">
-      <Hero />
       <MCLogo />
+      <Hero />
       <Colors />
       <TextStyles />
       <Shadow />
