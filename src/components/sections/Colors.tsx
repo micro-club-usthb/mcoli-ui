@@ -5,7 +5,7 @@ function Colors() {
       <div className="flex flex-col items-center">
         <div className="space-y-4">
           <div className="space-y-2">
-            <h3 className="header-xs font-semibold text-primary">Primary:</h3>
+            <h3 className="header-xs font-semibold text-primary">Primary</h3>
             <ul className="flex border w-fit border-primary">
               <li className="size-[80px] bg-primary-50"></li>
               <li className="size-[80px] bg-primary-100"></li>
@@ -23,7 +23,7 @@ function Colors() {
 
           <div className="space-y-2">
             <h3 className="header-xs font-semibold text-gray-500">
-              Neutral (Gray):
+              Neutral (Gray)
             </h3>
             <ul className="flex border w-fit border-gray-500">
               <li className="size-[80px] bg-gray-50"></li>
@@ -41,7 +41,7 @@ function Colors() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="header-xs font-semibold">Accent:</h3>
+            <h3 className="header-xs font-semibold">Accent</h3>
             <ul className="flex w-fit">
               <li className="size-[80px] bg-electric-cyan"></li>
               <li className="size-[80px] bg-mint-green"></li>
@@ -59,7 +59,7 @@ function Colors() {
 
           <div className="space-y-2">
             <h3 className="header-xs font-semibold text-success-500">
-              Success:
+              Success
             </h3>
             <ul className="flex w-fit border border-success-500">
               <li className="size-[80px] bg-success-50"></li>
@@ -73,7 +73,7 @@ function Colors() {
 
           <div className="space-y-2">
             <h3 className="header-xs font-semibold text-warning-500">
-              Warning:
+              Warning
             </h3>
             <ul className="flex w-fit border border-warning-500">
               <li className="size-[80px] bg-warning-50"></li>
@@ -86,7 +86,7 @@ function Colors() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="header-xs font-semibold text-error-500">Error:</h3>
+            <h3 className="header-xs font-semibold text-error-500">Error</h3>
             <ul className="flex w-fit border border-error-500">
               <li className="size-[80px] bg-error-50"></li>
               <li className="size-[80px] bg-error-100"></li>
@@ -98,7 +98,7 @@ function Colors() {
           </div>
 
           <div className="space-y-2">
-            <h3 className="header-xs font-semibold text-info-500">Info:</h3>
+            <h3 className="header-xs font-semibold text-info-500">Info</h3>
             <ul className="flex w-fit border border-info-500">
               <li className="size-[80px] bg-info-50"></li>
               <li className="size-[80px] bg-info-100"></li>
