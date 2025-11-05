@@ -5,25 +5,25 @@ function Shadow() {
       <div className="p-4 bg-white rounded-lg">
         <ul className="flex items-center justify-between w-full">
           <li className="shadow-xs rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">XS</p>
+            <p className="paragraph-lg font-semibold text-black">XS</p>
           </li>
           <li className="shadow-sm rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">SM</p>
+            <p className="paragraph-lg font-semibold text-black">SM</p>
           </li>
           <li className="shadow-md rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">MD</p>
+            <p className="paragraph-lg font-semibold text-black">MD</p>
           </li>
           <li className="shadow-lg rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">LG</p>
+            <p className="paragraph-lg font-semibold text-black">LG</p>
           </li>
           <li className="shadow-xl rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">XL</p>
+            <p className="paragraph-lg font-semibold text-black">XL</p>
           </li>
           <li className="shadow-2xl rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">2XL</p>
+            <p className="paragraph-lg font-semibold text-black">2XL</p>
           </li>
           <li className="shadow-3xl rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold">3XL</p>
+            <p className="paragraph-lg font-semibold text-black">3XL</p>
           </li>
         </ul>
       </div>

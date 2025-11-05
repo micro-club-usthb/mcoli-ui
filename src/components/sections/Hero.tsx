@@ -1,11 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import MCLogo from "../MCLogo";
 
 function Hero() {
   return (
-    <div className="flex flex-col items-center gap-4">
-      <MCLogo className="-mb-10" />
+    <div className="flex flex-col items-center gap-4 pt-20">
       <div className="space-y-1 flex flex-col items-center">
         <h1 className="header-xl font-black">MC-UI</h1>
         <p className="paragraph-md text-center">
