@@ -4,13 +4,27 @@ function Shadow() {
       <h2 className="header-md font-bold underline">Shadow:</h2>
       <div className="p-4 bg-white rounded-lg">
         <ul className="flex items-center justify-between w-full">
-          <li className="rounded-md size-[80px] bg-white shadow-xs"></li>
-          <li className="rounded-md size-[80px] bg-white shadow-sm"></li>
-          <li className="rounded-md size-[80px] bg-white shadow-md"></li>
-          <li className="rounded-md size-[80px] bg-white shadow-lg"></li>
-          <li className="rounded-md size-[80px] bg-white shadow-xl"></li>
-          <li className="rounded-md size-[80px] bg-white shadow-2xl"></li>
-          <li className="rounded-md size-[80px] bg-white shadow-3xl"></li>
+          <li className="shadow-xs rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">XS</p>
+          </li>
+          <li className="shadow-sm rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">SM</p>
+          </li>
+          <li className="shadow-md rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">MD</p>
+          </li>
+          <li className="shadow-lg rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">LG</p>
+          </li>
+          <li className="shadow-xl rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">XL</p>
+          </li>
+          <li className="shadow-2xl rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">2XL</p>
+          </li>
+          <li className="shadow-3xl rounded-md size-[100px] bg-white flex items-center justify-center">
+            <p className="paragraph-lg font-semibold">3XL</p>
+          </li>
         </ul>
       </div>
     </div>

@@ -4,7 +4,6 @@ import BorderRadius from "@/components/sections/BorderRadius";
 import Colors from "@/components/sections/Colors";
 import Hero from "@/components/sections/Hero";
 import Shadow from "@/components/sections/Shadow";
-import Stroke from "@/components/sections/Stroke";
 import TextStyles from "@/components/sections/TextStyles";
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
       <Colors />
       <TextStyles />
       <Shadow />
-      <Stroke />
+      {/* <Stroke /> */}
       <BorderRadius />
       <Blur />
       <BackgroundBlur />
