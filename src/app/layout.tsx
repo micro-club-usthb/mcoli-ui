@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dmSans.variable} ${plusJakartaSans.variable} antialiased font-primary`}
+        className={`${dmSans.className} ${plusJakartaSans.variable} antialiased`}
       >
         <RootProvider>{children}</RootProvider>
       </body>
