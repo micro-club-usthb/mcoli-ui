@@ -1,6 +1,6 @@
 function Shadow() {
   return (
-    <div className="bg-red w-full space-y-8">
+    <div className="w-full space-y-8">
       <h2 className="header-md font-bold underline">Shadow:</h2>
       <div className="p-4 bg-white rounded-lg">
         <ul className="flex items-center justify-between w-full">

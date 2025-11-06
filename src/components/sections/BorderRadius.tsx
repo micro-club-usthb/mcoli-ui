@@ -1,6 +1,6 @@
 function BorderRadius() {
   return (
-    <div className="bg-red w-full space-y-8">
+    <div className="w-full space-y-8">
       <h2 className="header-md font-bold underline">Border Radius:</h2>
       <ul className="flex items-center justify-between w-full">
         <li className="border border-gray-300 rounded-sm size-[100px] bg-white flex items-center justify-center">

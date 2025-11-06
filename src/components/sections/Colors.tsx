@@ -1,6 +1,6 @@
 function Colors() {
   return (
-    <div className="bg-red w-full space-y-8">
+    <div className="w-full space-y-8">
       <h2 className="header-md font-bold underline">Colors:</h2>
       <div className="space-y-4">
         <div className="space-y-2">
