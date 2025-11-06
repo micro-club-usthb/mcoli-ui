@@ -57,6 +57,20 @@ function Colors() {
         </div>
 
         <div className="space-y-2">
+          <h3 className="header-xs font-semibold">Tertiary</h3>
+          <ul className="flex w-fit">
+            <li className="size-[80px] bg-aqua"></li>
+            <li className="size-[80px] bg-peach"></li>
+            <li className="size-[80px] bg-lavender"></li>
+            <li className="size-[80px] bg-coral"></li>
+            <li className="size-[80px] bg-eggsh"></li>
+            <li className="size-[80px] bg-gray"></li>
+            <li className="size-[80px] bg-ice-blue"></li>
+            <li className="size-[80px] bg-navy"></li>
+          </ul>
+        </div>
+
+        <div className="space-y-2">
           <h3 className="header-xs font-semibold text-success-200">Success</h3>
           <ul className="flex w-fit border border-success-200">
             <li className="size-[80px] bg-success-50"></li>
