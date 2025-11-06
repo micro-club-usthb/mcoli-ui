@@ -6,7 +6,7 @@ function Hero() {
     <div className="flex flex-col items-center gap-4">
       <div className="space-y-1 flex flex-col items-center">
         <h1 className="header-xl font-black">MC-UI</h1>
-        <p className="paragraph-md text-center">
+        <p className="paragraph-xl font-medium text-foreground/40 text-center">
           the MicroClub Component Library
         </p>
       </div>
