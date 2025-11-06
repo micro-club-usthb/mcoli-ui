@@ -15,39 +15,52 @@ h6 {
 }
 
 .header-xl {
-  @apply text-[72px] leading-[90px] tracking-[-0.02em];
+  font-size: 72px;
+  line-height: 90px;
+  letter-spacing: -0.02em;
 }
 .header-lg {
-  @apply text-[60px] leading-[72px] tracking-[-0.02em];
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
 }
 .header-md {
-  @apply text-[36px] leading-[44px] tracking-[-0.02em];
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
 }
 .header-sm {
-  @apply text-[30px] leading-[38px];
+  font-size: 30px;
+  line-height: 38px;
 }
 .header-xs {
-  @apply text-[24px] leading-[32px];
+  font-size: 24px;
+  line-height: 32px;
 }
 
 .paragraph-xl {
-  @apply text-[20px] leading-[30px];
+  font-size: 20px;
+  line-height: 30px;
 }
 
 .paragraph-lg {
-  @apply text-[18px] leading-[28px];
+  font-size: 18px;
+  line-height: 28px;
 }
 
 .paragraph-md {
-  @apply text-[16px] leading-[24px];
+  font-size: 16px;
+  line-height: 24px;
 }
 
 .paragraph-sm {
-  @apply text-[14px] leading-[20px];
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .paragraph-xs {
-  @apply text-[12px] leading-[18px];
+  font-size: 12px;
+  line-height: 18px;
 }
 
 @theme inline {
@@ -306,10 +319,30 @@ h6 {
 
 @layer base {
   * {
+    border-color: var(--border);
+    outline-color: rgb(var(--ring) / 0.5);
+  }
+  body {
+    letter-spacing: 0em;
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+}
+
+@layer base {
+  * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-    letter-spacing: 0em;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-plus-jakarta-sans);
 }
