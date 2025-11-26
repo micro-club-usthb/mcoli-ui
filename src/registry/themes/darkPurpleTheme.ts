@@ -1,3 +1,5 @@
+import { commonLightVars, commonDarkVars } from "./common";
+
 const darkPurple = {
   theme: {},
   light: {
@@ -14,45 +16,7 @@ const darkPurple = {
     "primary-900": "#160548",
     "primary-950": "#0D022E",
 
-    "gray-50": "#fcfcff",
-    "gray-100": "#f0f0f3",
-    "gray-200": "#e2e2e5",
-    "gray-300": "#c5c6c9",
-    "gray-400": "#aaabae",
-    "gray-500": "#8f9193",
-    "gray-600": "#75777a",
-    "gray-700": "#5d5e61",
-    "gray-800": "#454749",
-    "gray-900": "#2e3133",
-    "gray-950": "#191c1e",
-
-    "success-50": "#e6f9ee",
-    "success-100": "#a8eec3",
-    "success-200": "#4cd981",
-    "success-300": "#22c55e",
-    "success-400": "#15803d",
-    "success-500": "#0e6e2d",
-
-    "warning-50": "#fff8e6",
-    "warning-100": "#ffe299",
-    "warning-200": "#ffd54a",
-    "warning-300": "#facc15",
-    "warning-400": "#a16207",
-    "warning-500": "#854d0e",
-
-    "error-50": "#ffedee",
-    "error-100": "#ffb3b8",
-    "error-200": "#ff6b74",
-    "error-300": "#ef4444",
-    "error-400": "#b91c1c",
-    "error-500": "#7f1d1d",
-
-    "info-50": "#e8f3ff",
-    "info-100": "#b5dcff",
-    "info-200": "#5bb2ff",
-    "info-300": "#3b82f6",
-    "info-400": "#1d4ed8",
-    "info-500": "#102a75",
+    ...commonLightVars,
   },
   dark: {
     background: "#0D022E",
@@ -68,45 +32,7 @@ const darkPurple = {
     "primary-900": "#8F69FD",
     "primary-950": "#A488F7",
 
-    "gray-50": "#191c1e",
-    "gray-100": "#2e3133",
-    "gray-200": "#454749",
-    "gray-300": "#5d5e61",
-    "gray-400": "#75777a",
-    "gray-500": "#8f9193",
-    "gray-600": "#aaabae",
-    "gray-700": "#c5c6c9",
-    "gray-800": "#e2e2e5",
-    "gray-900": "#f0f0f3",
-    "gray-950": "#fcfcff",
-
-    "success-50": "#00291c",
-    "success-100": "#004d33",
-    "success-200": "#00c46c",
-    "success-300": "#22c55e",
-    "success-400": "#15803d",
-    "success-500": "#0e6e2d",
-
-    "warning-50": "#332600",
-    "warning-100": "#664d00",
-    "warning-200": "#e6b800",
-    "warning-300": "#facc15",
-    "warning-400": "#a16207",
-    "warning-500": "#854d0e",
-
-    "error-50": "#330508",
-    "error-100": "#661017",
-    "error-200": "#e03140",
-    "error-300": "#ef4444",
-    "error-400": "#b91c1c",
-    "error-500": "#7f1d1d",
-
-    "info-50": "#001933",
-    "info-100": "#003366",
-    "info-200": "#1e90ff",
-    "info-300": "#3b82f6",
-    "info-400": "#1d4ed8",
-    "info-500": "#102a75",
+    ...commonDarkVars,
   },
 };
 

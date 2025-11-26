@@ -112,27 +112,27 @@ h6 {
   --color-info-500: var(--info-500);
 
   /* Accent Colors */
-  --color-electric-cyan: #00ffff;
-  --color-mint-green: #80e786;
-  --color-teal-green: #6be6bc;
-  --color-teal: #6cafab;
-  --color-golden-sun: #ffb800;
-  --color-sunset-orange: #fd5c1d;
-  --color-rose-pink: #f495a8;
-  --color-indigo-blue: #435eec;
-  --color-amber-mustard: #d08f18;
-  --color-sky-blue: #46a7dd;
-  --color-soft-blue: #8db4fc;
+  --color-electric-cyan: var(--electric-cyan);
+  --color-mint-green: var(--mint-green);
+  --color-teal-green: var(--teal-green);
+  --color-teal: var(--teal);
+  --color-golden-sun: var(--golden-sun);
+  --color-sunset-orange: var(--sunset-orange);
+  --color-rose-pink: var(--rose-pink);
+  --color-indigo-blue: var(--indigo-blue);
+  --color-amber-mustard: var(--amber-mustard);
+  --color-sky-blue: var(--sky-blue);
+  --color-soft-blue: var(--soft-blue);
 
   /* Tertiary Colors */
-  --color-aqua: #a0e7e5;
-  --color-peach: #ffcba4;
-  --color-lavender: #e6e6fa;
-  --color-coral: #f08080;
-  --color-eggsh: #f5f5dc;
-  --color-gray: #d3d3d3;
-  --color-ice-blue: #b4ceff;
-  --color-navy: #49668a;
+  --color-aqua: var(--aqua);
+  --color-peach: var(--peach);
+  --color-lavender: var(--lavender);
+  --color-coral: var(--coral);
+  --color-eggsh: var(--eggsh);
+  --color-gray: var(--gray);
+  --color-ice-blue: var(--ice-blue);
+  --color-navy: var(--navy);
 
   /* Shadcn variables */
   --color-background: var(--background);
@@ -167,7 +167,7 @@ h6 {
   --color-card-foreground: var(--primary-900);
   --color-card: var(--primary-50);
   --color-destructive-foreground: var(--primary-50);
-  --color-shadow-color: oklch(0 0 0);
+  --color-shadow-color: var(--shadow-color);
 
   /* Fumadocs variables */
   --color-fd-background: var(--background);
@@ -260,6 +260,29 @@ h6 {
   --info-300: #3b82f6;
   --info-400: #1d4ed8;
   --info-500: #102a75;
+
+  --electric-cyan: #00ffff;
+  --mint-green: #80e786;
+  --teal-green: #6be6bc;
+  --teal: #6cafab;
+  --golden-sun: #ffb800;
+  --sunset-orange: #fd5c1d;
+  --rose-pink: #f495a8;
+  --indigo-blue: #435eec;
+  --amber-mustard: #d08f18;
+  --sky-blue: #46a7dd;
+  --soft-blue: #8db4fc;
+
+  --aqua: #a0e7e5;
+  --peach: #ffcba4;
+  --lavender: #e6e6fa;
+  --coral: #f08080;
+  --eggsh: #f5f5dc;
+  --gray: #d3d3d3;
+  --ice-blue: #b4ceff;
+  --navy: #49668a;
+
+  --shadow-color: oklch(0 0 0);
 }
 
 .dark {
@@ -315,6 +338,29 @@ h6 {
   --info-300: #3b82f6;
   --info-400: #1d4ed8;
   --info-500: #102a75;
+
+  --electric-cyan: #00ffff;
+  --mint-green: #80e786;
+  --teal-green: #6be6bc;
+  --teal: #6cafab;
+  --golden-sun: #ffb800;
+  --sunset-orange: #fd5c1d;
+  --rose-pink: #f495a8;
+  --indigo-blue: #435eec;
+  --amber-mustard: #d08f18;
+  --sky-blue: #46a7dd;
+  --soft-blue: #8db4fc;
+
+  --aqua: #a0e7e5;
+  --peach: #ffcba4;
+  --lavender: #e6e6fa;
+  --coral: #f08080;
+  --eggsh: #f5f5dc;
+  --gray: #d3d3d3;
+  --ice-blue: #b4ceff;
+  --navy: #49668a;
+
+  --shadow-color: oklch(0 0 0);
 }
 
 @layer base {
