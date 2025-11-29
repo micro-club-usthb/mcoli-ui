@@ -76,7 +76,7 @@ function handleInit() {
       try {
         // TODO: Need to change the website URL once hosted
         execSync(
-          `npx shadcn@latest add http://localhost:3000/r/${selectedTheme}.json`,
+          `npx shadcn@latest add https://mc-ui.microclub.info/r/${selectedTheme}.json`,
           {
             stdio: "inherit",
           },
@@ -116,7 +116,7 @@ function handleAdd(packageNames: string[]) {
 
     try {
       // TODO: Need to change the website URL once hosted
-      const url = new URL(`r/${packageName}.json`, "http://localhost:3000");
+      const url = new URL(`r/${packageName}.json`, "https://mc-ui.microclub.info");
 
       execSync(`npx shadcn@latest add ${url.toString()}`, {
         stdio: "inherit",

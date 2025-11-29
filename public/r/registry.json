@@ -983,6 +983,21 @@
           "type": "registry:component"
         }
       ]
+    },
+    {
+      "name": "mc-button",
+      "type": "registry:component",
+      "title": "MicroClub Button",
+      "description": "A button component for MicroClub UI",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "files": [
+        {
+          "path": "src/registry/ui/mc-button.tsx",
+          "type": "registry:component"
+        }
+      ]
     }
   ]
 }

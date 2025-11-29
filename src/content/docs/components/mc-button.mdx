@@ -1,0 +1,175 @@
+---
+title: MC Button
+description: A versatile button component with multiple variants and sizes for MicroClub UI.
+---
+
+## Preview
+
+<Tabs items={['preview', 'code']}>
+  <Tab>
+    <ComponentPreview name='mc-button-demo'/>
+  </Tab>
+  <Tab>
+    <ComponentSource name='mc-button-demo' />
+  </Tab>
+</Tabs>
+
+## Installation
+
+### CLI
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mc-ui@latest add mc-button
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm dlx mc-ui@latest add mc-button
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn dlx mc-ui@latest add mc-button
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bunx mc-ui@latest add mc-button
+    ```
+  </Tab>
+</Tabs>
+
+### Manual
+
+<Steps>
+
+<Step>Install the following dependencies</Step>
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npm install clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm add clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn add clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bun add clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+    ```
+  </Tab>
+</Tabs>
+
+<Step>Add a classname utility function</Step>
+
+```tsx
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+export const cn = (...inputs: ClassValue[]) => {
+  return twMerge(clsx(inputs));
+};
+```
+
+<Step>Copy and paste the following code into your project</Step>
+
+<ComponentSource name='mc-button' />
+
+<Step>Update the import paths to match your project setup</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import { McButton } from "@/components/ui/mc-button"
+
+export default function Example() {
+  return <McButton>Click me</McButton>
+}
+```
+
+## Examples
+
+### Variants
+
+```tsx
+<McButton variant="default">Default</McButton>
+<McButton variant="secondary">Secondary</McButton>
+<McButton variant="destructive">Destructive</McButton>
+<McButton variant="outline">Outline</McButton>
+<McButton variant="ghost">Ghost</McButton>
+<McButton variant="link">Link</McButton>
+```
+
+### Sizes
+
+```tsx
+<McButton size="sm">Small</McButton>
+<McButton size="default">Default</McButton>
+<McButton size="lg">Large</McButton>
+```
+
+### Icon Buttons
+
+```tsx
+import { ArrowRight } from "lucide-react"
+
+<McButton size="icon-sm" variant="outline">
+  <ArrowRight />
+</McButton>
+<McButton size="icon" variant="outline">
+  <ArrowRight />
+</McButton>
+<McButton size="icon-lg" variant="outline">
+  <ArrowRight />
+</McButton>
+```
+
+### With Icons
+
+```tsx
+import { ArrowRight } from "lucide-react"
+
+<McButton>
+  <ArrowRight />
+  Button with Icon
+</McButton>
+<McButton variant="outline">
+  Button with Icon
+  <ArrowRight />
+</McButton>
+```
+
+### As Child (Polymorphic)
+
+Use `asChild` to render the button as a different element or component:
+
+```tsx
+<McButton asChild>
+  <a href="https://microclub.info">Visit MicroClub</a>
+</McButton>
+```
+
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` | The visual style of the button |
+| `size` | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"` | The size of the button |
+| `asChild` | `boolean` | `false` | Renders the button as a child element (polymorphic) |
+| `className` | `string` | `undefined` | Additional CSS classes |
+
+All other props from `React.ComponentProps<"button">` are also supported.

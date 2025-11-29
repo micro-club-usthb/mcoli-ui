@@ -41,6 +41,16 @@ export const Index: Record<string, any> ={
       type: "registry:component",
     }],
   },
+  "mc-button": {
+    name: "mc-button",
+    description: "A button component for MicroClub UI",
+    type: "registry:component",
+    files: [{
+      path: "src/registry/ui/mc-button.tsx",
+      content: "import * as React from \"react\"\nimport { Slot } from \"@radix-ui/react-slot\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst buttonVariants = cva(\n  \"inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n        destructive:\n          \"bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60\",\n        outline:\n          \"border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50\",\n        secondary:\n          \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n        ghost:\n          \"hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50\",\n        link: \"text-primary underline-offset-4 hover:underline\",\n      },\n      size: {\n        default: \"h-9 px-4 py-2 has-[>svg]:px-3\",\n        sm: \"h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5\",\n        lg: \"h-10 rounded-md px-6 has-[>svg]:px-4\",\n        icon: \"size-9\",\n        \"icon-sm\": \"size-8\",\n        \"icon-lg\": \"size-10\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n      size: \"default\",\n    },\n  }\n)\n\nfunction McButton({\n  className,\n  variant,\n  size,\n  asChild = false,\n  ...props\n}: React.ComponentProps<\"button\"> &\n  VariantProps<typeof buttonVariants> & {\n    asChild?: boolean\n  }) {\n  const Comp = asChild ? Slot : \"button\"\n\n  return (\n    <Comp\n      data-slot=\"button\"\n      className={cn(buttonVariants({ variant, size, className }))}\n      {...props}\n    />\n  )\n}\n\nexport { McButton, buttonVariants }\n",
+      type: "registry:component",
+    }],
+  },
   "floating-label-input-demo": {
     name: "floating-label-input-demo",
     description: "Material UI floating label input",
@@ -52,5 +62,17 @@ export const Index: Record<string, any> ={
     }],
     component: React.lazy(() => import("@/registry/examples/floating-label-input-demo.tsx")),
     source: "import { FloatingInput } from \"../ui/floating-label-input\";\n\nexport default function FloatingLabelInputDemo() {\n  return <FloatingInput label=\"Demo\" />;\n}\n",
+  },
+  "mc-button-demo": {
+    name: "mc-button-demo",
+    description: "Demo for MicroClub Button",
+    type: "registry:example",
+    files: [{
+      path: "src/registry/examples/mc-button-demo.tsx",
+      content: "import { McButton } from \"../ui/mc-button\";\n\nexport default function McButtonDemo() {\n  return <McButton>Button</McButton>;\n}\n",
+      type: "registry:example",
+    }],
+    component: React.lazy(() => import("@/registry/examples/mc-button-demo.tsx")),
+    source: "import { McButton } from \"../ui/mc-button\";\n\nexport default function McButtonDemo() {\n  return <McButton>Button</McButton>;\n}\n",
   },
 }

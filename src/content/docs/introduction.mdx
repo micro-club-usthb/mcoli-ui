@@ -3,16 +3,110 @@ title: Introduction
 description: Get started with the Micro Club's component registry for Shadcn UI.
 ---
 
-Welcome to my personal [shadcn/ui](https://ui.shadcn.com/) component registry! This is a collection of reusable UI components built on top of Radix UI primitives and styled with Tailwind CSS, designed to accelerate your development workflow.
+Welcome to the **MicroClub UI** component registry! This is a collection of reusable UI components built on top of Radix UI primitives and styled with Tailwind CSS, designed to accelerate your development workflow.
 
-> shadcn/ui is a set of beautifully-designed, accessible components and a code distribution platform. Works with your favorite frameworks and AI models. Open Source. Open Code.
 > This is not a component library. It is how you build your component library.
 
 This is built on top of shadcn/ui and includes many useful components. The same as shadcn/ui, all components are free to use for personal and commercial. Just copy and paste to your project and customize to your needs. The code is yours.
 
 ## Getting Started
 
-To start using this registry, you must first have shadcn installed in your project. Follow the [installation](https://ui.shadcn.com/docs/installation) instructions if necessary.
+To start using this registry, you can use our CLI tool to initialize your project with the components you need.
+
+### Prerequisites
+
+Before using MicroClub UI components, ensure you have a project with shadcn/ui installed. If you haven't set it up yet, follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation).
+
+### Initialization
+
+Run the `init` command to set up your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mc-ui@latest init
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm dlx mc-ui@latest init
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn dlx mc-ui@latest init
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bunx mc-ui@latest init
+    ```
+  </Tab>
+</Tabs>
+
+Alternatively, you can install the CLI globally:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npm install -g mc-ui@latest
+mc-ui init
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm add -g mc-ui@latest
+mc-ui init
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn global add mc-ui@latest
+mc-ui init
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bun add -g mc-ui@latest
+mc-ui init
+    ```
+  </Tab>
+</Tabs>
+
+## Adding Components
+
+Once initialized, you can add individual components to your project using the CLI:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mc-ui@latest add [component-name]
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm dlx mc-ui@latest add [component-name]
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn dlx mc-ui@latest add [component-name]
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bunx mc-ui@latest add [component-name]
+    ```
+  </Tab>
+</Tabs>
+
+## Why MicroClub UI?
+
+- **Copy & Paste**: Own your code. Components are copied directly into your project.
+- **Customizable**: Built with Tailwind CSS, allowing full control over styling.
+- **Accessible**: Built on Radix UI primitives with accessibility best practices.
+- **Type-Safe**: Written in TypeScript for better developer experience.
+- **Framework Agnostic**: Works with any React framework.
 
 ## References
 
