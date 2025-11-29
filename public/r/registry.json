@@ -967,24 +967,6 @@
       }
     },
     {
-      "name": "floating-label-input",
-      "type": "registry:component",
-      "title": "Floating Label Input",
-      "description": "Material UI floating label input",
-      "dependencies": [
-        "@radix-ui/react-label"
-      ],
-      "registryDependencies": [
-        "input"
-      ],
-      "files": [
-        {
-          "path": "src/registry/ui/floating-label-input.tsx",
-          "type": "registry:component"
-        }
-      ]
-    },
-    {
       "name": "mc-button",
       "type": "registry:component",
       "title": "MicroClub Button",
