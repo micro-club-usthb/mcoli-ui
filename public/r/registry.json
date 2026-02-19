@@ -968,7 +968,6 @@
     },
     {
       "name": "mc-button",
-      "type": "registry:component",
       "title": "MicroClub Button",
       "description": "A button component for MicroClub UI",
       "dependencies": [
@@ -979,7 +978,8 @@
           "path": "src/registry/ui/mc-button.tsx",
           "type": "registry:component"
         }
-      ]
+      ],
+      "type": "registry:component"
     }
   ]
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "primary",
-  "type": "registry:theme",
   "title": "Primary",
   "description": "A theme based on the Primary color palette.",
   "cssVars": {
@@ -318,5 +317,6 @@
         "letter-spacing": "0em"
       }
     }
-  }
+  },
+  "type": "registry:theme"
 }

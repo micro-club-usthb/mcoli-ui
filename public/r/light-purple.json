@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "light-purple",
-  "type": "registry:theme",
   "title": "Light Purple",
   "description": "A light purple themed color palette.",
   "cssVars": {
@@ -318,5 +317,6 @@
         "letter-spacing": "0em"
       }
     }
-  }
+  },
+  "type": "registry:theme"
 }

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dark-purple",
-  "type": "registry:theme",
   "title": "Dark Purple",
   "description": "A dark purple themed color palette.",
   "cssVars": {
@@ -318,5 +317,6 @@
         "letter-spacing": "0em"
       }
     }
-  }
+  },
+  "type": "registry:theme"
 }
