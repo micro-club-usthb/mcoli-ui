@@ -3,23 +3,21 @@ title: Introduction
 description: Get started with the Micro Club's component registry for Shadcn UI.
 ---
 
-Welcome to the **MicroClub UI** component registry! This is a collection of reusable UI components built on top of Radix UI primitives and styled with Tailwind CSS, designed to accelerate your development workflow.
+Welcome to **mc-ui**, the official component registry for Micro Club. mc-ui provides pre-built themes and components that extend [shadcn/ui](https://ui.shadcn.com) with custom styling.
 
-> This is not a component library. It is how you build your component library.
+> **Important:** mc-ui is not a standalone component library. It is a **theme and component registry** that requires shadcn/ui as a prerequisite. Think of it as an extension that adds Micro Club's custom themes and components to your existing shadcn/ui project.
 
-This is built on top of shadcn/ui and includes many useful components. The same as shadcn/ui, all components are free to use for personal and commercial. Just copy and paste to your project and customize to your needs. The code is yours.
+## Prerequisites
 
-## Getting Started
+mc-ui requires an existing **shadcn/ui** project. If you don't have one, you must set it up first.
 
-To start using this registry, you can use our CLI tool to initialize your project with the components you need.
+> **Warning:** mc-ui is built on top of shadcn/ui. You **must** initialize shadcn/ui before using mc-ui.
+> 
+> Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
 
-### Prerequisites
+## Initialize mc-ui
 
-Before using MicroClub UI components, ensure you have a project with shadcn/ui installed. If you haven't set it up yet, follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation).
-
-### Initialization
-
-Run the `init` command to set up your project:
+Once shadcn/ui is set up, you can initialize mc-ui to add Micro Club's themes:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -43,6 +41,8 @@ bunx mc-ui@latest init
     ```
   </Tab>
 </Tabs>
+
+The `init` command will prompt you to select a theme for your project.
 
 Alternatively, you can install the CLI globally:
 
@@ -73,9 +73,9 @@ mc-ui init
   </Tab>
 </Tabs>
 
-## Adding Components
+## Add Components
 
-Once initialized, you can add individual components to your project using the CLI:
+After initializing a theme, you can add individual mc-ui components:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -100,16 +100,25 @@ bunx mc-ui@latest add [component-name]
   </Tab>
 </Tabs>
 
-## Why MicroClub UI?
+## Available Themes
+
+mc-ui ships with three pre-built themes:
+
+| Theme | Description |
+|-------|-------------|
+| **Primary** | A professional blue color scheme |
+| **Light Purple** | A light-themed purple palette |
+| **Dark Purple** | A dark-themed purple palette |
+
+## Why mc-ui?
 
 - **Copy & Paste**: Own your code. Components are copied directly into your project.
-- **Customizable**: Built with Tailwind CSS, allowing full control over styling.
-- **Accessible**: Built on Radix UI primitives with accessibility best practices.
+- **Themeable**: Pre-built themes that integrate seamlessly with shadcn/ui.
+- **Custom Components**: Micro Club-specific components built on Radix UI primitives.
 - **Type-Safe**: Written in TypeScript for better developer experience.
-- **Framework Agnostic**: Works with any React framework.
 
 ## References
 
-- [shadcn/ui](https://ui.shadcn.com/) - For style and registry distribution.
-- [Tailwind CSS](https://tailwindcss.com) - For easily styling with utility first CSS
-- [Radix UI](https://radix-ui.com/) - For composition utilities.
+- [shadcn/ui](https://ui.shadcn.com/) - Base component library and registry system
+- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
+- [Radix UI](https://radix-ui.com/) - Unstyled, accessible UI components
