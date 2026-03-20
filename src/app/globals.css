@@ -3,14 +3,7 @@
 @import "fumadocs-ui/css/preset.css";
 @import "tw-animate-css";
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-plus-jakarta-sans);
-}
+@custom-variant dark (&:is(.dark *));
 
 .header-xl {
   font-size: 72px;
@@ -177,6 +170,21 @@ h6 {
   --color-input: var(--input);
   --color-ring: var(--ring);
 
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
   --color-fd-background: var(--fd-background);
   --color-fd-foreground: var(--fd-foreground);
   --color-fd-muted: var(--fd-muted);
@@ -194,39 +202,24 @@ h6 {
   --color-fd-accent-foreground: var(--fd-accent-foreground);
   --color-fd-ring: var(--fd-ring);
 
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
 
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-3xl: var(--shadow-3xl);
 
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
-
-  --shadow-xs: 0 1px 4px 0px hsl(0 0% 0% / 0.04);
-  --shadow-sm: 0 4px 12px -4px hsl(0 0% 0% / 0.08);
-  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
-  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
-  --shadow-xl: 0 16px 20px -5px hsl(0 0% 0% / 0.1);
-  --shadow-2xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
-  --shadow-3xl: 0 25px 50px -12px hsl(0 0% 0% / 0.12);
-
-  --blur-sm: 2px;
-  --blur-md: 4px;
-  --blur-lg: 7px;
-  --blur-xl: 9px;
+  --blur-sm: var(--blur-sm);
+  --blur-md: var(--blur-md);
+  --blur-lg: var(--blur-lg);
+  --blur-xl: var(--blur-xl);
 }
 
 :root {
@@ -376,6 +369,25 @@ h6 {
   --error: #e7000b;
   --info: #3b82f6;
   --info-foreground: #ffedee;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+
+  --shadow-xs: 0 1px 4px 0px hsl(0 0% 0% / 0.04);
+  --shadow-sm: 0 4px 12px -4px hsl(0 0% 0% / 0.08);
+  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 16px 20px -5px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+  --shadow-3xl: 0 25px 50px -12px hsl(0 0% 0% / 0.12);
+
+  --blur-sm: 2px;
+  --blur-md: 4px;
+  --blur-lg: 7px;
+  --blur-xl: 9px;
 }
 
 .dark {
@@ -525,6 +537,25 @@ h6 {
   --error: #ffedee;
   --info: #5bb2ff;
   --info-foreground: #0b0e24;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+
+  --shadow-xs: 0 1px 4px 0px hsl(0 0% 0% / 0.04);
+  --shadow-sm: 0 4px 12px -4px hsl(0 0% 0% / 0.08);
+  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 16px 20px -5px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+  --shadow-3xl: 0 25px 50px -12px hsl(0 0% 0% / 0.12);
+
+  --blur-sm: 2px;
+  --blur-md: 4px;
+  --blur-lg: 7px;
+  --blur-xl: 9px;
 }
 
 @layer base {
@@ -536,15 +567,6 @@ h6 {
     letter-spacing: 0em;
     background-color: var(--background);
     color: var(--foreground);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
@@ -561,3 +583,4 @@ h6 {
   background-color: var(--primary) !important;
   color: var(--primary-foreground) !important;
 }
+

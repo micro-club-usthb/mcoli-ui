@@ -15,9 +15,25 @@ mc-ui requires an existing **shadcn/ui** project. If you don't have one, you mus
 > 
 > Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
 
+## Available Themes
+
+mc-ui ships with five pre-built themes:
+
+| Theme | Description |
+|-------|-------------|
+| **primary** | A professional blue primary with purple secondary accents |
+| **secondary** | A purple primary with blue secondary accents |
+| **game-dev** | A vibrant pink primary with yellow accents for gaming |
+| **robotics** | A technical blue primary with accent blue for precision |
+| **it** | A clean green primary with gray accents for IT |
+
 ## Initialize mc-ui
 
-Once shadcn/ui is set up, you can initialize mc-ui to add Micro Club's themes:
+Once shadcn/ui is set up, you can initialize mc-ui to add Micro Club's themes.
+
+### Interactive Mode
+
+The `init` command will prompt you to select a theme with a visual color picker:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -42,7 +58,36 @@ bunx mc-ui@latest init
   </Tab>
 </Tabs>
 
-The `init` command will prompt you to select a theme for your project.
+### Direct Theme Selection
+
+You can also specify the theme directly as an argument:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mc-ui@latest init primary
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm dlx mc-ui@latest init primary
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn dlx mc-ui@latest init primary
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bunx mc-ui@latest init primary
+    ```
+  </Tab>
+</Tabs>
+
+Replace `primary` with any available theme: `primary`, `secondary`, `game-dev`, `robotics`, or `it`.
+
+### Global CLI Installation
 
 Alternatively, you can install the CLI globally:
 
@@ -50,25 +95,25 @@ Alternatively, you can install the CLI globally:
   <Tab>
     ```sh
 npm install -g mc-ui@latest
-mc-ui init
+mc-ui init primary
     ```
   </Tab>
   <Tab>
     ```sh
 pnpm add -g mc-ui@latest
-mc-ui init
+mc-ui init primary
     ```
   </Tab>
   <Tab>
     ```sh
 yarn global add mc-ui@latest
-mc-ui init
+mc-ui init primary
     ```
   </Tab>
   <Tab>
     ```sh
 bun add -g mc-ui@latest
-mc-ui init
+mc-ui init primary
     ```
   </Tab>
 </Tabs>
@@ -80,37 +125,25 @@ After initializing a theme, you can add individual mc-ui components:
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npx mc-ui@latest add [component-name]
+npx mc-ui@latest add mc-button
     ```
   </Tab>
   <Tab>
     ```sh
-pnpm dlx mc-ui@latest add [component-name]
+pnpm dlx mc-ui@latest add mc-button
     ```
   </Tab>
   <Tab>
     ```sh
-yarn dlx mc-ui@latest add [component-name]
+yarn dlx mc-ui@latest add mc-button
     ```
   </Tab>
   <Tab>
     ```sh
-bunx mc-ui@latest add [component-name]
+bunx mc-ui@latest add mc-button
     ```
   </Tab>
 </Tabs>
-
-## Available Themes
-
-mc-ui ships with five pre-built themes:
-
-| Theme | Description |
-|-------|-------------|
-| **Primary** | A professional blue primary with purple secondary accents |
-| **Secondary** | A purple primary with blue secondary accents |
-| **GameDev** | A vibrant pink primary with yellow accents for gaming |
-| **Robotics** | A technical blue primary with accent blue for precision |
-| **IT** | A clean green primary with gray accents for IT |
 
 ## Why mc-ui?
 
