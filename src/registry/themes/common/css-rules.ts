@@ -190,23 +190,23 @@ export const themeInlineCSS = `
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  --radius-sm: var(--radius-sm);
-  --radius-md: var(--radius-md);
-  --radius-lg: var(--radius-lg);
-  --radius-xl: var(--radius-xl);
-  --radius-2xl: var(--radius-2xl);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
 
-  --shadow-xs: var(--shadow-xs);
-  --shadow-sm: var(--shadow-sm);
-  --shadow-md: var(--shadow-md);
-  --shadow-lg: var(--shadow-lg);
-  --shadow-xl: var(--shadow-xl);
-  --shadow-2xl: var(--shadow-2xl);
-  --shadow-3xl: var(--shadow-3xl);
+  --shadow-xs: 0 1px 4px 0px hsl(0 0% 0% / 0.04);
+  --shadow-sm: 0 4px 12px -4px hsl(0 0% 0% / 0.08);
+  --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+  --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.1);
+  --shadow-xl: 0 16px 20px -5px hsl(0 0% 0% / 0.1);
+  --shadow-2xl: 0 20px 25px -5px hsl(0 0% 0% / 0.1);
+  --shadow-3xl: 0 25px 50px -12px hsl(0 0% 0% / 0.12);
 
-  --blur-sm: var(--blur-sm);
-  --blur-md: var(--blur-md);
-  --blur-lg: var(--blur-lg);
-  --blur-xl: var(--blur-xl);
+  --blur-sm: 2px;
+  --blur-md: 4px;
+  --blur-lg: 7px;
+  --blur-xl: 9px;
 }
 `;

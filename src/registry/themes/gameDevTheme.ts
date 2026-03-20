@@ -1,9 +1,8 @@
-import { commonColors, staticCSSVars } from "./common";
+import { commonColors } from "./common";
 
 const gameDevTheme = {
   light: {
     ...commonColors.light,
-    ...staticCSSVars.light,
 
     background: "#FDF6E3",
     foreground: "#2E3133",
@@ -69,7 +68,6 @@ const gameDevTheme = {
   },
   dark: {
     ...commonColors.dark,
-    ...staticCSSVars.dark,
 
     background: "#78142A",
     foreground: "#FDF6E3",

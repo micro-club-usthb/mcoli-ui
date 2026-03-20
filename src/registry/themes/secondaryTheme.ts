@@ -1,9 +1,8 @@
-import { commonColors, staticCSSVars } from "./common";
+import { commonColors } from "./common";
 
 const secondaryTheme = {
   light: {
     ...commonColors.light,
-    ...staticCSSVars.light,
 
     background: "#FFFFFF",
     foreground: "#200533",
@@ -69,7 +68,6 @@ const secondaryTheme = {
   },
   dark: {
     ...commonColors.dark,
-    ...staticCSSVars.dark,
 
     background: "#200533",
     foreground: "#FEF7FF",
