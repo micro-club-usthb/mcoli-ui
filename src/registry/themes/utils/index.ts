@@ -91,35 +91,60 @@ type ThemeConfig = {
 };
 
 const themeMap: Record<string, ThemeConfig> = {
-  primary: { theme: primaryTheme, title: "Primary", description: "Blue Primary with Purple Secondary accents - Professional and modern." },
-  secondary: { theme: secondaryTheme, title: "Secondary", description: "Purple Secondary with Blue Primary accents - Creative and bold." },
-  "game-dev": { theme: gameDevTheme, title: "GameDev", description: "Pink Primary with Yellow accents - Vibrant and energetic for gaming." },
-  robotics: { theme: roboticsTheme, title: "Robotics", description: "Blue Primary with Accent Blue accents - Technical and precise." },
-  it: { theme: itTheme, title: "IT", description: "Green Primary with Gray accents - Clean and professional for IT." },
+  primary: {
+    theme: primaryTheme,
+    title: "Primary",
+    description:
+      "Blue Primary with Purple Secondary accents - Professional and modern.",
+  },
+  secondary: {
+    theme: secondaryTheme,
+    title: "Secondary",
+    description:
+      "Purple Secondary with Blue Primary accents - Creative and bold.",
+  },
+  "game-dev": {
+    theme: gameDevTheme,
+    title: "GameDev",
+    description:
+      "Pink Primary with Yellow accents - Vibrant and energetic for gaming.",
+  },
+  robotics: {
+    theme: roboticsTheme,
+    title: "Robotics",
+    description:
+      "Blue Primary with Accent Blue accents - Technical and precise.",
+  },
+  it: {
+    theme: itTheme,
+    title: "IT",
+    description:
+      "Green Primary with Gray accents - Clean and professional for IT.",
+  },
 };
 
 function themeInlineMappings(): Record<string, string> {
   return {
-    "--color-primary-50": "var(--primary-50)",
-    "--color-primary-100": "var(--primary-100)",
-    "--color-primary-200": "var(--primary-200)",
-    "--color-primary-300": "var(--primary-300)",
-    "--color-primary-400": "var(--primary-400)",
-    "--color-primary-500": "var(--primary-500)",
-    "--color-primary-600": "var(--primary-600)",
-    "--color-primary-700": "var(--primary-700)",
-    "--color-primary-800": "var(--primary-800)",
-    "--color-primary-900": "var(--primary-900)",
-    "--color-primary-950": "var(--primary-950)",
-    "--color-secondary-50": "var(--secondary-50)",
-    "--color-secondary-100": "var(--secondary-100)",
-    "--color-secondary-200": "var(--secondary-200)",
-    "--color-secondary-300": "var(--secondary-300)",
-    "--color-secondary-400": "var(--secondary-400)",
-    "--color-secondary-500": "var(--secondary-500)",
-    "--color-secondary-600": "var(--secondary-600)",
-    "--color-secondary-700": "var(--secondary-700)",
-    "--color-secondary-800": "var(--secondary-800)",
+    "--color-blue-primary-50": "var(--blue-primary-50)",
+    "--color-blue-primary-100": "var(--blue-primary-100)",
+    "--color-blue-primary-200": "var(--blue-primary-200)",
+    "--color-blue-primary-300": "var(--blue-primary-300)",
+    "--color-blue-primary-400": "var(--blue-primary-400)",
+    "--color-blue-primary-500": "var(--blue-primary-500)",
+    "--color-blue-primary-600": "var(--blue-primary-600)",
+    "--color-blue-primary-700": "var(--blue-primary-700)",
+    "--color-blue-primary-800": "var(--blue-primary-800)",
+    "--color-blue-primary-900": "var(--blue-primary-900)",
+    "--color-blue-primary-950": "var(--blue-primary-950)",
+    "--color-purple-secondary-50": "var(--purple-secondary-50)",
+    "--color-purple-secondary-100": "var(--purple-secondary-100)",
+    "--color-purple-secondary-200": "var(--purple-secondary-200)",
+    "--color-purple-secondary-300": "var(--purple-secondary-300)",
+    "--color-purple-secondary-400": "var(--purple-secondary-400)",
+    "--color-purple-secondary-500": "var(--purple-secondary-500)",
+    "--color-purple-secondary-600": "var(--purple-secondary-600)",
+    "--color-purple-secondary-700": "var(--purple-secondary-700)",
+    "--color-purple-secondary-800": "var(--purple-secondary-800)",
     "--color-gray-50": "var(--gray-50)",
     "--color-gray-100": "var(--gray-100)",
     "--color-gray-200": "var(--gray-200)",

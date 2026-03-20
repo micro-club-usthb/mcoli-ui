@@ -1,6 +1,6 @@
 function TextStyles() {
   return (
-    <div className="bg-destructive w-full space-y-8">
+    <div className="w-full space-y-8">
       <h2 className="header-md font-bold underline">Text Styles:</h2>
       <div className="space-y-6">
         {/* Headers */}
