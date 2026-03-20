@@ -14,38 +14,39 @@ const themes = [
   {
     name: "Primary",
     value: "primary",
-    description: "Blue primary with Purple secondary accents",
-    colors: ["#0006B1", "#6A0DAD"],
+    description: "Professional and modern",
+    colors: ["#0006B1", "#E6E9FF"],
   },
   {
     name: "Secondary",
     value: "secondary",
-    description: "Purple primary with Blue secondary accents",
-    colors: ["#6A0DAD", "#001EFF"],
+    description: "Creative and bold",
+    colors: ["#6A0DAD", "#FDDDFF"],
   },
   {
     name: "GameDev",
     value: "game-dev",
-    description: "Pink primary with Yellow accents",
+    description: "Fun and energetic",
     colors: ["#D04F99", "#FACC15"],
   },
   {
     name: "Robotics",
     value: "robotics",
-    description: "Blue primary with Accent Blue",
-    colors: ["#001EFF", "#00D3FF"],
+    description: "Technical and precise",
+    colors: ["#001EFF", "#0006B1"],
   },
   {
     name: "IT",
     value: "it",
-    description: "Green primary with Gray accents",
-    colors: ["#25C059", "#8F9193"],
+    description: "Clean and professional",
+    colors: ["#25C059", "#25C059"],
   },
 ];
 
 const validThemeValues = themes.map((t) => t.value);
 
-const REGISTRY_URL = process.env.MC_UI_REGISTRY_URL || "https://mc-ui.microclub.info";
+const REGISTRY_URL =
+  process.env.MC_UI_REGISTRY_URL || "https://mc-ui.microclub.info";
 
 const args = process.argv.slice(2);
 
@@ -166,12 +167,9 @@ function addTheme(themeValue: string, themeName: string) {
     `Adding ${chalk.yellow(themeName)} mc-ui theme...`,
   ).start();
   try {
-    execSync(
-      `npx shadcn@latest add ${REGISTRY_URL}/r/${themeValue}.json`,
-      {
-        stdio: "inherit",
-      },
-    );
+    execSync(`npx shadcn@latest add ${REGISTRY_URL}/r/${themeValue}.json`, {
+      stdio: "inherit",
+    });
     themeSpinner.succeed(
       `Successfully added ${chalk.green(themeName)} mc-ui theme`,
     );
@@ -216,10 +214,7 @@ function handleAdd(packageNames: string[]) {
     ).start();
 
     try {
-      const url = new URL(
-        `r/${packageName}.json`,
-        REGISTRY_URL,
-      );
+      const url = new URL(`r/${packageName}.json`, REGISTRY_URL);
 
       execSync(`npx shadcn@latest add ${url.toString()}`, {
         stdio: "inherit",
