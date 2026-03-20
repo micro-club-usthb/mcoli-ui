@@ -1,16 +1,19 @@
 import { Registry } from "shadcn/schema";
-import darkPurple from "../darkPurpleTheme";
-import lightPurple from "../lightPurpleTheme";
 import primaryTheme from "../primaryTheme";
-import { commonCSS, commonThemeVars } from "../common";
+import secondaryTheme from "../secondaryTheme";
+import gameDevTheme from "../gameDevTheme";
+import roboticsTheme from "../roboticsTheme";
+import itTheme from "../itTheme";
+import { commonCSS, themeInlineCSS } from "../common";
 
 const themeVars = {
   primary: primaryTheme,
-  "light-purple": lightPurple,
-  "dark-purple": darkPurple,
+  secondary: secondaryTheme,
+  "game-dev": gameDevTheme,
+  robotics: roboticsTheme,
+  it: itTheme,
 };
 
-// Helper function to create a theme
 export default function createTheme(
   name: string,
   title: string,
@@ -23,14 +26,16 @@ export default function createTheme(
     type: "registry:theme",
     title,
     description,
-    css: commonCSS,
     cssVars: {
-      theme: {
-        ...commonThemeVars,
-        ...vars.theme,
-      },
+      theme: {},
       light: vars.light,
       dark: vars.dark,
     },
+    css: {
+      ...commonCSS,
+      "@theme inline": themeInlineCSS,
+    },
   };
 }
+
+export { themeVars };

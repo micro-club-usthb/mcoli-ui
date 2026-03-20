@@ -1,21 +1,30 @@
 import type { Registry } from "shadcn/schema";
 import createTheme from "./themes/utils";
 
-// Generate themes using the helper function
 export const themes: Registry["items"] = [
   createTheme(
     "primary",
     "Primary",
-    "A theme based on the Primary color palette.",
+    "Blue Primary with Purple Secondary accents - Professional and modern.",
   ),
   createTheme(
-    "light-purple",
-    "Light Purple",
-    "A light purple themed color palette.",
+    "secondary",
+    "Secondary",
+    "Purple Secondary with Blue Primary accents - Creative and bold.",
   ),
   createTheme(
-    "dark-purple",
-    "Dark Purple",
-    "A dark purple themed color palette.",
+    "game-dev",
+    "GameDev",
+    "Pink Primary with Yellow accents - Vibrant and energetic for gaming.",
+  ),
+  createTheme(
+    "robotics",
+    "Robotics",
+    "Blue Primary with Accent Blue accents - Technical and precise.",
+  ),
+  createTheme(
+    "it",
+    "IT",
+    "Green Primary with Gray accents - Clean and professional for IT.",
   ),
 ];

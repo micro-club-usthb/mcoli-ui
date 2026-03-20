@@ -61,8 +61,10 @@ function handleInit() {
         message: "Select an mc-ui theme:",
         choices: [
           { name: "Primary", value: "primary" },
-          { name: "Light Purple", value: "light-purple" },
-          { name: "Dark Purple", value: "dark-purple" },
+          { name: "Secondary", value: "secondary" },
+          { name: "GameDev", value: "game-dev" },
+          { name: "Robotics", value: "robotics" },
+          { name: "IT", value: "it" },
         ],
         default: "primary",
       },
