@@ -1,10 +1,69 @@
 import { Registry } from "shadcn/schema";
-import primaryTheme from "../primaryTheme";
-import secondaryTheme from "../secondaryTheme";
-import gameDevTheme from "../gameDevTheme";
-import roboticsTheme from "../roboticsTheme";
-import itTheme from "../itTheme";
-import { commonCSS } from "../common";
+import { primaryTheme } from "../primaryTheme";
+import { secondaryTheme } from "../secondaryTheme";
+import { gameDevTheme } from "../gameDevTheme";
+import { roboticsTheme } from "../roboticsTheme";
+import { itTheme } from "../itTheme";
+
+const commonCSS = {
+  "@layer base": {
+    "*": {
+      "border-color": "var(--border)",
+      "outline-color": "rgb(var(--ring) / 0.5)",
+    },
+    body: {
+      "background-color": "var(--background)",
+      color: "var(--foreground)",
+      "letter-spacing": "0em",
+    },
+  },
+  "h1, h2, h3, h4, h5, h6": {
+    "font-family": "var(--font-plus-jakarta-sans)",
+  },
+  ".header-xl": {
+    "font-size": "72px",
+    "line-height": "90px",
+    "letter-spacing": "-0.02em",
+  },
+  ".header-lg": {
+    "font-size": "60px",
+    "line-height": "72px",
+    "letter-spacing": "-0.02em",
+  },
+  ".header-md": {
+    "font-size": "36px",
+    "line-height": "44px",
+    "letter-spacing": "-0.02em",
+  },
+  ".header-sm": {
+    "font-size": "30px",
+    "line-height": "38px",
+  },
+  ".header-xs": {
+    "font-size": "24px",
+    "line-height": "32px",
+  },
+  ".paragraph-xl": {
+    "font-size": "20px",
+    "line-height": "30px",
+  },
+  ".paragraph-lg": {
+    "font-size": "18px",
+    "line-height": "28px",
+  },
+  ".paragraph-md": {
+    "font-size": "16px",
+    "line-height": "24px",
+  },
+  ".paragraph-sm": {
+    "font-size": "14px",
+    "line-height": "20px",
+  },
+  ".paragraph-xs": {
+    "font-size": "12px",
+    "line-height": "18px",
+  },
+};
 
 const staticVars = {
   "radius-sm": "4px",
@@ -25,37 +84,19 @@ const staticVars = {
   "blur-xl": "9px",
 };
 
-const themeVars = {
-  primary: primaryTheme,
-  secondary: secondaryTheme,
-  "game-dev": gameDevTheme,
-  robotics: roboticsTheme,
-  it: itTheme,
+type ThemeConfig = {
+  theme: { light: Record<string, string>; dark: Record<string, string> };
+  title: string;
+  description: string;
 };
 
-export default function createTheme(
-  name: string,
-  title: string,
-  description: string,
-): Registry["items"][number] {
-  const vars = themeVars[name as keyof typeof themeVars];
-
-  return {
-    name,
-    type: "registry:theme",
-    title,
-    description,
-    cssVars: {
-      theme: {
-        ...staticVars,
-        ...themeInlineMappings(),
-      },
-      light: vars.light,
-      dark: vars.dark,
-    },
-    css: commonCSS,
-  };
-}
+const themeMap: Record<string, ThemeConfig> = {
+  primary: { theme: primaryTheme, title: "Primary", description: "Blue Primary with Purple Secondary accents - Professional and modern." },
+  secondary: { theme: secondaryTheme, title: "Secondary", description: "Purple Secondary with Blue Primary accents - Creative and bold." },
+  "game-dev": { theme: gameDevTheme, title: "GameDev", description: "Pink Primary with Yellow accents - Vibrant and energetic for gaming." },
+  robotics: { theme: roboticsTheme, title: "Robotics", description: "Blue Primary with Accent Blue accents - Technical and precise." },
+  it: { theme: itTheme, title: "IT", description: "Green Primary with Gray accents - Clean and professional for IT." },
+};
 
 function themeInlineMappings(): Record<string, string> {
   return {
@@ -79,8 +120,6 @@ function themeInlineMappings(): Record<string, string> {
     "--color-secondary-600": "var(--secondary-600)",
     "--color-secondary-700": "var(--secondary-700)",
     "--color-secondary-800": "var(--secondary-800)",
-    "--color-secondary-900": "var(--secondary-900)",
-    "--color-secondary-950": "var(--secondary-950)",
     "--color-gray-50": "var(--gray-50)",
     "--color-gray-100": "var(--gray-100)",
     "--color-gray-200": "var(--gray-200)",
@@ -175,4 +214,23 @@ function themeInlineMappings(): Record<string, string> {
   };
 }
 
-export { themeVars };
+export default function createTheme(name: string): Registry["items"][number] {
+  const config = themeMap[name];
+  if (!config) throw new Error(`Unknown theme: ${name}`);
+
+  return {
+    name,
+    type: "registry:theme",
+    title: config.title,
+    description: config.description,
+    cssVars: {
+      theme: {
+        ...staticVars,
+        ...themeInlineMappings(),
+      },
+      light: config.theme.light,
+      dark: config.theme.dark,
+    },
+    css: commonCSS,
+  };
+}

@@ -5,37 +5,35 @@ function Colors() {
       <div className="space-y-6">
         {/* Blue Primary */}
         <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-primary">Blue Primary</h3>
-          <ul className="flex border w-fit border-primary">
-            <li className="size-[60px] bg-primary-50"></li>
-            <li className="size-[60px] bg-primary-100"></li>
-            <li className="size-[60px] bg-primary-200"></li>
-            <li className="size-[60px] bg-primary-300"></li>
-            <li className="size-[60px] bg-primary-400"></li>
-            <li className="size-[60px] bg-primary-500"></li>
-            <li className="size-[60px] bg-primary-600"></li>
-            <li className="size-[60px] bg-primary-700"></li>
-            <li className="size-[60px] bg-primary-800"></li>
-            <li className="size-[60px] bg-primary-900"></li>
-            <li className="size-[60px] bg-primary-950"></li>
+          <h3 className="header-xs font-semibold text-blue-primary-600">Blue Primary</h3>
+          <ul className="flex border w-fit border-blue-primary-600">
+            <li className="size-[60px] bg-blue-primary-50"></li>
+            <li className="size-[60px] bg-blue-primary-100"></li>
+            <li className="size-[60px] bg-blue-primary-200"></li>
+            <li className="size-[60px] bg-blue-primary-300"></li>
+            <li className="size-[60px] bg-blue-primary-400"></li>
+            <li className="size-[60px] bg-blue-primary-500"></li>
+            <li className="size-[60px] bg-blue-primary-600"></li>
+            <li className="size-[60px] bg-blue-primary-700"></li>
+            <li className="size-[60px] bg-blue-primary-800"></li>
+            <li className="size-[60px] bg-blue-primary-900"></li>
+            <li className="size-[60px] bg-blue-primary-950"></li>
           </ul>
         </div>
 
         {/* Purple Secondary */}
         <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-secondary">Purple Secondary</h3>
-          <ul className="flex border w-fit border-secondary">
-            <li className="size-[60px] bg-secondary-50"></li>
-            <li className="size-[60px] bg-secondary-100"></li>
-            <li className="size-[60px] bg-secondary-200"></li>
-            <li className="size-[60px] bg-secondary-300"></li>
-            <li className="size-[60px] bg-secondary-400"></li>
-            <li className="size-[60px] bg-secondary-500"></li>
-            <li className="size-[60px] bg-secondary-600"></li>
-            <li className="size-[60px] bg-secondary-700"></li>
-            <li className="size-[60px] bg-secondary-800"></li>
-            <li className="size-[60px] bg-secondary-900"></li>
-            <li className="size-[60px] bg-secondary-950"></li>
+          <h3 className="header-xs font-semibold text-purple-secondary-500">Purple Secondary</h3>
+          <ul className="flex border w-fit border-purple-secondary-500">
+            <li className="size-[60px] bg-purple-secondary-50"></li>
+            <li className="size-[60px] bg-purple-secondary-100"></li>
+            <li className="size-[60px] bg-purple-secondary-200"></li>
+            <li className="size-[60px] bg-purple-secondary-300"></li>
+            <li className="size-[60px] bg-purple-secondary-400"></li>
+            <li className="size-[60px] bg-purple-secondary-500"></li>
+            <li className="size-[60px] bg-purple-secondary-600"></li>
+            <li className="size-[60px] bg-purple-secondary-700"></li>
+            <li className="size-[60px] bg-purple-secondary-800"></li>
           </ul>
         </div>
 
