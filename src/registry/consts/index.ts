@@ -15,6 +15,7 @@ export const commonCSS = {
       "background-color": "var(--background)",
       color: "var(--foreground)",
       "letter-spacing": "0em",
+      "font-family": "var(--font-dm-sans), DM Sans, system-ui, sans-serif",
     },
   },
   // Will add those int the futur if found that its necessary

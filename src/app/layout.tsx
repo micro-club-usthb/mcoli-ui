@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import "./globals.css";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const plusJakartaSansPlusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-plus-jakarta-sans",
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const dmSansDmSans = DM_Sans({
   subsets: ["latin"],
+  variable: "--font-dm-sans",
 });
 
 export const metadata: Metadata = {
@@ -46,10 +47,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${dmSans.className} ${plusJakartaSans.variable} antialiased`}
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn(
+        dmSansDmSans.variable,
+        plusJakartaSansPlusJakartaSans.variable,
+      )}
+    >
+      <body className={`antialiased`}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>
