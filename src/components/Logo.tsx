@@ -23,7 +23,7 @@ export default function Logo({ className, size = 32 }: LogoProps) {
         y1="20"
         x2="16"
         y2="100"
-        stroke="currentColor"
+        stroke="var(--primary)"
         strokeWidth="16"
         strokeLinecap="round"
       />
@@ -44,8 +44,8 @@ export default function Logo({ className, size = 32 }: LogoProps) {
         Uses 'var(--primary)' to automatically pull the active theme's accent color.
       */}
       <path
-        d="M 42 20 V 60 A 18 18 0 0 0 82 60 V 20"
-        stroke="var(--primary)"
+        d="M 40 20 V 60 A 18 18 0 0 0 80 60 V 20"
+        stroke="currentColor"
         strokeWidth="16"
         strokeLinecap="round"
       />
