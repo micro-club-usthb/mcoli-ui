@@ -32,12 +32,15 @@ export function ThemeSwitcher() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
+        {/* Using variant="ghost" and size="icon" with a size-5 icon 
+          perfectly matches the Fumadocs native UI buttons 
+        */}
         <Button
-          variant="outline"
-          size="icon"
-          className="rounded-full shadow-sm hover:border-primary/50 transition-all focus-visible:ring-offset-0"
+          variant="ghost"
+          size="icon-sm"
+          className="text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors focus-visible:ring-offset-0"
         >
-          <Palette className="h-[1.2rem] w-[1.2rem] text-primary transition-transform group-hover:scale-110" />
+          <Palette className="size-4.5" />
           <span className="sr-only">Toggle Color Palette</span>
         </Button>
       </DropdownMenuTrigger>

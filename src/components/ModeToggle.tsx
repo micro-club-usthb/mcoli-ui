@@ -1,102 +1,72 @@
 "use client";
 
 import * as React from "react";
-import { Check, Laptop, Moon, Sun } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
-
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { cn } from "@/lib/utils";
 
 export function ModeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Prevent layout shift/hydration mismatch during SSR
+  if (!mounted) {
+    return <div className="h-7 w-12 rounded-full bg-muted/50" />;
+  }
+
+  // We use resolvedTheme so it accurately detects Dark Mode even if set to "system"
+  const isDark = resolvedTheme === "dark";
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          size="icon"
-          className="rounded-full shadow-sm hover:border-primary/50 transition-all focus-visible:ring-offset-0"
-        >
-          <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90 text-primary" />
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0 text-primary" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-40 rounded-xl shadow-lg">
-        <DropdownMenuItem
-          onClick={() => setTheme("light")}
-          className="flex items-center justify-between cursor-pointer rounded-lg my-0.5"
-        >
-          <div className="flex items-center gap-2.5">
-            <Sun className="size-4 text-muted-foreground" />
-            <span
-              className={
-                mounted && theme === "light"
-                  ? "font-semibold"
-                  : "font-medium text-muted-foreground"
-              }
-            >
-              Light
-            </span>
-          </div>
-          {mounted && theme === "light" && (
-            <Check className="size-4 text-primary" />
-          )}
-        </DropdownMenuItem>
+    <button
+      type="button"
+      role="switch"
+      aria-checked={isDark}
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className={cn(
+        "relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+        isDark ? "bg-primary" : "bg-muted",
+      )}
+    >
+      <span className="sr-only">Toggle theme</span>
 
-        <DropdownMenuItem
-          onClick={() => setTheme("dark")}
-          className="flex items-center justify-between cursor-pointer rounded-lg my-0.5"
-        >
-          <div className="flex items-center gap-2.5">
-            <Moon className="size-4 text-muted-foreground" />
-            <span
-              className={
-                mounted && theme === "dark"
-                  ? "font-semibold"
-                  : "font-medium text-muted-foreground"
-              }
-            >
-              Dark
-            </span>
-          </div>
-          {mounted && theme === "dark" && (
-            <Check className="size-4 text-primary" />
+      {/* Sliding Thumb */}
+      <span
+        className={cn(
+          "pointer-events-none relative inline-block h-6 w-6 rounded-full bg-background shadow ring-0 transition-transform duration-300 ease-in-out",
+          isDark ? "translate-x-5" : "translate-x-0",
+        )}
+      >
+        {/* Sun Icon (Fades out in Dark Mode) */}
+        <span
+          className={cn(
+            "absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ease-in-out",
+            isDark
+              ? "opacity-0 duration-100 ease-out"
+              : "opacity-100 duration-200 ease-in",
           )}
-        </DropdownMenuItem>
+          aria-hidden="true"
+        >
+          <Sun className="size-3.5 text-muted-foreground" />
+        </span>
 
-        <DropdownMenuItem
-          onClick={() => setTheme("system")}
-          className="flex items-center justify-between cursor-pointer rounded-lg my-0.5"
-        >
-          <div className="flex items-center gap-2.5">
-            <Laptop className="size-4 text-muted-foreground" />
-            <span
-              className={
-                mounted && theme === "system"
-                  ? "font-semibold"
-                  : "font-medium text-muted-foreground"
-              }
-            >
-              System
-            </span>
-          </div>
-          {mounted && theme === "system" && (
-            <Check className="size-4 text-primary" />
+        {/* Moon Icon (Fades in in Dark Mode) */}
+        <span
+          className={cn(
+            "absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ease-in-out",
+            isDark
+              ? "opacity-100 duration-200 ease-in"
+              : "opacity-0 duration-100 ease-out",
           )}
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+          aria-hidden="true"
+        >
+          <Moon className="size-3.5 text-primary" />
+        </span>
+      </span>
+    </button>
   );
 }
