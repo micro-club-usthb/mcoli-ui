@@ -3,6 +3,10 @@
   "name": "it",
   "title": "IT",
   "description": "Green Primary with Gray accents - Clean and professional for IT.",
+  "registryDependencies": [
+    "http://localhost:3000/r/font-dm-sans.json",
+    "http://localhost:3000/r/font-plus-jakarta-sans.json"
+  ],
   "cssVars": {
     "theme": {
       "radius-sm": "4px",
@@ -368,29 +372,29 @@
       "font-size": "72px",
       "line-height": "90px",
       "letter-spacing": "-0.02em",
-      "font-family": "var(--font-plus-jakarta-sans)"
+      "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
     },
     ".header-lg": {
       "font-size": "60px",
       "line-height": "72px",
       "letter-spacing": "-0.02em",
-      "font-family": "var(--font-plus-jakarta-sans)"
+      "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
     },
     ".header-md": {
       "font-size": "36px",
       "line-height": "44px",
       "letter-spacing": "-0.02em",
-      "font-family": "var(--font-plus-jakarta-sans)"
+      "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
     },
     ".header-sm": {
       "font-size": "30px",
       "line-height": "38px",
-      "font-family": "var(--font-plus-jakarta-sans)"
+      "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
     },
     ".header-xs": {
       "font-size": "24px",
       "line-height": "32px",
-      "font-family": "var(--font-plus-jakarta-sans)"
+      "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
     },
     ".paragraph-xl": {
       "font-size": "20px",

@@ -1,13 +1,43 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "mc-ui-registry",
-  "homepage": "https://mc-ui.microclub.info/",
+  "homepage": "http://localhost:3000/",
   "items": [
+    {
+      "name": "font-dm-sans",
+      "type": "registry:font",
+      "font": {
+        "family": "DM Sans",
+        "provider": "google",
+        "import": "DM_Sans",
+        "variable": "--font-dm-sans",
+        "subsets": [
+          "latin"
+        ]
+      }
+    },
+    {
+      "name": "font-plus-jakarta-sans",
+      "type": "registry:font",
+      "font": {
+        "family": "Plus Jakarta Sans",
+        "provider": "google",
+        "import": "Plus_Jakarta_Sans",
+        "variable": "--font-plus-jakarta-sans",
+        "subsets": [
+          "latin"
+        ]
+      }
+    },
     {
       "name": "primary",
       "type": "registry:theme",
       "title": "Primary",
       "description": "Blue Primary with Purple Secondary accents - Professional and modern.",
+      "registryDependencies": [
+        "http://localhost:3000/r/font-dm-sans.json",
+        "http://localhost:3000/r/font-plus-jakarta-sans.json"
+      ],
       "css": {
         "@layer base": {
           "*": {
@@ -24,29 +54,29 @@
           "font-size": "72px",
           "line-height": "90px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-sm": {
           "font-size": "30px",
           "line-height": "38px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-xs": {
           "font-size": "24px",
           "line-height": "32px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -424,6 +454,10 @@
       "type": "registry:theme",
       "title": "Secondary",
       "description": "Purple Secondary with Blue Primary accents - Creative and bold.",
+      "registryDependencies": [
+        "http://localhost:3000/r/font-dm-sans.json",
+        "http://localhost:3000/r/font-plus-jakarta-sans.json"
+      ],
       "css": {
         "@layer base": {
           "*": {
@@ -440,29 +474,29 @@
           "font-size": "72px",
           "line-height": "90px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-sm": {
           "font-size": "30px",
           "line-height": "38px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-xs": {
           "font-size": "24px",
           "line-height": "32px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -840,6 +874,10 @@
       "type": "registry:theme",
       "title": "GameDev",
       "description": "Pink Primary with Yellow accents - Vibrant and energetic for gaming.",
+      "registryDependencies": [
+        "http://localhost:3000/r/font-dm-sans.json",
+        "http://localhost:3000/r/font-plus-jakarta-sans.json"
+      ],
       "css": {
         "@layer base": {
           "*": {
@@ -856,29 +894,29 @@
           "font-size": "72px",
           "line-height": "90px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-sm": {
           "font-size": "30px",
           "line-height": "38px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-xs": {
           "font-size": "24px",
           "line-height": "32px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -1256,6 +1294,10 @@
       "type": "registry:theme",
       "title": "Robotics",
       "description": "Blue Primary with Accent Blue accents - Technical and precise.",
+      "registryDependencies": [
+        "http://localhost:3000/r/font-dm-sans.json",
+        "http://localhost:3000/r/font-plus-jakarta-sans.json"
+      ],
       "css": {
         "@layer base": {
           "*": {
@@ -1272,29 +1314,29 @@
           "font-size": "72px",
           "line-height": "90px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-sm": {
           "font-size": "30px",
           "line-height": "38px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-xs": {
           "font-size": "24px",
           "line-height": "32px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -1672,6 +1714,10 @@
       "type": "registry:theme",
       "title": "IT",
       "description": "Green Primary with Gray accents - Clean and professional for IT.",
+      "registryDependencies": [
+        "http://localhost:3000/r/font-dm-sans.json",
+        "http://localhost:3000/r/font-plus-jakarta-sans.json"
+      ],
       "css": {
         "@layer base": {
           "*": {
@@ -1688,29 +1734,29 @@
           "font-size": "72px",
           "line-height": "90px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
           "letter-spacing": "-0.02em",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-sm": {
           "font-size": "30px",
           "line-height": "38px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".header-xs": {
           "font-size": "24px",
           "line-height": "32px",
-          "font-family": "var(--font-plus-jakarta-sans)"
+          "font-family": "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif"
         },
         ".paragraph-xl": {
           "font-size": "20px",

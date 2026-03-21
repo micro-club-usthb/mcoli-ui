@@ -1,9 +1,41 @@
+import { config } from "dotenv";
 import { Registry } from "shadcn/schema";
 import { primaryTheme } from "../primaryTheme";
 import { secondaryTheme } from "../secondaryTheme";
 import { gameDevTheme } from "../gameDevTheme";
 import { roboticsTheme } from "../roboticsTheme";
 import { itTheme } from "../itTheme";
+
+config();
+
+const REGISTRY_URL =
+  process.env.MC_UI_REGISTRY_URL || "https://mc-ui.microclub.info";
+
+const fontDmSans = {
+  name: "font-dm-sans",
+  type: "registry:font" as const,
+  font: {
+    family: "DM Sans",
+    provider: "google" as const,
+    import: "DM_Sans",
+    variable: "--font-dm-sans",
+    subsets: ["latin"] as string[],
+  },
+};
+
+const fontPlusJakartaSans = {
+  name: "font-plus-jakarta-sans",
+  type: "registry:font" as const,
+  font: {
+    family: "Plus Jakarta Sans",
+    provider: "google" as const,
+    import: "Plus_Jakarta_Sans",
+    variable: "--font-plus-jakarta-sans",
+    subsets: ["latin"] as string[],
+  },
+};
+
+export const fontRegistryItems = [fontDmSans, fontPlusJakartaSans];
 
 const commonCSS = {
   "@layer base": {
@@ -28,29 +60,34 @@ const commonCSS = {
     "font-size": "72px",
     "line-height": "90px",
     "letter-spacing": "-0.02em",
-    "font-family": "var(--font-plus-jakarta-sans)",
+    "font-family":
+      "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
   ".header-lg": {
     "font-size": "60px",
     "line-height": "72px",
     "letter-spacing": "-0.02em",
-    "font-family": "var(--font-plus-jakarta-sans)",
+    "font-family":
+      "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
   ".header-md": {
     "font-size": "36px",
     "line-height": "44px",
     "letter-spacing": "-0.02em",
-    "font-family": "var(--font-plus-jakarta-sans)",
+    "font-family":
+      "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
   ".header-sm": {
     "font-size": "30px",
     "line-height": "38px",
-    "font-family": "var(--font-plus-jakarta-sans)",
+    "font-family":
+      "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
   ".header-xs": {
     "font-size": "24px",
     "line-height": "32px",
-    "font-family": "var(--font-plus-jakarta-sans)",
+    "font-family":
+      "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
   ".paragraph-xl": {
     "font-size": "20px",
@@ -257,6 +294,10 @@ export default function createTheme(name: string): Registry["items"][number] {
     type: "registry:theme",
     title: config.title,
     description: config.description,
+    registryDependencies: [
+      `${REGISTRY_URL}/r/font-dm-sans.json`,
+      `${REGISTRY_URL}/r/font-plus-jakarta-sans.json`,
+    ],
     cssVars: {
       theme: {
         ...staticVars,

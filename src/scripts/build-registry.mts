@@ -22,6 +22,17 @@ export const Index: Record<string, any> ={`;
   for (const item of registry.items) {
     console.log(`Adding ${item.name} to registry...`);
 
+    // Handle registry:font items
+    if (item.type === "registry:font") {
+      index += `
+  "${item.name}": {
+    name: "${item.name}",
+    type: "${item.type}",
+    font: ${JSON.stringify(item.font)},
+  },`;
+      continue;
+    }
+
     // Handle registry:theme items
     if (item.type === "registry:theme") {
       index += `
@@ -30,6 +41,7 @@ export const Index: Record<string, any> ={`;
     description: "${item.description ?? ""}",
     type: "${item.type}",
     title: "${item.title ?? ""}",
+    registryDependencies: ${JSON.stringify(item.registryDependencies ?? [])},
     css: ${JSON.stringify(item.css ?? {})},
     cssVars: ${JSON.stringify(item.cssVars ?? {})},
   },`;
@@ -92,6 +104,15 @@ export const Index: Record<string, any> ={`;
       items: registry.items
         .filter((item) => item.type !== "registry:example")
         .map((item) => {
+          // Handle registry:font items
+          if (item.type === "registry:font") {
+            return {
+              name: item.name,
+              type: item.type,
+              font: item.font,
+            };
+          }
+
           // Handle registry:theme items
           if (item.type === "registry:theme") {
             return {
@@ -99,6 +120,7 @@ export const Index: Record<string, any> ={`;
               type: item.type,
               title: item.title,
               description: item.description,
+              registryDependencies: item.registryDependencies,
               css: item.css,
               cssVars: item.cssVars,
             };
