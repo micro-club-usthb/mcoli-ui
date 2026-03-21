@@ -20,31 +20,33 @@
             "letter-spacing": "0em"
           }
         },
-        "h1, h2, h3, h4, h5, h6": {
-          "font-family": "var(--font-plus-jakarta-sans)"
-        },
         ".header-xl": {
           "font-size": "72px",
           "line-height": "90px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-sm": {
           "font-size": "30px",
-          "line-height": "38px"
+          "line-height": "38px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-xs": {
           "font-size": "24px",
-          "line-height": "32px"
+          "line-height": "32px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -434,31 +436,33 @@
             "letter-spacing": "0em"
           }
         },
-        "h1, h2, h3, h4, h5, h6": {
-          "font-family": "var(--font-plus-jakarta-sans)"
-        },
         ".header-xl": {
           "font-size": "72px",
           "line-height": "90px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-sm": {
           "font-size": "30px",
-          "line-height": "38px"
+          "line-height": "38px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-xs": {
           "font-size": "24px",
-          "line-height": "32px"
+          "line-height": "32px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -848,31 +852,33 @@
             "letter-spacing": "0em"
           }
         },
-        "h1, h2, h3, h4, h5, h6": {
-          "font-family": "var(--font-plus-jakarta-sans)"
-        },
         ".header-xl": {
           "font-size": "72px",
           "line-height": "90px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-sm": {
           "font-size": "30px",
-          "line-height": "38px"
+          "line-height": "38px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-xs": {
           "font-size": "24px",
-          "line-height": "32px"
+          "line-height": "32px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -1262,31 +1268,33 @@
             "letter-spacing": "0em"
           }
         },
-        "h1, h2, h3, h4, h5, h6": {
-          "font-family": "var(--font-plus-jakarta-sans)"
-        },
         ".header-xl": {
           "font-size": "72px",
           "line-height": "90px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-sm": {
           "font-size": "30px",
-          "line-height": "38px"
+          "line-height": "38px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-xs": {
           "font-size": "24px",
-          "line-height": "32px"
+          "line-height": "32px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".paragraph-xl": {
           "font-size": "20px",
@@ -1676,31 +1684,33 @@
             "letter-spacing": "0em"
           }
         },
-        "h1, h2, h3, h4, h5, h6": {
-          "font-family": "var(--font-plus-jakarta-sans)"
-        },
         ".header-xl": {
           "font-size": "72px",
           "line-height": "90px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-lg": {
           "font-size": "60px",
           "line-height": "72px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-md": {
           "font-size": "36px",
           "line-height": "44px",
-          "letter-spacing": "-0.02em"
+          "letter-spacing": "-0.02em",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-sm": {
           "font-size": "30px",
-          "line-height": "38px"
+          "line-height": "38px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".header-xs": {
           "font-size": "24px",
-          "line-height": "32px"
+          "line-height": "32px",
+          "font-family": "var(--font-plus-jakarta-sans)"
         },
         ".paragraph-xl": {
           "font-size": "20px",
