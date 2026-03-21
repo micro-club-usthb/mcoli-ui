@@ -1,4 +1,5 @@
 import { ModeToggle } from "@/components/ModeToggle";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import BackgroundBlur from "@/components/sections/BackgroundBlur";
 import Blur from "@/components/sections/Blur";
 import BorderRadius from "@/components/sections/BorderRadius";
@@ -7,12 +8,33 @@ import Hero from "@/components/sections/Hero";
 import Shadow from "@/components/sections/Shadow";
 import Stroke from "@/components/sections/Stroke";
 import TextStyles from "@/components/sections/TextStyles";
+import Link from "next/link";
+import Logo from "@/components/Logo";
 
 export default function Home() {
   return (
-    <div className="relative">
-      <ModeToggle />
-      <div className="px-2 md:px-10 xl:px-16 py-20 min-h-screen flex flex-col items-center gap-20">
+    <div className="relative flex min-h-screen flex-col bg-background text-foreground">
+      {/* Sticky Glassmorphic Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60">
+        <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
+          <Link
+            href="/"
+            className="flex items-center gap-3 transition-opacity hover:opacity-80"
+          >
+            <Logo />
+            <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
+              MC UI
+            </span>
+          </Link>
+          <div className="flex items-center gap-3">
+            <ThemeSwitcher />
+            <ModeToggle />
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="flex-1 px-4 md:px-10 xl:px-16 py-20 flex flex-col items-center gap-24">
         <Hero />
         <Colors />
         <TextStyles />
@@ -21,7 +43,7 @@ export default function Home() {
         <BorderRadius />
         <Blur />
         <BackgroundBlur />
-      </div>
+      </main>
     </div>
   );
 }

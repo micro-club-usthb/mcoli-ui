@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RootProvider } from "fumadocs-ui/provider/next";
+import { ColorThemeProvider } from "@/components/ColorThemeProvider";
 import "./globals.css";
 import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
@@ -55,8 +56,24 @@ export default function RootLayout({
         plusJakartaSansPlusJakartaSans.variable,
       )}
     >
+      <head>
+        {/* SSR Flash Prevention Script */}
+        <script
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var theme = localStorage.getItem('mc-ui-color-theme') || 'primary';
+                document.documentElement.setAttribute('data-theme', theme);
+              } catch (e) {}
+            `,
+          }}
+        />
+      </head>
       <body className={`antialiased`}>
-        <RootProvider>{children}</RootProvider>
+        <ColorThemeProvider>
+          <RootProvider>{children}</RootProvider>
+        </ColorThemeProvider>
       </body>
     </html>
   );

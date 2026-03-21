@@ -1,11 +1,12 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Logo from "../Logo";
 
 function Hero() {
   return (
     <div className="flex flex-col items-center gap-4">
       <div className="space-y-1 flex flex-col items-center">
-        <h1 className="header-xl font-black">MC-UI</h1>
+        <Logo size={200} />
         <p className="paragraph-xl font-medium text-foreground/40 text-center">
           the MicroClub Component Library
         </p>
