@@ -50,7 +50,7 @@ export async function generateMetadata({
   }
 
   return {
-    title: `MC UI - ${page.data.title}`,
+    title: `Mcoli UI - ${page.data.title}`,
     description: page.data.description,
   };
 }

@@ -16,11 +16,11 @@ const dmSansDmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "MC UI – Micro Club UI Components Library",
+  title: "Mcoli UI – Micro Club UI Components Library",
   description:
     "Official React UI component library by Micro Club. Reusable, accessible, and customizable components for modern web apps. Built with Next.js and shadcn/ui. Documented and showcased using Fumadocs.",
   keywords: [
-    "MC UI",
+    "Mcoli UI",
     "Micro Club",
     "UI components",
     "React",
@@ -33,11 +33,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Micro Club" }],
   openGraph: {
-    title: "MC UI – Micro Club UI Components Library",
+    title: "Mcoli UI – Micro Club UI Components Library",
     description:
       "Reusable, accessible, and customizable React components for modern web applications. Built with Next.js and shadcn/ui. Documented and showcased using Fumadocs.",
-    url: "https://github.com/MicroClub-USTHB/mc-ui",
-    siteName: "MC UI",
+    url: "https://github.com/MicroClub-USTHB/mcoli-ui",
+    siteName: "Mcoli UI",
     type: "website",
   },
 };
@@ -63,7 +63,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                var theme = localStorage.getItem('mc-ui-color-theme') || 'primary';
+                var theme = localStorage.getItem('mcoli-ui-color-theme') || 'primary';
                 document.documentElement.setAttribute('data-theme', theme);
               } catch (e) {}
             `,

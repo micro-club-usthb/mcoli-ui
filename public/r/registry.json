@@ -1,6 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
-  "name": "mc-ui-registry",
+  "name": "mcoli-ui-registry",
   "homepage": "http://localhost:3000/",
   "items": [
     {

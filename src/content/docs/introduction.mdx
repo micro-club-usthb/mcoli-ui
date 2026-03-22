@@ -3,21 +3,21 @@ title: Introduction
 description: Get started with the Micro Club's component registry for Shadcn UI.
 ---
 
-Welcome to **mc-ui**, the official component registry for Micro Club. mc-ui provides pre-built themes and components that extend [shadcn/ui](https://ui.shadcn.com) with custom styling.
+Welcome to **mcoli-ui**, the official component registry for Micro Club. mcoli-ui provides pre-built themes and components that extend [shadcn/ui](https://ui.shadcn.com) with custom styling.
 
-> **Important:** mc-ui is not a standalone component library. It is a **theme and component registry** that requires shadcn/ui as a prerequisite. Think of it as an extension that adds Micro Club's custom themes and components to your existing shadcn/ui project.
+> **Important:** mcoli-ui is not a standalone component library. It is a **theme and component registry** that requires shadcn/ui as a prerequisite. Think of it as an extension that adds Micro Club's custom themes and components to your existing shadcn/ui project.
 
 ## Prerequisites
 
-mc-ui requires an existing **shadcn/ui** project. If you don't have one, you must set it up first.
+mcoli-ui requires an existing **shadcn/ui** project. If you don't have one, you must set it up first.
 
-> **Warning:** mc-ui is built on top of shadcn/ui. You **must** initialize shadcn/ui before using mc-ui.
+> **Warning:** mcoli-ui is built on top of shadcn/ui. You **must** initialize shadcn/ui before using mcoli-ui.
 > 
 > Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
 
 ## Available Themes
 
-mc-ui ships with five pre-built themes:
+mcoli-ui ships with five pre-built themes:
 
 | Theme | Description |
 |-------|-------------|
@@ -27,9 +27,9 @@ mc-ui ships with five pre-built themes:
 | **robotics** | A technical blue primary with accent blue for precision |
 | **it** | A clean green primary with gray accents for IT |
 
-## Initialize mc-ui
+## Initialize mcoli-ui
 
-Once shadcn/ui is set up, you can initialize mc-ui to add Micro Club's themes.
+Once shadcn/ui is set up, you can initialize mcoli-ui to add Micro Club's themes.
 
 ### Interactive Mode
 
@@ -38,22 +38,22 @@ The `init` command will prompt you to select a theme with a visual color picker:
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npx mc-ui@latest init
+npx mcoli-ui@latest init
     ```
   </Tab>
   <Tab>
     ```sh
-pnpm dlx mc-ui@latest init
+pnpm dlx mcoli-ui@latest init
     ```
   </Tab>
   <Tab>
     ```sh
-yarn dlx mc-ui@latest init
+yarn dlx mcoli-ui@latest init
     ```
   </Tab>
   <Tab>
     ```sh
-bunx mc-ui@latest init
+bunx mcoli-ui@latest init
     ```
   </Tab>
 </Tabs>
@@ -65,22 +65,22 @@ You can also specify the theme directly as an argument:
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npx mc-ui@latest init primary
+npx mcoli-ui@latest init primary
     ```
   </Tab>
   <Tab>
     ```sh
-pnpm dlx mc-ui@latest init primary
+pnpm dlx mcoli-ui@latest init primary
     ```
   </Tab>
   <Tab>
     ```sh
-yarn dlx mc-ui@latest init primary
+yarn dlx mcoli-ui@latest init primary
     ```
   </Tab>
   <Tab>
     ```sh
-bunx mc-ui@latest init primary
+bunx mcoli-ui@latest init primary
     ```
   </Tab>
 </Tabs>
@@ -94,58 +94,58 @@ Alternatively, you can install the CLI globally:
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npm install -g mc-ui@latest
-mc-ui init primary
+npm install -g mcoli-ui@latest
+mcoli-ui init primary
     ```
   </Tab>
   <Tab>
     ```sh
-pnpm add -g mc-ui@latest
-mc-ui init primary
+pnpm add -g mcoli-ui@latest
+mcoli-ui init primary
     ```
   </Tab>
   <Tab>
     ```sh
-yarn global add mc-ui@latest
-mc-ui init primary
+yarn global add mcoli-ui@latest
+mcoli-ui init primary
     ```
   </Tab>
   <Tab>
     ```sh
-bun add -g mc-ui@latest
-mc-ui init primary
+bun add -g mcoli-ui@latest
+mcoli-ui init primary
     ```
   </Tab>
 </Tabs>
 
 ## Add Components
 
-After initializing a theme, you can add individual mc-ui components:
+After initializing a theme, you can add individual mcoli-ui components:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npx mc-ui@latest add mc-button
+npx mcoli-ui@latest add mc-button
     ```
   </Tab>
   <Tab>
     ```sh
-pnpm dlx mc-ui@latest add mc-button
+pnpm dlx mcoli-ui@latest add mc-button
     ```
   </Tab>
   <Tab>
     ```sh
-yarn dlx mc-ui@latest add mc-button
+yarn dlx mcoli-ui@latest add mc-button
     ```
   </Tab>
   <Tab>
     ```sh
-bunx mc-ui@latest add mc-button
+bunx mcoli-ui@latest add mc-button
     ```
   </Tab>
 </Tabs>
 
-## Why mc-ui?
+## Why mcoli-ui?
 
 - **Copy & Paste**: Own your code. Components are copied directly into your project.
 - **Themeable**: Pre-built themes that integrate seamlessly with shadcn/ui.

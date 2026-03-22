@@ -46,15 +46,15 @@ const themes = [
 const validThemeValues = themes.map((t) => t.value);
 
 const REGISTRY_URL =
-  process.env.MC_UI_REGISTRY_URL || "https://mc-ui.microclub.info";
+  process.env.MCOLI_UI_REGISTRY_URL || "https://mcoli.microclub.info";
 
 const args = process.argv.slice(2);
 
 if (args.length < 1) {
-  console.log("Usage: npx mc-ui <command>");
+  console.log("Usage: npx mcoli-ui <command>");
   console.log("Commands:");
-  console.log("  init [theme]     Initialize mc-ui theme (requires shadcn/ui)");
-  console.log("  add [...packages]  Add mc-ui components");
+  console.log("  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)");
+  console.log("  add [...packages]  Add mcoli-ui components");
   console.log("\nAvailable themes:");
   themes.forEach((theme) => {
     console.log(`  ${chalk.cyan(theme.value.padEnd(12))} ${theme.description}`);
@@ -71,10 +71,10 @@ if (command === "init") {
   handleAdd(args.slice(1));
 } else {
   console.log(`Unknown command: ${command}`);
-  console.log("Usage: npx mc-ui <command>");
+  console.log("Usage: npx mcoli-ui <command>");
   console.log("Commands:");
-  console.log("  init [theme]     Initialize mc-ui theme (requires shadcn/ui)");
-  console.log("  add [...packages]  Add mc-ui components");
+  console.log("  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)");
+  console.log("  add [...packages]  Add mcoli-ui components");
   process.exit(1);
 }
 
@@ -93,7 +93,7 @@ async function interactiveThemeSelect() {
     {
       type: "select",
       name: "theme",
-      message: "Select an mc-ui theme:",
+      message: "Select an mcoli-ui theme:",
       choices,
       default: "primary",
       loop: false,
@@ -120,7 +120,7 @@ function handleInit(themeArgs: string[]) {
   }
 
   const checkSpinner = ora(
-    `${chalk.green("✓")} shadcn/ui found, proceeding with mc-ui theme...`,
+    `${chalk.green("✓")} shadcn/ui found, proceeding with mcoli-ui theme...`,
   ).start();
   checkSpinner.succeed("shadcn/ui configuration detected");
 
@@ -164,14 +164,14 @@ function handleInit(themeArgs: string[]) {
 
 function addTheme(themeValue: string, themeName: string) {
   const themeSpinner = ora(
-    `Adding ${chalk.yellow(themeName)} mc-ui theme...`,
+    `Adding ${chalk.yellow(themeName)} mcoli-ui theme...`,
   ).start();
   try {
     execSync(`npx shadcn@latest add ${REGISTRY_URL}/r/${themeValue}.json`, {
       stdio: "inherit",
     });
     themeSpinner.succeed(
-      `Successfully added ${chalk.green(themeName)} mc-ui theme`,
+      `Successfully added ${chalk.green(themeName)} mcoli-ui theme`,
     );
   } catch (error) {
     themeSpinner.fail(`Failed to add ${chalk.red(themeName)} theme`);
@@ -179,8 +179,8 @@ function addTheme(themeValue: string, themeName: string) {
     process.exit(1);
   }
 
-  const completeSpinner = ora("Finalizing mc-ui setup...").start();
-  completeSpinner.succeed("mc-ui theme setup complete!");
+  const completeSpinner = ora("Finalizing mcoli-ui setup...").start();
+  completeSpinner.succeed("mcoli-ui theme setup complete!");
 }
 
 function handleAdd(packageNames: string[]) {
@@ -200,7 +200,7 @@ function handleAdd(packageNames: string[]) {
   }
 
   if (packageNames.length === 0) {
-    console.log("Usage: npx mc-ui add [...packages]");
+    console.log("Usage: npx mcoli-ui add [...packages]");
     process.exit(1);
   }
 
@@ -210,7 +210,7 @@ function handleAdd(packageNames: string[]) {
     }
 
     const addSpinner = ora(
-      `Adding ${chalk.yellow(packageName)} mc-ui component...`,
+      `Adding ${chalk.yellow(packageName)} mcoli-ui component...`,
     ).start();
 
     try {

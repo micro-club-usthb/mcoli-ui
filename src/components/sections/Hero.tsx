@@ -15,7 +15,7 @@ function Hero() {
         href={"/docs/introduction"}
         className="flex gap-1 text-xl font-medium hover:underline text-primary-800 hover:text-primary-700"
       >
-        Go to docs
+        Browse Library
         <ArrowRight />
       </Link>
     </div>

@@ -6,7 +6,7 @@ import { fonts } from "./regisry-fonts";
 import { REGISTRY_URL } from "./consts";
 
 export const registry = {
-  name: "mc-ui-registry",
+  name: "mcoli-ui-registry",
   homepage: `${REGISTRY_URL}/`,
   items: [...fonts, ...themes, ...ui, ...examples],
 } satisfies Registry;

@@ -13,7 +13,7 @@ export const examples: Registry["items"] = [
       },
     ],
     registryDependencies: [
-      "https://mc-ui.microclub.info/r/mc-button.json",
+      "https://mcoli.microclub.info/r/mc-button.json",
     ],
   },
 ];

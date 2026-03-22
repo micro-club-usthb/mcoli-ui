@@ -1,12 +1,12 @@
-# MC UI – Micro Club UI Component Registry
+# Mcoli UI – Micro Club UI Component Registry
 
-mc-ui is a theme and component registry that extends [shadcn/ui](https://ui.shadcn.com) with Micro Club's custom themes and components.
+mcoli-ui is a theme and component registry that extends [shadcn/ui](https://ui.shadcn.com) with Micro Club's custom themes and components.
 
-> **Important:** mc-ui is not a standalone library. It requires shadcn/ui to be installed first. Think of mc-ui as an extension that adds Micro Club's branding and components to your existing shadcn/ui project.
+> **Important:** mcoli-ui is not a standalone library. It requires shadcn/ui to be installed first. Think of mcoli-ui as an extension that adds Micro Club's branding and components to your existing shadcn/ui project.
 
 ## Prerequisites
 
-Before using mc-ui, you must have a project with shadcn/ui installed. Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
+Before using mcoli-ui, you must have a project with shadcn/ui installed. Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
 
 ## Available Themes
 
@@ -20,35 +20,35 @@ Before using mc-ui, you must have a project with shadcn/ui installed. Follow the
 
 ## Quick Start
 
-### 1. Initialize mc-ui
+### 1. Initialize mcoli-ui
 
-After shadcn/ui is set up, initialize mc-ui with your preferred theme:
+After shadcn/ui is set up, initialize mcoli-ui with your preferred theme:
 
 **Interactive mode** (visual theme picker):
 ```sh
-npx mc-ui@latest init
+npx mcoli-ui@latest init
 ```
 
 **Direct selection**:
 ```sh
-npx mc-ui@latest init primary
+npx mcoli-ui@latest init primary
 ```
 
 ### 2. Add Components
 
-Add mc-ui components to your project:
+Add mcoli-ui components to your project:
 
 ```sh
-npx mc-ui@latest add mc-button
+npx mcoli-ui@latest add mc-button
 ```
 
 ## CLI Commands
 
 | Command | Description |
 |---------|-------------|
-| `mc-ui init` | Initialize mc-ui theme (interactive picker) |
-| `mc-ui init [theme]` | Initialize with specific theme (e.g., `primary`, `secondary`) |
-| `mc-ui add [component]` | Add an mc-ui component |
+| `mcoli-ui init` | Initialize mcoli-ui theme (interactive picker) |
+| `mcoli-ui init [theme]` | Initialize with specific theme (e.g., `primary`, `secondary`) |
+| `mcoli-ui add [component]` | Add an mcoli-ui component |
 
 ## Features
 

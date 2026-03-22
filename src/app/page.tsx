@@ -23,7 +23,7 @@ export default function Home() {
           >
             <Logo />
             <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
-              MC UI
+              Mcoli UI
             </span>
           </Link>
           <div className="flex items-center gap-3">

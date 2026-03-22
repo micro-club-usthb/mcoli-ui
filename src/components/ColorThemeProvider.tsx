@@ -29,13 +29,13 @@ export function ColorThemeProvider({
   // Load the saved theme on mount
   useEffect(() => {
     const stored =
-      (localStorage.getItem("mc-ui-color-theme") as ThemePalette) || "primary";
+      (localStorage.getItem("mcoli-ui-color-theme") as ThemePalette) || "primary";
     setColorThemeState(stored);
   }, []);
 
   const setColorTheme = (theme: ThemePalette) => {
     setColorThemeState(theme);
-    localStorage.setItem("mc-ui-color-theme", theme);
+    localStorage.setItem("mcoli-ui-color-theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
   };
 
