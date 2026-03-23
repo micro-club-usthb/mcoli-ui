@@ -6,6 +6,7 @@ import BorderRadius from "@/components/sections/BorderRadius";
 import Colors from "@/components/sections/Colors";
 import Hero from "@/components/sections/Hero";
 import Shadow from "@/components/sections/Shadow";
+import { Showcase } from "@/components/sections/Showcase";
 import Stroke from "@/components/sections/Stroke";
 import TextStyles from "@/components/sections/TextStyles";
 import Link from "next/link";
@@ -36,6 +37,7 @@ export default function Home() {
       {/* Main Content */}
       <main className="flex-1 px-4 md:px-10 xl:px-16 py-20 flex flex-col items-center gap-24">
         <Hero />
+        <Showcase />
         <Colors />
         <TextStyles />
         <Shadow />

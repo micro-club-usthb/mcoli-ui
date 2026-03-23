@@ -1,181 +1,107 @@
+import { CheckCircle2, AlertTriangle, Info, XCircle } from "lucide-react";
+
+const colorRamps = [
+  {
+    name: "Blue Primary",
+    prefix: "blue-primary",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+  },
+  {
+    name: "Purple Secondary",
+    prefix: "purple-secondary",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800],
+  },
+  {
+    name: "Gray",
+    prefix: "gray",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950],
+  },
+  { name: "Pink", prefix: "pink", steps: [50, 100, 200, 300, 400, 500] },
+  { name: "Cyan", prefix: "cyan", steps: [50, 100, 200] },
+  { name: "Yellow", prefix: "yellow", steps: [50, 100, 200, 300] },
+  { name: "Baby Blue", prefix: "baby-blue", steps: [50, 100, 200, 300, 400] },
+  { name: "Accent Blue", prefix: "accent-blue", steps: [50, 100, 200, 300] },
+  { name: "Accent Orange", prefix: "accent-orange", steps: [50, 100] },
+  { name: "Green", prefix: "green", steps: [50, 300, 400] },
+  { name: "Red", prefix: "red", steps: [50, 100, 200] },
+  {
+    name: "Information",
+    prefix: "information",
+    steps: [50, 100, 200, 300, 400, 500],
+  },
+];
+
 function Colors() {
   return (
-    <div className="w-full space-y-8">
-      <h2 className="header-md font-bold underline">Colors:</h2>
-      <div className="space-y-6">
-        {/* Blue Primary */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-blue-primary-600">Blue Primary</h3>
-          <ul className="flex border w-fit border-blue-primary-600">
-            <li className="size-[60px] bg-blue-primary-50"></li>
-            <li className="size-[60px] bg-blue-primary-100"></li>
-            <li className="size-[60px] bg-blue-primary-200"></li>
-            <li className="size-[60px] bg-blue-primary-300"></li>
-            <li className="size-[60px] bg-blue-primary-400"></li>
-            <li className="size-[60px] bg-blue-primary-500"></li>
-            <li className="size-[60px] bg-blue-primary-600"></li>
-            <li className="size-[60px] bg-blue-primary-700"></li>
-            <li className="size-[60px] bg-blue-primary-800"></li>
-            <li className="size-[60px] bg-blue-primary-900"></li>
-            <li className="size-[60px] bg-blue-primary-950"></li>
-          </ul>
-        </div>
+    <section className="w-full max-w-[1200px] mx-auto space-y-8 px-4">
+      <div className="space-y-2 text-center sm:text-left mb-6">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+          Color Palette
+        </h2>
+        <p className="text-muted-foreground text-sm font-dm-sans">
+          The comprehensive color system powering the theme engine.
+        </p>
+      </div>
 
-        {/* Purple Secondary */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-purple-secondary-500">Purple Secondary</h3>
-          <ul className="flex border w-fit border-purple-secondary-500">
-            <li className="size-[60px] bg-purple-secondary-50"></li>
-            <li className="size-[60px] bg-purple-secondary-100"></li>
-            <li className="size-[60px] bg-purple-secondary-200"></li>
-            <li className="size-[60px] bg-purple-secondary-300"></li>
-            <li className="size-[60px] bg-purple-secondary-400"></li>
-            <li className="size-[60px] bg-purple-secondary-500"></li>
-            <li className="size-[60px] bg-purple-secondary-600"></li>
-            <li className="size-[60px] bg-purple-secondary-700"></li>
-            <li className="size-[60px] bg-purple-secondary-800"></li>
-          </ul>
-        </div>
-
-        {/* Gray */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-gray-500">Gray</h3>
-          <ul className="flex border w-fit border-gray-400">
-            <li className="size-[60px] bg-gray-50"></li>
-            <li className="size-[60px] bg-gray-100"></li>
-            <li className="size-[60px] bg-gray-200"></li>
-            <li className="size-[60px] bg-gray-300"></li>
-            <li className="size-[60px] bg-gray-400"></li>
-            <li className="size-[60px] bg-gray-500"></li>
-            <li className="size-[60px] bg-gray-600"></li>
-            <li className="size-[60px] bg-gray-700"></li>
-            <li className="size-[60px] bg-gray-800"></li>
-            <li className="size-[60px] bg-gray-850"></li>
-            <li className="size-[60px] bg-gray-900"></li>
-            <li className="size-[60px] bg-gray-950"></li>
-          </ul>
-        </div>
-
-        {/* Pink */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-pink-500">Pink</h3>
-          <ul className="flex border w-fit border-pink-300">
-            <li className="size-[60px] bg-pink-50"></li>
-            <li className="size-[60px] bg-pink-100"></li>
-            <li className="size-[60px] bg-pink-200"></li>
-            <li className="size-[60px] bg-pink-300"></li>
-            <li className="size-[60px] bg-pink-400"></li>
-            <li className="size-[60px] bg-pink-500"></li>
-          </ul>
-        </div>
-
-        {/* Cyan */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-cyan-200">Cyan</h3>
-          <ul className="flex border w-fit border-cyan-100">
-            <li className="size-[60px] bg-cyan-50"></li>
-            <li className="size-[60px] bg-cyan-100"></li>
-            <li className="size-[60px] bg-cyan-200"></li>
-          </ul>
-        </div>
-
-        {/* Yellow */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-yellow-300">Yellow</h3>
-          <ul className="flex border w-fit border-yellow-200">
-            <li className="size-[60px] bg-yellow-50"></li>
-            <li className="size-[60px] bg-yellow-100"></li>
-            <li className="size-[60px] bg-yellow-200"></li>
-            <li className="size-[60px] bg-yellow-300"></li>
-          </ul>
-        </div>
-
-        {/* Baby Blue */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-baby-blue-300">Baby Blue</h3>
-          <ul className="flex border w-fit border-baby-blue-200">
-            <li className="size-[60px] bg-baby-blue-50"></li>
-            <li className="size-[60px] bg-baby-blue-100"></li>
-            <li className="size-[60px] bg-baby-blue-200"></li>
-            <li className="size-[60px] bg-baby-blue-300"></li>
-            <li className="size-[60px] bg-baby-blue-400"></li>
-          </ul>
-        </div>
-
-        {/* Accent Blue */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-accent-blue-300">Accent Blue</h3>
-          <ul className="flex border w-fit border-accent-blue-200">
-            <li className="size-[60px] bg-accent-blue-50"></li>
-            <li className="size-[60px] bg-accent-blue-100"></li>
-            <li className="size-[60px] bg-accent-blue-200"></li>
-            <li className="size-[60px] bg-accent-blue-300"></li>
-          </ul>
-        </div>
-
-        {/* Accent Orange */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-accent-orange-100">Accent Orange</h3>
-          <ul className="flex border w-fit border-accent-orange-50">
-            <li className="size-[60px] bg-accent-orange-50"></li>
-            <li className="size-[60px] bg-accent-orange-100"></li>
-          </ul>
-        </div>
-
-        {/* Green */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-green-400">Green</h3>
-          <ul className="flex border w-fit border-green-300">
-            <li className="size-[60px] bg-green-50"></li>
-            <li className="size-[60px] bg-green-300"></li>
-            <li className="size-[60px] bg-green-400"></li>
-          </ul>
-        </div>
-
-        {/* Red */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-red-200">Red</h3>
-          <ul className="flex border w-fit border-red-100">
-            <li className="size-[60px] bg-red-50"></li>
-            <li className="size-[60px] bg-red-100"></li>
-            <li className="size-[60px] bg-red-200"></li>
-          </ul>
-        </div>
-
-        {/* Information */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold text-information-300">Information</h3>
-          <ul className="flex border w-fit border-information-200">
-            <li className="size-[60px] bg-information-50"></li>
-            <li className="size-[60px] bg-information-100"></li>
-            <li className="size-[60px] bg-information-200"></li>
-            <li className="size-[60px] bg-information-300"></li>
-            <li className="size-[60px] bg-information-400"></li>
-            <li className="size-[60px] bg-information-500"></li>
-          </ul>
-        </div>
-
-        {/* Neutral */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold">Neutral</h3>
-          <ul className="flex border w-fit border-gray-300">
-            <li className="size-[60px] bg-white"></li>
-            <li className="size-[60px] bg-black"></li>
-          </ul>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Core Ramps */}
+        {colorRamps.map((ramp) => (
+          <div
+            key={ramp.name}
+            className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4"
+          >
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="text-sm font-semibold text-foreground">
+                {ramp.name}
+              </h3>
+              <span className="text-[10px] font-mono text-muted-foreground">
+                --{ramp.prefix}-*
+              </span>
+            </div>
+            <div className="flex w-full h-10 rounded-md overflow-hidden border border-border/50">
+              {ramp.steps.map((step) => (
+                <div
+                  key={step}
+                  className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer"
+                  style={{ backgroundColor: `var(--${ramp.prefix}-${step})` }}
+                  title={`--${ramp.prefix}-${step}`}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
 
         {/* Semantic Colors */}
-        <div className="space-y-2">
-          <h3 className="header-xs font-semibold">Semantic Colors</h3>
-          <ul className="flex w-fit border border-gray-300">
-            <li className="size-[60px] bg-success flex items-center justify-center text-success-foreground text-xs font-bold">S</li>
-            <li className="size-[60px] bg-warning flex items-center justify-center text-warning-foreground text-xs font-bold">W</li>
-            <li className="size-[60px] bg-destructive flex items-center justify-center text-destructive-foreground text-xs font-bold">D</li>
-            <li className="size-[60px] bg-info flex items-center justify-center text-info-foreground text-xs font-bold">I</li>
-          </ul>
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-2">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm font-semibold text-foreground">
+              Semantic Roles
+            </h3>
+            <span className="text-[10px] font-mono text-muted-foreground">
+              --success, --warning, etc.
+            </span>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-success text-success-foreground border border-success/20">
+              <CheckCircle2 className="size-4 shrink-0" />
+              <span className="text-xs font-semibold">Success</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-warning text-warning-foreground border border-warning/20">
+              <AlertTriangle className="size-4 shrink-0" />
+              <span className="text-xs font-semibold">Warning</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-destructive text-destructive-foreground border border-destructive/20">
+              <XCircle className="size-4 shrink-0" />
+              <span className="text-xs font-semibold">Destructive</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 rounded-lg bg-info text-info-foreground border border-info/20">
+              <Info className="size-4 shrink-0" />
+              <span className="text-xs font-semibold">Info</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

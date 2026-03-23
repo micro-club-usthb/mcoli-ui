@@ -1,24 +1,45 @@
 function Stroke() {
+  const strokes = [
+    { name: "0.5px", class: "border-[0.5px]" },
+    { name: "1px", class: "border" },
+    { name: "1.5px", class: "border-[1.5px]" },
+    { name: "2px", class: "border-[2px]" },
+  ];
+
   return (
-    <div className="w-full space-y-8">
-      <h2 className="header-md font-bold underline">Stroke:</h2>
-      <div className="p-4 bg-white rounded-lg">
-        <ul className="flex items-center justify-between w-full">
-          <li className="border-[0.5px] border-border rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">0.5px</p>
-          </li>
-          <li className="border border-border rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">1px</p>
-          </li>
-          <li className="border-[1.5px] border-border rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">1.5px</p>
-          </li>
-          <li className="border-[2px] border-border rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">2px</p>
-          </li>
-        </ul>
+    <section className="w-full max-w-[1200px] mx-auto space-y-8 px-4">
+      <div className="space-y-2 text-center sm:text-left mb-6">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+          Stroke Widths
+        </h2>
+        <p className="text-muted-foreground text-sm font-dm-sans">
+          Border thickness scale for component boundaries.
+        </p>
       </div>
-    </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {strokes.map((s) => (
+          <div
+            key={s.name}
+            className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-surface/50 backdrop-blur-sm border border-border/30"
+          >
+            <div
+              className={`size-16 bg-transparent flex items-center justify-center rounded-xl border-foreground/80 ${s.class}`}
+            >
+              <div
+                className={`size-8 rounded-md border-primary/50 bg-primary/5 ${s.class}`}
+              />
+            </div>
+            <div className="text-center space-y-1">
+              <p className="text-sm font-bold text-foreground">{s.name}</p>
+              <p className="text-[10px] font-mono text-muted-foreground">
+                {s.class}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

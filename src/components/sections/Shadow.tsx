@@ -1,33 +1,45 @@
 function Shadow() {
+  const shadows = [
+    { name: "XS", class: "shadow-xs", var: "--shadow-xs" },
+    { name: "SM", class: "shadow-sm", var: "--shadow-sm" },
+    { name: "MD", class: "shadow-md", var: "--shadow-md" },
+    { name: "LG", class: "shadow-lg", var: "--shadow-lg" },
+    { name: "XL", class: "shadow-xl", var: "--shadow-xl" },
+    { name: "2XL", class: "shadow-2xl", var: "--shadow-2xl" },
+    { name: "3XL", class: "shadow-3xl", var: "--shadow-3xl" },
+  ];
+
   return (
-    <div className="w-full space-y-8">
-      <h2 className="header-md font-bold underline">Shadow:</h2>
-      <div className="p-4 bg-white rounded-lg">
-        <ul className="flex items-center justify-between w-full">
-          <li className="shadow-xs rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">XS</p>
-          </li>
-          <li className="shadow-sm rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">SM</p>
-          </li>
-          <li className="shadow-md rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">MD</p>
-          </li>
-          <li className="shadow-lg rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">LG</p>
-          </li>
-          <li className="shadow-xl rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">XL</p>
-          </li>
-          <li className="shadow-2xl rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">2XL</p>
-          </li>
-          <li className="shadow-3xl rounded-md size-[100px] bg-white flex items-center justify-center">
-            <p className="paragraph-lg font-semibold text-black">3XL</p>
-          </li>
-        </ul>
+    <section className="w-full max-w-[1200px] mx-auto space-y-8 px-4">
+      <div className="space-y-2 text-center sm:text-left mb-6">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+          Elevation & Shadows
+        </h2>
+        <p className="text-muted-foreground text-sm font-dm-sans">
+          Layer depth utilizing tailored box-shadow utilities.
+        </p>
       </div>
-    </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+        {shadows.map((s) => (
+          <div
+            key={s.name}
+            className="flex flex-col items-center gap-4 p-6 rounded-2xl border border-border bg-surface/30"
+          >
+            <div
+              className={`size-16 bg-background rounded-xl flex items-center justify-center border border-border/50 ${s.class}`}
+            >
+              <span className="text-xs font-bold text-foreground">
+                {s.name}
+              </span>
+            </div>
+            <p className="text-[10px] font-mono text-muted-foreground truncate w-full text-center">
+              {s.var}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
 

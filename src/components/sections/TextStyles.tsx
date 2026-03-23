@@ -1,111 +1,80 @@
 function TextStyles() {
   return (
-    <div className="w-full space-y-8">
-      <h2 className="header-md font-bold underline">Text Styles:</h2>
-      <div className="space-y-6">
+    <section className="w-full max-w-[1200px] mx-auto space-y-8 px-4">
+      <div className="space-y-2 text-center sm:text-left mb-6">
+        <h2 className="text-2xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+          Typography Scale
+        </h2>
+        <p className="text-muted-foreground text-sm font-dm-sans">
+          Precision-tracked fluid typography system.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Headers */}
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Header XL:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <h6 className="header-xl">Regular</h6>
-            <h6 className="header-xl font-medium">Medium</h6>
-            <h6 className="header-xl font-semibold">Semi Bold</h6>
-            <h6 className="header-xl font-bold">Bold</h6>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Header LG:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <h6 className="header-lg">Regular</h6>
-            <h6 className="header-lg font-medium">Medium</h6>
-            <h6 className="header-lg font-semibold">Semi Bold</h6>
-            <h6 className="header-lg font-bold">Bold</h6>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Header MD:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <h6 className="header-md">Regular</h6>
-            <h6 className="header-md font-medium">Medium</h6>
-            <h6 className="header-md font-semibold">Semi Bold</h6>
-            <h6 className="header-md font-bold">Bold</h6>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Header SM:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <h6 className="header-sm">Regular</h6>
-            <h6 className="header-sm font-medium">Medium</h6>
-            <h6 className="header-sm font-semibold">Semi Bold</h6>
-            <h6 className="header-sm font-bold">Bold</h6>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Header XS:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <h6 className="header-xs">Regular</h6>
-            <h6 className="header-xs font-medium">Medium</h6>
-            <h6 className="header-xs font-semibold">Semi Bold</h6>
-            <h6 className="header-xs font-bold">Bold</h6>
-          </ul>
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm flex flex-col gap-6 overflow-hidden">
+          <div className="flex items-center justify-between border-b border-border/50 pb-2">
+            <h3 className="font-semibold text-foreground font-plus-jakarta-sans">
+              Headings
+            </h3>
+            <span className="text-[10px] font-mono text-muted-foreground">
+              .header-*
+            </span>
+          </div>
+          <div className="flex flex-col gap-6 text-foreground overflow-x-auto no-scrollbar">
+            <div className="flex items-end gap-4 whitespace-nowrap">
+              <h6 className="header-xl font-bold leading-none">Header XL</h6>
+            </div>
+            <div className="flex items-end gap-4 whitespace-nowrap">
+              <h6 className="header-lg font-bold leading-none">Header LG</h6>
+            </div>
+            <div className="flex items-end gap-4 whitespace-nowrap">
+              <h6 className="header-md font-bold leading-none">Header MD</h6>
+            </div>
+            <div className="flex items-end gap-4 whitespace-nowrap">
+              <h6 className="header-sm font-bold leading-none">Header SM</h6>
+            </div>
+            <div className="flex items-end gap-4 whitespace-nowrap">
+              <h6 className="header-xs font-bold leading-none">Header XS</h6>
+            </div>
+          </div>
         </div>
 
         {/* Paragraphs */}
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Paragraph XL:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <li className="paragraph-xl">Regular</li>
-            <li className="paragraph-xl font-medium">Medium</li>
-            <li className="paragraph-xl font-semibold">Semi Bold</li>
-            <li className="paragraph-xl font-bold">Bold</li>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Paragraph LG:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <li className="paragraph-lg">Regular</li>
-            <li className="paragraph-lg font-medium">Medium</li>
-            <li className="paragraph-lg font-semibold">Semi Bold</li>
-            <li className="paragraph-lg font-bold">Bold</li>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Paragraph MD:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <li className="paragraph-md">Regular</li>
-            <li className="paragraph-md font-medium">Medium</li>
-            <li className="paragraph-md font-semibold">Semi Bold</li>
-            <li className="paragraph-md font-bold">Bold</li>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Paragraph SM:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <li className="paragraph-sm">Regular</li>
-            <li className="paragraph-sm font-medium">Medium</li>
-            <li className="paragraph-sm font-semibold">Semi Bold</li>
-            <li className="paragraph-sm font-bold">Bold</li>
-          </ul>
-        </div>
-
-        <div className="space-y-1">
-          <h3 className="header-xs font-semibold underline">Paragraph XS:</h3>
-          <ul className="flex items-center justify-between w-full">
-            <li className="paragraph-xs">Regular</li>
-            <li className="paragraph-xs font-medium">Medium</li>
-            <li className="paragraph-xs font-semibold">Semi Bold</li>
-            <li className="paragraph-xs font-bold">Bold</li>
-          </ul>
+        <div className="rounded-2xl border border-border bg-card p-6 shadow-sm flex flex-col gap-6 overflow-hidden">
+          <div className="flex items-center justify-between border-b border-border/50 pb-2">
+            <h3 className="font-semibold text-foreground font-plus-jakarta-sans">
+              Paragraphs
+            </h3>
+            <span className="text-[10px] font-mono text-muted-foreground">
+              .paragraph-*
+            </span>
+          </div>
+          <div className="flex flex-col gap-6 text-muted-foreground">
+            <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-3">
+              <p className="paragraph-xl text-foreground">Paragraph XL</p>
+              <span className="text-xs font-mono opacity-50">20px / 30px</span>
+            </div>
+            <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-3">
+              <p className="paragraph-lg text-foreground">Paragraph LG</p>
+              <span className="text-xs font-mono opacity-50">18px / 28px</span>
+            </div>
+            <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-3">
+              <p className="paragraph-md text-foreground">Paragraph MD</p>
+              <span className="text-xs font-mono opacity-50">16px / 24px</span>
+            </div>
+            <div className="flex items-center justify-between gap-4 border-b border-border/30 pb-3">
+              <p className="paragraph-sm text-foreground">Paragraph SM</p>
+              <span className="text-xs font-mono opacity-50">14px / 20px</span>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <p className="paragraph-xs text-foreground">Paragraph XS</p>
+              <span className="text-xs font-mono opacity-50">12px / 18px</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
