@@ -8,12 +8,12 @@ function BackgroundBlur() {
   ];
 
   return (
-    <section className="w-full max-w-[1200px] mx-auto space-y-8 px-4">
+    <section className="w-full max-w-[1200px] mx-auto space-y-6 sm:space-y-8 px-4">
       <div className="space-y-2 text-center sm:text-left mb-6">
-        <h2 className="text-2xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
           Background Blur
         </h2>
-        <p className="text-muted-foreground text-sm font-dm-sans">
+        <p className="text-sm sm:text-base text-muted-foreground font-dm-sans px-2 sm:px-0">
           Frosted glassmorphism utilities for surfaces and overlays.
         </p>
       </div>

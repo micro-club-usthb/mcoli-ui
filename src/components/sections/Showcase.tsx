@@ -15,15 +15,15 @@ import {
 
 export function Showcase() {
   return (
-    <section className="w-full max-w-[1200px] mx-auto space-y-12 relative px-4">
+    <section className="w-full max-w-[1200px] mx-auto space-y-8 sm:space-y-12 relative px-4">
       {/* Dashed background grid (2026 Developer Aesthetic) */}
       <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] opacity-30"></div>
 
       <div className="space-y-4 text-center">
-        <h2 className="text-3xl font-bold tracking-tight text-foreground font-plus-jakarta-sans sm:text-4xl">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
           The Variable Anatomy
         </h2>
-        <p className="text-muted-foreground text-lg max-w-2xl mx-auto font-dm-sans">
+        <p className="text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto font-dm-sans px-2 sm:px-0">
           Every single semantic variable mapped. Change the theme in the
           navigation bar to see the entire grid adapt instantly with perfect
           contrast ratios.
