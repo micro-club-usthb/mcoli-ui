@@ -81,11 +81,6 @@ export const commonCSS = {
 };
 
 export const staticVars = {
-  "radius-sm": "4px",
-  "radius-md": "6px",
-  "radius-lg": "8px",
-  "radius-xl": "12px",
-  "radius-2xl": "16px",
   "shadow-xs": "0 1px 4px 0px hsl(0 0% 0% / 0.04)",
   "shadow-sm": "0 4px 12px -4px hsl(0 0% 0% / 0.08)",
   "shadow-md": "0 4px 6px -1px hsl(0 0% 0% / 0.1)",

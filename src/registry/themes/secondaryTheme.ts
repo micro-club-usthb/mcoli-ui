@@ -1,6 +1,13 @@
 import { commonColors } from "./common/colors";
 
 export const secondaryTheme = {
+  theme: {
+    "radius-sm": "0.25rem",
+    "radius-md": "0.375rem",
+    "radius-lg": "0.5rem",
+    "radius-xl": "0.75rem",
+    "radius-2xl": "0.75rem",
+  },
   light: {
     ...commonColors.light,
     background: commonColors.light["white"],

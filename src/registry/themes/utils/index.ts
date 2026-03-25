@@ -7,7 +7,11 @@ import { itTheme } from "../itTheme";
 import { commonCSS, REGISTRY_URL, staticVars } from "@/registry/consts";
 
 type ThemeConfig = {
-  theme: { light: Record<string, string>; dark: Record<string, string> };
+  theme: {
+    theme: Record<string, string>;
+    light: Record<string, string>;
+    dark: Record<string, string>;
+  };
   title: string;
   description: string;
 };
@@ -177,6 +181,7 @@ export default function createTheme(name: string): Registry["items"][number] {
     cssVars: {
       theme: {
         ...staticVars,
+        ...(config.theme.theme || {}),
         ...themeInlineMappings(),
       },
       light: config.theme.light,

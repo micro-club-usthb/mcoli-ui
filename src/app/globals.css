@@ -221,11 +221,11 @@
   --color-fd-accent-foreground: var(--accent-foreground);
   --color-fd-ring: var(--ring);
 
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
 
   --shadow-xs: 0 1px 4px 0px hsl(0 0% 0% / 0.04);
   --shadow-sm: 0 4px 12px -4px hsl(0 0% 0% / 0.08);
@@ -439,6 +439,11 @@
   --error: #e7000b;
   --info: #3b82f6;
   --info-foreground: #ffedee;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
 }
 .dark,
 .dark[data-theme="primary"] {
@@ -483,6 +488,11 @@
   --error: #ffedee;
   --info: #5bb2ff;
   --info-foreground: #0b0e24;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
 }
 
 /* 2. SECONDARY THEME */
@@ -528,6 +538,11 @@
   --error: #e7000b;
   --info: #3b82f6;
   --info-foreground: #ffedee;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
 }
 .dark[data-theme="secondary"] {
   --background: #000000;
@@ -571,6 +586,11 @@
   --error: #ffedee;
   --info: #5bb2ff;
   --info-foreground: #0b0e24;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
 }
 
 /* 3. GAME-DEV THEME */
@@ -616,6 +636,11 @@
   --error: #e7000b;
   --info: #3b82f6;
   --info-foreground: #ffedee;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
 }
 .dark[data-theme="game-dev"] {
   --background: #facc15;
@@ -659,6 +684,11 @@
   --error: #ffedee;
   --info: #5bb2ff;
   --info-foreground: #0b0e24;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
 }
 
 /* 4. ROBOTICS THEME */
@@ -704,6 +734,11 @@
   --error: #e7000b;
   --info: #3b82f6;
   --info-foreground: #ffedee;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.25rem;
+  --radius-2xl: 0.25rem;
 }
 .dark[data-theme="robotics"] {
   --background: #000000;
@@ -747,6 +782,11 @@
   --error: #ffedee;
   --info: #5bb2ff;
   --info-foreground: #0b0e24;
+  --radius-sm: 0.125rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.25rem;
+  --radius-2xl: 0.25rem;
 }
 
 /* 5. IT THEME */
@@ -792,6 +832,11 @@
   --error: #e7000b;
   --info: #3b82f6;
   --info-foreground: #ffedee;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
 }
 .dark[data-theme="it"] {
   --background: #000000;
@@ -835,6 +880,11 @@
   --error: #ffedee;
   --info: #5bb2ff;
   --info-foreground: #0b0e24;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 0.75rem;
 }
 
 .fd-step::before {

@@ -1,6 +1,13 @@
 import { commonColors } from "./common/colors";
 
 export const roboticsTheme = {
+  theme: {
+    "radius-sm": "0.125rem",
+    "radius-md": "0.125rem",
+    "radius-lg": "0.25rem",
+    "radius-xl": "0.25rem",
+    "radius-2xl": "0.25rem",
+  },
   light: {
     ...commonColors.light,
     background: commonColors.light["white"],

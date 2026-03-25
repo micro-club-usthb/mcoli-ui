@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Copy, Terminal, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Logo from "@/components/Logo";
 
 function Hero() {
   return (
