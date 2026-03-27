@@ -11,7 +11,7 @@ function Hero() {
       {/* Main Heading */}
       <h1 className="max-w-6xl font-extrabold tracking-tighter text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] xl:leading-[90px] text-foreground mb-4 sm:mb-6 font-plus-jakarta-sans z-10">
         Ship professional themed UIs, <br className="hidden sm:block" />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/50">
+        <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-primary/50">
           faster than ever.
         </span>
       </h1>

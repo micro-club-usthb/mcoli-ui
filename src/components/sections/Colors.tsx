@@ -1,5 +1,140 @@
 import { CheckCircle2, AlertTriangle, Info, XCircle } from "lucide-react";
 
+// This ensures Tailwind JIT can scan the full strings at build time.
+const colorClassMap: Record<string, Record<string | number, string>> = {
+  "blue-primary": {
+    50: "bg-blue-primary-50",
+    100: "bg-blue-primary-100",
+    200: "bg-blue-primary-200",
+    300: "bg-blue-primary-300",
+    400: "bg-blue-primary-400",
+    500: "bg-blue-primary-500",
+    600: "bg-blue-primary-600",
+    700: "bg-blue-primary-700",
+    800: "bg-blue-primary-800",
+    900: "bg-blue-primary-900",
+    950: "bg-blue-primary-950",
+  },
+  "purple-secondary": {
+    50: "bg-purple-secondary-50",
+    100: "bg-purple-secondary-100",
+    200: "bg-purple-secondary-200",
+    300: "bg-purple-secondary-300",
+    400: "bg-purple-secondary-400",
+    500: "bg-purple-secondary-500",
+    600: "bg-purple-secondary-600",
+    700: "bg-purple-secondary-700",
+    800: "bg-purple-secondary-800",
+    900: "bg-purple-secondary-900",
+    950: "bg-purple-secondary-950",
+  },
+  gray: {
+    50: "bg-gray-50",
+    100: "bg-gray-100",
+    200: "bg-gray-200",
+    300: "bg-gray-300",
+    400: "bg-gray-400",
+    500: "bg-gray-500",
+    600: "bg-gray-600",
+    700: "bg-gray-700",
+    800: "bg-gray-800",
+    900: "bg-gray-900",
+    950: "bg-gray-950",
+    1000: "bg-gray-1000",
+  },
+  "gray-blue": {
+    50: "bg-gray-blue-50",
+    100: "bg-gray-blue-100",
+    200: "bg-gray-blue-200",
+    300: "bg-gray-blue-300",
+    400: "bg-gray-blue-400",
+    500: "bg-gray-blue-500",
+    600: "bg-gray-blue-600",
+    700: "bg-gray-blue-700",
+    800: "bg-gray-blue-800",
+    900: "bg-gray-blue-900",
+    950: "bg-gray-blue-950",
+    1000: "bg-gray-blue-1000",
+  },
+  "baby-blue": {
+    50: "bg-baby-blue-50",
+    100: "bg-baby-blue-100",
+    200: "bg-baby-blue-200",
+    300: "bg-baby-blue-300",
+    400: "bg-baby-blue-400",
+    500: "bg-baby-blue-500",
+    600: "bg-baby-blue-600",
+    700: "bg-baby-blue-700",
+    800: "bg-baby-blue-800",
+    900: "bg-baby-blue-900",
+    950: "bg-baby-blue-950",
+    1000: "bg-baby-blue-1000",
+  },
+  pink: {
+    50: "bg-pink-50",
+    100: "bg-pink-100",
+    200: "bg-pink-200",
+    300: "bg-pink-300",
+    400: "bg-pink-400",
+    500: "bg-pink-500",
+    600: "bg-pink-600",
+    700: "bg-pink-700",
+    800: "bg-pink-800",
+    900: "bg-pink-900",
+    950: "bg-pink-950",
+  },
+  cyan: {
+    50: "bg-cyan-50",
+    100: "bg-cyan-100",
+    200: "bg-cyan-200",
+    300: "bg-cyan-300",
+    400: "bg-cyan-400",
+    500: "bg-cyan-500",
+    600: "bg-cyan-600",
+    700: "bg-cyan-700",
+    800: "bg-cyan-800",
+    900: "bg-cyan-900",
+    950: "bg-cyan-950",
+  },
+  orange: {
+    50: "bg-orange-50",
+    100: "bg-orange-100",
+    200: "bg-orange-200",
+    300: "bg-orange-300",
+    400: "bg-orange-400",
+    500: "bg-orange-500",
+    600: "bg-orange-600",
+  },
+  "flashy-green": {
+    50: "bg-flashy-green-50",
+    100: "bg-flashy-green-100",
+    200: "bg-flashy-green-200",
+    300: "bg-flashy-green-300",
+  },
+  green: {
+    50: "bg-green-50",
+    300: "bg-green-300",
+    400: "bg-green-400",
+  },
+  red: {
+    50: "bg-red-50",
+    100: "bg-red-100",
+    200: "bg-red-200",
+  },
+  yellow: {
+    50: "bg-yellow-50",
+    100: "bg-yellow-100",
+    200: "bg-yellow-200",
+  },
+  accent: {
+    "blue-50": "bg-accent-blue-50",
+    "flash-50": "bg-accent-flash-50",
+    "green-50": "bg-accent-green-50",
+    "magenta-50": "bg-accent-magenta-50",
+    "red-50": "bg-accent-red-50",
+  },
+};
+
 const colorRamps = [
   {
     name: "Blue Primary",
@@ -77,22 +212,24 @@ function Colors() {
                 {ramp.name}
               </h3>
               <span className="text-[10px] font-mono text-muted-foreground">
-                --{ramp.prefix}-*
+                {ramp.isSpecial ? "accent-*-50" : `--${ramp.prefix}-*`}
               </span>
             </div>
             <div className="flex w-full h-10 rounded-md overflow-hidden border border-border/50">
-              {ramp.steps.map((step) => (
-                <div
-                  key={step}
-                  className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer"
-                  style={{
-                    backgroundColor: ramp.isSpecial
-                      ? `var(--${ramp.prefix}-${step})`
-                      : `var(--${ramp.prefix}-${step})`,
-                  }}
-                  title={`--${ramp.prefix}-${step}`}
-                />
-              ))}
+              {ramp.steps.map((step) => {
+                const tailwindClass = colorClassMap[ramp.prefix][step];
+                return (
+                  <div
+                    key={step}
+                    className={`flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer ${tailwindClass}`}
+                    title={
+                      ramp.isSpecial
+                        ? `accent-${step}`
+                        : `--${ramp.prefix}-${step}`
+                    }
+                  />
+                );
+              })}
             </div>
           </div>
         ))}
@@ -107,13 +244,11 @@ function Colors() {
           </div>
           <div className="flex w-full h-10 rounded-md overflow-hidden border border-border/50">
             <div
-              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-[#000000]"
-              style={{ backgroundColor: `var(--neutral-black)` }}
+              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-neutral-black"
               title="--neutral-black"
             />
             <div
-              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-[#ffffff]"
-              style={{ backgroundColor: `var(--neutral-white)` }}
+              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-neutral-white"
               title="--neutral-white"
             />
           </div>
