@@ -95,6 +95,7 @@ function themeInlineMappings(): Record<string, string> {
     "--color-flashy-green-100": "var(--flashy-green-100)",
     "--color-flashy-green-200": "var(--flashy-green-200)",
     "--color-flashy-green-300": "var(--flashy-green-300)",
+    "--color-it-gradient": "var(--it-gradient)",
     "--color-gray-50": "var(--gray-50)",
     "--color-gray-100": "var(--gray-100)",
     "--color-gray-200": "var(--gray-200)",

@@ -42,6 +42,7 @@ export const commonColors = {
   "flashy-green-200": "#beffd4",
   "flashy-green-300": "#34d399",
   "flashy-green-50": "#f9faff",
+  "it-gradient": "linear-gradient(to right, #34D399, #78DEBF)",
   "gray-100": "#cccccc",
   "gray-1000": "#1a1a1a",
   "gray-200": "#a1a1a1",
