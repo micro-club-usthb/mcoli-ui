@@ -18,7 +18,7 @@ export const withTheme: Decorator = (Story, context) => {
   return (
     <ColorThemeProvider>
       <RootProvider>
-        <div className="bg-background text-foreground antialiased p-6 ">
+        <div className="bg-background text-foreground antialiased p-6 max-w-100">
           <Story />
         </div>
       </RootProvider>

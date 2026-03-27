@@ -1,0 +1,143 @@
+---
+title: MC Input
+description: A tactile, accessible input component with icon support and multiple variants.
+---
+
+## Preview
+
+<Tabs items={['preview', 'code']}>
+  <Tab>
+    <ComponentPreview name='mc-input-demo'/>
+  </Tab>
+  <Tab>
+    <ComponentSource name='mc-input-demo' />
+  </Tab>
+</Tabs>
+
+## Installation
+
+### CLI
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mcoli-ui@latest add mc-input
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm dlx mcoli-ui@latest add mc-input
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn dlx mcoli-ui@latest add mc-input
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bunx mcoli-ui@latest add mc-input
+    ```
+  </Tab>
+</Tabs>
+
+### Manual
+
+<Steps>
+
+<Step>Install the following dependencies</Step>
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+pnpm add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bun add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+</Tabs>
+
+<Step>Copy and paste the following code into your project</Step>
+
+<ComponentSource name='mc-input' />
+
+<Step>Update the import paths to match your project setup</Step>
+
+</Steps>
+
+## Usage
+
+```tsx
+import { McInput } from "@/components/ui/mc-input"
+import { Mail } from "lucide-react"
+
+export default function Example() {
+  return (
+    <McInput 
+      placeholder="Enter your email" 
+      leftIcon={<Mail className="size-4" />}
+    />
+  )
+}
+```
+
+## Examples
+
+### Variants
+
+```tsx
+<McInput variant="default" placeholder="Default variant" />
+<McInput variant="filled" placeholder="Filled variant" />
+<McInput variant="outline" placeholder="Outline variant" />
+```
+
+### With Icons
+
+```tsx
+import { Search, Mail } from "lucide-react"
+
+<McInput 
+  leftIcon={<Search className="size-4" />} 
+  placeholder="Search components..." 
+/>
+
+<McInput 
+  rightIcon={<Mail className="size-4" />} 
+  placeholder="Contact support" 
+/>
+```
+
+### Validation States
+
+The component supports standard HTML validation attributes and ARIA states.
+
+```tsx
+<McInput aria-invalid="true" placeholder="Invalid input" />
+<McInput required placeholder="Required field" />
+<McInput disabled placeholder="Disabled field" />
+```
+
+## API Reference
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `"default" \| "filled" \| "outline"` | `"default"` | The visual style of the input |
+| `leftIcon` | `ReactNode` | `undefined` | Icon element to render inside the input on the left |
+| `rightIcon` | `ReactNode` | `undefined` | Icon element to render inside the input on the right |
+| `className` | `string` | `undefined` | Additional CSS classes for the input wrapper |
+
+All other props from `@base-ui/react/input` are also supported.

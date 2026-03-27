@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "mc-input",
+  "title": "MicroClub Input",
+  "description": "A text input component for MicroClub UI",
+  "dependencies": [
+    "@base-ui/react"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/mc-input.tsx",
+      "content": "import * as React from \"react\"\nimport { Input as InputPrimitive } from \"@base-ui/react/input\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst inputVariants = cva(\n  \"flex h-9 w-full rounded-lg border border-transparent bg-clip-padding px-3 py-1 text-sm transition-all outline-none select-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-input/50 border-border hover:bg-input/80 focus-visible:bg-background\",\n        filled: \"bg-muted/50 border-transparent hover:bg-muted/80 focus-visible:bg-background focus-visible:border-ring\",\n        outline: \"bg-transparent border-border hover:border-ring/50 focus-visible:border-ring\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nexport interface McInputProps\n  extends Omit<InputPrimitive.Props, 'variant'>,\n    VariantProps<typeof inputVariants> {\n  leftIcon?: React.ReactNode\n  rightIcon?: React.ReactNode\n}\n\nconst McInput = React.forwardRef<HTMLInputElement, McInputProps>(\n  ({ className, variant, leftIcon, rightIcon, ...props }, ref) => {\n    return (\n      <div className=\"relative flex items-center group/input w-full\">\n        {leftIcon && (\n          <div className=\"absolute left-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors\">\n            {leftIcon}\n          </div>\n        )}\n        <InputPrimitive\n          ref={ref}\n          className={cn(\n            inputVariants({ variant, className }),\n            leftIcon && \"pl-10\",\n            rightIcon && \"pr-10\"\n          )}\n          {...props}\n        />\n        {rightIcon && (\n          <div className=\"absolute right-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors\">\n            {rightIcon}\n          </div>\n        )}\n      </div>\n    )\n  }\n)\nMcInput.displayName = \"McInput\"\n\nexport { McInput, inputVariants }\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
