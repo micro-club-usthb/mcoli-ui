@@ -2149,7 +2149,7 @@
       "title": "MicroClub Button",
       "description": "A button component for MicroClub UI",
       "dependencies": [
-        "@radix-ui/react-slot"
+        "@base-ui/react"
       ],
       "files": [
         {

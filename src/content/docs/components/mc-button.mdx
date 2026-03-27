@@ -50,22 +50,22 @@ bunx mcoli-ui@latest add mc-button
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npm install clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+npm install clsx tailwind-merge @base-ui/react class-variance-authority
     ```
   </Tab>
   <Tab>
     ```sh
-pnpm add clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+pnpm add clsx tailwind-merge @base-ui/react class-variance-authority
     ```
   </Tab>
   <Tab>
     ```sh
-yarn add clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+yarn add clsx tailwind-merge @base-ui/react class-variance-authority
     ```
   </Tab>
   <Tab>
     ```sh
-bun add clsx tailwind-merge @radix-ui/react-slot class-variance-authority
+bun add clsx tailwind-merge @base-ui/react class-variance-authority
     ```
   </Tab>
 </Tabs>
@@ -151,14 +151,12 @@ import { ArrowRight } from "lucide-react"
 </McButton>
 ```
 
-### As Child (Polymorphic)
+### Composition (Polymorphic)
 
-Use `asChild` to render the button as a different element or component:
+Use the `render` prop to render the button as a different element or component:
 
 ```tsx
-<McButton asChild>
-  <a href="https://microclub.info">Visit MicroClub</a>
-</McButton>
+<McButton render={<a href="https://microclub.info">Visit MicroClub</a>} />
 ```
 
 ## API Reference
@@ -169,7 +167,7 @@ Use `asChild` to render the button as a different element or component:
 |------|------|---------|-------------|
 | `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` | The visual style of the button |
 | `size` | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"` | The size of the button |
-| `asChild` | `boolean` | `false` | Renders the button as a child element (polymorphic) |
+| `render` | `ReactElement \| ((props: HTMLProps) => ReactElement)` | `undefined` | Allows you to replace the component's HTML element with a different tag, or compose it with another component |
 | `className` | `string` | `undefined` | Additional CSS classes |
 
-All other props from `React.ComponentProps<"button">` are also supported.
+All other props from `@base-ui/react/button` are also supported.

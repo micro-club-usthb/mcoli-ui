@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Copy, Terminal, Github } from "lucide-react";
+import { ArrowRight, Copy, Terminal, GitFork } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function Hero() {
@@ -26,28 +26,30 @@ function Hero() {
       {/* Call to Actions */}
       <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-12 sm:mb-16 w-full sm:w-auto px-4 sm:px-0 z-10">
         <Button
-          asChild
+          render={
+            <Link href="/docs/introduction">
+              Get Started <ArrowRight className="ml-2 size-4" />
+            </Link>
+          }
+          nativeButton={false}
           size="lg"
           className="w-full sm:w-auto px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base shadow-xl shadow-primary/20 transition-all hover:bg-primary/90"
-        >
-          <Link href="/docs/introduction">
-            Get Started <ArrowRight className="ml-2 size-4" />
-          </Link>
-        </Button>
+        />
         <Button
-          asChild
+          render={
+            <a
+              href="https://github.com/MicroClub-USTHB/mcoli-ui"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitFork className="size-4 mr-2" /> GitHub
+            </a>
+          }
+          nativeButton={false}
           variant="outline"
           size="lg"
           className="w-full sm:w-auto px-6 sm:px-8 h-11 sm:h-12 text-sm sm:text-base border-border bg-surface/50 backdrop-blur-md hover:bg-accent hover:text-accent-foreground transition-all"
-        >
-          <a
-            href="https://github.com/MicroClub-USTHB/mcoli-ui"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github className="size-4 mr-2" /> GitHub
-          </a>
-        </Button>
+        />
       </div>
 
       {/* High-End Terminal CLI Snippet */}

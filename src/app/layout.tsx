@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import { ColorThemeProvider } from "@/components/ColorThemeProvider";
 import "./globals.css";
-import { DM_Sans, Plus_Jakarta_Sans, Geist } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const plusJakartaSansPlusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -54,9 +52,9 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-              dmSansDmSans.variable,
-              plusJakartaSansPlusJakartaSans.variable,
-            , "font-sans", geist.variable)}
+        dmSansDmSans.variable,
+        plusJakartaSansPlusJakartaSans.variable,
+      )}
     >
       <head>
         {/* SSR Flash Prevention Script */}

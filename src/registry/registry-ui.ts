@@ -12,6 +12,6 @@ export const ui: Registry['items'] = [
         type: 'registry:component',
       },
     ],
-    dependencies: ['@radix-ui/react-slot'],
+    dependencies: ['@base-ui/react'],
   },
 ];

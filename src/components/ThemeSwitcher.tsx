@@ -31,19 +31,18 @@ export function ThemeSwitcher() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        {/* Using variant="ghost" and size="icon" with a size-5 icon 
-          perfectly matches the Fumadocs native UI buttons 
-        */}
-        <Button
-          variant="ghost"
-          size="icon-sm"
-          className="text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors focus-visible:ring-offset-0"
-        >
-          <Palette className="size-4.5" />
-          <span className="sr-only">Toggle Color Palette</span>
-        </Button>
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger
+        render={
+          <Button
+            variant="ghost"
+            size="icon-sm"
+            className="text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors focus-visible:ring-offset-0"
+          >
+            <Palette className="size-4.5" />
+            <span className="sr-only">Toggle Color Palette</span>
+          </Button>
+        }
+      />
       <DropdownMenuContent align="end" className="w-48 rounded-xl shadow-lg">
         {themes.map((t) => (
           <DropdownMenuItem
