@@ -4,78 +4,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
-.header-xl {
-  font-size: 72px;
-  line-height: 90px;
-  letter-spacing: -0.02em;
-  font-family:
-    var(--font-plus-jakarta-sans),
-    Plus Jakarta Sans,
-    system-ui,
-    sans-serif;
-}
-.header-lg {
-  font-size: 60px;
-  line-height: 72px;
-  letter-spacing: -0.02em;
-  font-family:
-    var(--font-plus-jakarta-sans),
-    Plus Jakarta Sans,
-    system-ui,
-    sans-serif;
-}
-.header-md {
-  font-size: 36px;
-  line-height: 44px;
-  letter-spacing: -0.02em;
-  font-family:
-    var(--font-plus-jakarta-sans),
-    Plus Jakarta Sans,
-    system-ui,
-    sans-serif;
-}
-.header-sm {
-  font-size: 30px;
-  line-height: 38px;
-  font-family:
-    var(--font-plus-jakarta-sans),
-    Plus Jakarta Sans,
-    system-ui,
-    sans-serif;
-}
-.header-xs {
-  font-size: 24px;
-  line-height: 32px;
-  font-family:
-    var(--font-plus-jakarta-sans),
-    Plus Jakarta Sans,
-    system-ui,
-    sans-serif;
-}
-
-.paragraph-xl {
-  font-size: 20px;
-  line-height: 30px;
-}
-.paragraph-lg {
-  font-size: 18px;
-  line-height: 28px;
-}
-.paragraph-md {
-  font-size: 16px;
-  line-height: 24px;
-}
-.paragraph-sm {
-  font-size: 14px;
-  line-height: 20px;
-}
-.paragraph-xs {
-  font-size: 12px;
-  line-height: 18px;
-}
-
 @theme inline {
   --color-accent-blue-50: #0066ff;
   --color-accent-flash-50: #ffff00;
@@ -806,3 +734,75 @@
 @utility bg-it-gradient {
   background: var(--color-it-gradient);
 }
+
+.header-xl {
+  font-size: 72px;
+  line-height: 90px;
+  letter-spacing: -0.02em;
+  font-family:
+    var(--font-plus-jakarta-sans),
+    Plus Jakarta Sans,
+    system-ui,
+    sans-serif;
+}
+.header-lg {
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  font-family:
+    var(--font-plus-jakarta-sans),
+    Plus Jakarta Sans,
+    system-ui,
+    sans-serif;
+}
+.header-md {
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -0.02em;
+  font-family:
+    var(--font-plus-jakarta-sans),
+    Plus Jakarta Sans,
+    system-ui,
+    sans-serif;
+}
+.header-sm {
+  font-size: 30px;
+  line-height: 38px;
+  font-family:
+    var(--font-plus-jakarta-sans),
+    Plus Jakarta Sans,
+    system-ui,
+    sans-serif;
+}
+.header-xs {
+  font-size: 24px;
+  line-height: 32px;
+  font-family:
+    var(--font-plus-jakarta-sans),
+    Plus Jakarta Sans,
+    system-ui,
+    sans-serif;
+}
+
+.paragraph-xl {
+  font-size: 20px;
+  line-height: 30px;
+}
+.paragraph-lg {
+  font-size: 18px;
+  line-height: 28px;
+}
+.paragraph-md {
+  font-size: 16px;
+  line-height: 24px;
+}
+.paragraph-sm {
+  font-size: 14px;
+  line-height: 20px;
+}
+.paragraph-xs {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@custom-variant dark (&:is(.dark *));
