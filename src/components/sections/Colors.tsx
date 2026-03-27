@@ -9,25 +9,47 @@ const colorRamps = [
   {
     name: "Purple Secondary",
     prefix: "purple-secondary",
-    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800],
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
   },
   {
     name: "Gray",
     prefix: "gray",
-    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 850, 900, 950],
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000],
   },
-  { name: "Pink", prefix: "pink", steps: [50, 100, 200, 300, 400, 500] },
-  { name: "Cyan", prefix: "cyan", steps: [50, 100, 200] },
-  { name: "Yellow", prefix: "yellow", steps: [50, 100, 200, 300] },
-  { name: "Baby Blue", prefix: "baby-blue", steps: [50, 100, 200, 300, 400] },
-  { name: "Accent Blue", prefix: "accent-blue", steps: [50, 100, 200, 300] },
-  { name: "Accent Orange", prefix: "accent-orange", steps: [50, 100] },
+  {
+    name: "Gray Blue",
+    prefix: "gray-blue",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000],
+  },
+  {
+    name: "Baby Blue",
+    prefix: "baby-blue",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950, 1000],
+  },
+  {
+    name: "Pink",
+    prefix: "pink",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+  },
+  {
+    name: "Cyan",
+    prefix: "cyan",
+    steps: [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950],
+  },
+  {
+    name: "Orange",
+    prefix: "orange",
+    steps: [50, 100, 200, 300, 400, 500, 600],
+  },
+  { name: "Flashy Green", prefix: "flashy-green", steps: [50, 100, 200, 300] },
   { name: "Green", prefix: "green", steps: [50, 300, 400] },
   { name: "Red", prefix: "red", steps: [50, 100, 200] },
+  { name: "Yellow", prefix: "yellow", steps: [50, 100, 200] },
   {
-    name: "Information",
-    prefix: "information",
-    steps: [50, 100, 200, 300, 400, 500],
+    name: "Accents",
+    prefix: "accent",
+    isSpecial: true,
+    steps: ["blue-50", "flash-50", "green-50", "magenta-50", "red-50"],
   },
 ];
 
@@ -63,7 +85,11 @@ function Colors() {
                 <div
                   key={step}
                   className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer"
-                  style={{ backgroundColor: `var(--${ramp.prefix}-${step})` }}
+                  style={{
+                    backgroundColor: ramp.isSpecial
+                      ? `var(--${ramp.prefix}-${step})`
+                      : `var(--${ramp.prefix}-${step})`,
+                  }}
                   title={`--${ramp.prefix}-${step}`}
                 />
               ))}
@@ -71,14 +97,36 @@ function Colors() {
           </div>
         ))}
 
+        {/* Neutrals */}
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-semibold text-foreground">Neutrals</h3>
+            <span className="text-[10px] font-mono text-muted-foreground">
+              --neutral-*
+            </span>
+          </div>
+          <div className="flex w-full h-10 rounded-md overflow-hidden border border-border/50">
+            <div
+              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-[#000000]"
+              style={{ backgroundColor: `var(--neutral-black)` }}
+              title="--neutral-black"
+            />
+            <div
+              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-[#ffffff]"
+              style={{ backgroundColor: `var(--neutral-white)` }}
+              title="--neutral-white"
+            />
+          </div>
+        </div>
+
         {/* Semantic Colors */}
-        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-2">
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-3">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-semibold text-foreground">
-              Semantic Roles
+              Semantic Colors
             </h3>
             <span className="text-[10px] font-mono text-muted-foreground">
-              --success, --warning, etc.
+              --success, --warning, --destructive, info
             </span>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
