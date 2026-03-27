@@ -1,5 +1,6 @@
 import { CheckCircle2, AlertTriangle, Info, XCircle } from "lucide-react";
 
+// Mapping of prefixes and steps to explicit Tailwind class names
 // This ensures Tailwind JIT can scan the full strings at build time.
 const colorClassMap: Record<string, Record<string | number, string>> = {
   "blue-primary": {
@@ -234,6 +235,22 @@ function Colors() {
           </div>
         ))}
 
+        {/* Gradients */}
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-semibold text-foreground">Gradients</h3>
+            <span className="text-[10px] font-mono text-muted-foreground">
+              --*-gradient
+            </span>
+          </div>
+          <div className="flex w-full h-10 rounded-md overflow-hidden border border-border/50">
+            <div
+              className="flex-1 hover:scale-110 hover:z-10 transition-transform origin-center cursor-pointer bg-it-gradient"
+              title="--it-gradient"
+            />
+          </div>
+        </div>
+
         {/* Neutrals */}
         <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4">
           <div className="flex items-center justify-between mb-3">
@@ -255,31 +272,29 @@ function Colors() {
         </div>
 
         {/* Semantic Colors */}
-        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-3">
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-1">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-semibold text-foreground">
-              Semantic Colors
-            </h3>
+            <h3 className="text-sm font-semibold text-foreground">Semantic</h3>
             <span className="text-[10px] font-mono text-muted-foreground">
-              --success, --warning, --destructive, info
+              roles
             </span>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            <div className="flex items-center gap-3 p-3 rounded-lg bg-success text-success-foreground border border-success/20">
-              <CheckCircle2 className="size-4 shrink-0" />
-              <span className="text-xs font-semibold">Success</span>
+          <div className="grid grid-cols-2 gap-2">
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-success text-success-foreground border border-success/20">
+              <CheckCircle2 className="size-3 shrink-0" />
+              <span className="text-[10px] font-semibold">Success</span>
             </div>
-            <div className="flex items-center gap-3 p-3 rounded-lg bg-warning text-warning-foreground border border-warning/20">
-              <AlertTriangle className="size-4 shrink-0" />
-              <span className="text-xs font-semibold">Warning</span>
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-warning text-warning-foreground border border-warning/20">
+              <AlertTriangle className="size-3 shrink-0" />
+              <span className="text-[10px] font-semibold">Warning</span>
             </div>
-            <div className="flex items-center gap-3 p-3 rounded-lg bg-destructive text-destructive-foreground border border-destructive/20">
-              <XCircle className="size-4 shrink-0" />
-              <span className="text-xs font-semibold">Destructive</span>
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-destructive text-destructive-foreground border border-destructive/20">
+              <XCircle className="size-3 shrink-0" />
+              <span className="text-[10px] font-semibold">Error</span>
             </div>
-            <div className="flex items-center gap-3 p-3 rounded-lg bg-info text-info-foreground border border-info/20">
-              <Info className="size-4 shrink-0" />
-              <span className="text-xs font-semibold">Info</span>
+            <div className="flex items-center gap-2 p-2 rounded-lg bg-info text-info-foreground border border-info/20">
+              <Info className="size-3 shrink-0" />
+              <span className="text-[10px] font-semibold">Info</span>
             </div>
           </div>
         </div>

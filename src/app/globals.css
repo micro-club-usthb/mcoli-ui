@@ -184,6 +184,8 @@
   --color-yellow-200: #facc15;
   --color-yellow-50: #fdf6e3;
 
+  --color-it-gradient: linear-gradient(to right, #34d399 0%, #78debf 100%);
+
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
@@ -789,4 +791,8 @@
       system-ui,
       sans-serif;
   }
+}
+
+@utility bg-it-gradient {
+  background: var(--color-it-gradient);
 }
