@@ -23,32 +23,53 @@ const inputVariants = cva(
 export interface McInputProps
   extends Omit<InputPrimitive.Props, 'variant'>,
     VariantProps<typeof inputVariants> {
+  label?: string
+  hint?: string
   leftIcon?: React.ReactNode
   rightIcon?: React.ReactNode
 }
 
 const McInput = React.forwardRef<HTMLInputElement, McInputProps>(
-  ({ className, variant, leftIcon, rightIcon, ...props }, ref) => {
+  ({ className, variant, label, hint, leftIcon, rightIcon, id, ...props }, ref) => {
+    const generatedId = React.useId()
+    const inputId = id || generatedId
+
     return (
-      <div className="relative flex items-center group/input w-full">
-        {leftIcon && (
-          <div className="absolute left-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors">
-            {leftIcon}
-          </div>
+      <div className="flex flex-col w-full gap-1.5 group/input-wrapper">
+        {label && (
+          <label 
+            htmlFor={inputId}
+            className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
+          >
+            {label}
+          </label>
         )}
-        <InputPrimitive
-          ref={ref}
-          className={cn(
-            inputVariants({ variant, className }),
-            leftIcon && "pl-10",
-            rightIcon && "pr-10"
+        <div className="relative flex items-center group/input w-full">
+          {leftIcon && (
+            <div className="absolute left-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors">
+              {leftIcon}
+            </div>
           )}
-          {...props}
-        />
-        {rightIcon && (
-          <div className="absolute right-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors">
-            {rightIcon}
-          </div>
+          <InputPrimitive
+            ref={ref}
+            id={inputId}
+            className={cn(
+              inputVariants({ variant, className }),
+              leftIcon && "pl-10",
+              rightIcon && "pr-10"
+            )}
+            {...props}
+          />
+          {rightIcon && (
+            <div className="absolute right-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors">
+              {rightIcon}
+            </div>
+          )}
+        </div>
+        {hint && (
+          <p className="text-[0.8rem] text-muted-foreground transition-colors group-focus-within/input-wrapper:text-foreground/70">
+            {hint}
+          </p>
         )}
       </div>
     )
