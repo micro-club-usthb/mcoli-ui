@@ -25,58 +25,61 @@ export const commonCSS = {
   // h4: { "font-family": "var(--font-plus-jakarta-sans)" },
   // h5: { "font-family": "var(--font-plus-jakarta-sans)" },
   // h6: { "font-family": "var(--font-plus-jakarta-sans)" },
-  ".header-xl": {
+  "@utility header-xl": {
     "font-size": "72px",
     "line-height": "90px",
     "letter-spacing": "-0.02em",
     "font-family":
       "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
-  ".header-lg": {
+  "@utility header-lg": {
     "font-size": "60px",
     "line-height": "72px",
     "letter-spacing": "-0.02em",
     "font-family":
       "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
-  ".header-md": {
+  "@utility header-md": {
     "font-size": "36px",
     "line-height": "44px",
     "letter-spacing": "-0.02em",
     "font-family":
       "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
-  ".header-sm": {
+  "@utility header-sm": {
     "font-size": "30px",
     "line-height": "38px",
     "font-family":
       "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
-  ".header-xs": {
+  "@utility header-xs": {
     "font-size": "24px",
     "line-height": "32px",
     "font-family":
       "var(--font-plus-jakarta-sans), Plus Jakarta Sans, system-ui, sans-serif",
   },
-  ".paragraph-xl": {
+  "@utility paragraph-xl": {
     "font-size": "20px",
     "line-height": "30px",
   },
-  ".paragraph-lg": {
+  "@utility paragraph-lg": {
     "font-size": "18px",
     "line-height": "28px",
   },
-  ".paragraph-md": {
+  "@utility paragraph-md": {
     "font-size": "16px",
     "line-height": "24px",
   },
-  ".paragraph-sm": {
+  "@utility paragraph-sm": {
     "font-size": "14px",
     "line-height": "20px",
   },
-  ".paragraph-xs": {
+  "@utility paragraph-xs": {
     "font-size": "12px",
     "line-height": "18px",
+  },
+  "@utility bg-it-gradient": {
+    background: "var(--it-gradient)",
   },
 };
 
