@@ -1,80 +1,94 @@
-# Mcoli UI – Micro Club UI Component Registry
+<p align="center">
+  <img src="./public/logo-light.svg" alt="mcoli-ui light" width="360" style="margin-right: 32px;" />
+  <img src="./public/logo-dark.svg" alt="mcoli-ui dark" width="360" />
+</p>
 
-mcoli-ui is a theme and component registry that extends [shadcn/ui](https://ui.shadcn.com) with Micro Club's custom themes and components.
+<p align="center">
+  <b>Stop building from scratch. Elevate your UI with MicroClub DNA.</b>
+</p>
 
-> **Important:** mcoli-ui is not a standalone library. It requires shadcn/ui to be installed first. Think of mcoli-ui as an extension that adds Micro Club's branding and components to your existing shadcn/ui project.
-
-## Prerequisites
-
-Before using mcoli-ui, you must have a project with shadcn/ui installed. Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
-
-## Available Themes
-
-| Theme | Description |
-|-------|-------------|
-| **primary** | Blue primary with purple secondary accents |
-| **secondary** | Purple primary with blue secondary accents |
-| **game-dev** | Pink primary with yellow accents for gaming |
-| **robotics** | Blue primary with accent blue for precision |
-| **it** | Green primary with gray accents for IT |
-
-## Quick Start
-
-### 1. Initialize mcoli-ui
-
-After shadcn/ui is set up, initialize mcoli-ui with your preferred theme:
-
-**Interactive mode** (visual theme picker):
-```sh
-npx mcoli-ui@latest init
-```
-
-**Direct selection**:
-```sh
-npx mcoli-ui@latest init primary
-```
-
-### 2. Add Components
-
-Add mcoli-ui components to your project:
-
-```sh
-npx mcoli-ui@latest add mc-button
-```
-
-## CLI Commands
-
-| Command | Description |
-|---------|-------------|
-| `mcoli-ui init` | Initialize mcoli-ui theme (interactive picker) |
-| `mcoli-ui init [theme]` | Initialize with specific theme (e.g., `primary`, `secondary`) |
-| `mcoli-ui add [component]` | Add an mcoli-ui component |
-
-## Features
-
-- **Pre-built Themes**: Choose from 5 professionally designed color themes
-- **Visual Theme Picker**: Interactive CLI with color swatches for easy selection
-- **Copy & Paste**: Components are copied directly into your project - you own the code
-- **Customizable**: Built with Tailwind CSS v4 for full styling control
-- **Accessible**: Components follow accessibility best practices
-- **Type-Safe**: Written in TypeScript
-
-## Development
-
-To start the documentation site:
-
-```sh
-npm run dev
-```
-
-Visit [http://localhost:3000](http://localhost:3000) to view the component showcase.
-
-## Resources
-
-- [shadcn/ui](https://ui.shadcn.com) - Base component library
-- [Tailwind CSS](https://tailwindcss.com) - Styling framework
-- [Radix UI](https://radix-ui.com/) - Primitive components
+<p align="center">
+  <a href="https://github.com/MicroClub-USTHB/mcoli-ui/stargazers">
+    <img src="https://img.shields.io/github/stars/MicroClub-USTHB/mcoli-ui?style=flat" alt="stars" />
+  </a>
+  <a href="https://github.com/MicroClub-USTHB/mcoli-ui/issues">
+    <img src="https://img.shields.io/github/issues/MicroClub-USTHB/mcoli-ui" alt="issues" />
+  </a>
+  <a href="https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/MicroClub-USTHB/mcoli-ui" alt="license" />
+  </a>
+</p>
 
 ---
 
-Micro Club © 2026. All rights reserved.
+## Build Faster. Design Better.
+
+**mcoli-ui** is the premier React component library that brings professional-grade UI components with a bold **MicroClub DNA** to developers everywhere. We’ve combined world-class design standards with an elite visual identity to help you build stunning web applications in record time.
+
+Stop fighting with generic components. **Infuse your project with signature UI.**
+
+### Why Developers Choose mcoli-ui:
+
+- **Elite Visual Identity**: 5 custom-engineered themes (Primary, Secondary, Game Dev, Robotics, IT) infused with our signature DNA.
+- **Instant Deployment**: Inject high-performance components directly into your workspace with a single command.
+- **Rock-Solid Accessibility**: Built on top of **@base-ui/react** for world-class accessible primitives and behavior.
+- **Peak Performance**: Optimized for the future with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript 6**.
+- **Ultimate Customization**: Your code, your vision. Since components are copied directly to your project, you have 100% control.
+
+## Quick Start
+
+### 1. Ready your Project
+
+mcoli-ui integrates with the industry-standard shadcn workflow. Ensure your framework is set up:
+
+- **New Projects**: Launch with [shadcn/create](https://ui.shadcn.com/create) for a perfect start.
+- **CLI**: Run `npx shadcn@latest init -t [framework]` (supports `next`, `vite`, `start`, `react-router`, and `astro`).
+- **Existing Projects**: Add the foundation via the [official installation guide](https://ui.shadcn.com/docs/installation).
+
+```bash
+npx shadcn@latest init
+```
+
+### 2. Ignite mcoli-ui
+
+Initialize the library and unlock our exclusive theme engine:
+
+```bash
+npx mcoli-ui@latest init
+```
+
+### 3. Add Your First Component
+
+Grab a premium component and start building:
+
+```bash
+npx mcoli-ui@latest add mc-button
+```
+
+## The Library Advantage
+
+mcoli-ui is more than just a registry; it’s a **Professional Component Library** designed for the modern web.
+
+1. **Signature Design**: Every pixel is aligned with MicroClub's high design standards.
+2. **Built for Performance**: No bulk. No unused dependencies. Just the code you need to shine.
+3. **Inclusive UI**: We handle the complex ARIA and keyboard logic so you don't have to.
+
+## Tech Stack
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS_v4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
+  <img src="https://img.shields.io/badge/TypeScript_6-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Base_UI-000000?style=for-the-badge&logo=mui&logoColor=white" alt="Base UI" />
+  <img src="https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white" alt="Storybook" />
+</div>
+
+## Join the Mission
+
+We’re on a quest to build the ultimate UI toolkit. Contribute your components and help us set a new standard. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+<p align="center">
+  Developed with passion by the <b>Dev Department</b> of <a href="https://microclub.info">MicroClub</a>
+</p>

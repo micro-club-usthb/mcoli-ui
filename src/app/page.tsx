@@ -18,14 +18,8 @@ export default function Home() {
       {/* Sticky Glassmorphic Header */}
       <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg supports-backdrop-filter:bg-background/60">
         <div className="container mx-auto flex h-16 max-w-screen-2xl items-center justify-between px-4 md:px-8">
-          <Link
-            href="/"
-            className="flex items-center gap-3 transition-opacity hover:opacity-80"
-          >
+          <Link href="/" className="transition-opacity hover:opacity-80">
             <Logo />
-            <span className="font-bold text-xl hidden sm:inline-block">
-              Mcoli UI
-            </span>
           </Link>
           <div className="flex items-center gap-3">
             <ThemeSwitcher />

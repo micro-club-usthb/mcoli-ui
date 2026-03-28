@@ -1,39 +1,35 @@
 ---
 title: Introduction
-description: Get started with the Micro Club's component registry for Shadcn UI.
+description: Elevate your projects with high-performance UI components infused with MicroClub DNA.
 ---
 
-Welcome to **mcoli-ui**, the official component registry for Micro Club. mcoli-ui provides pre-built themes and components that extend [shadcn/ui](https://ui.shadcn.com) with custom styling.
+Welcome to **mcoli-ui**, a high-performance React component library designed for developers who demand both speed and signature design.
 
-> **Important:** mcoli-ui is not a standalone component library. It is a **theme and component registry** that requires shadcn/ui as a prerequisite. Think of it as an extension that adds Micro Club's custom themes and components to your existing shadcn/ui project.
+mcoli-ui delivers a curated collection of elite UI components infused with **MicroClub DNA**—a unique visual identity that combines professional-grade aesthetics with a bold, modern edge.
 
-## Prerequisites
+## Own Your Code, Master Your UI
 
-mcoli-ui requires an existing **shadcn/ui** project. If you don't have one, you must set it up first.
+Forget rigid, black-box component libraries. mcoli-ui is a **modern UI toolkit** built on the [shadcn registry](https://ui.shadcn.com/docs/registry) workflow. We deliver the full source code of our components directly into your project, giving you the best of both worlds: a world-class design system and total creative control.
 
-> **Warning:** mcoli-ui is built on top of shadcn/ui. You **must** initialize shadcn/ui before using mcoli-ui.
-> 
-> Follow the [shadcn/ui installation guide](https://ui.shadcn.com/docs/installation) to set up shadcn/ui in your project.
+- **Signature Aesthetics**: Every component is pre-styled with MicroClub's distinct DNA using **Tailwind CSS v4**.
+- **Unmatched Accessibility**: Built on **@base-ui/react** primitives to guarantee a flawless user experience for everyone.
+- **Peak Performance**: No runtime overhead. No unused dependencies. Just clean, optimized code that lives in your repository.
+- **Total Freedom**: Since the components are part of your project, you can customize them to fit your specific vision.
 
-## Available Themes
+## Ready to Launch?
 
-mcoli-ui ships with five pre-built themes:
+mcoli-ui integrates seamlessly with any modern React project that follows the shadcn workflow.
 
-| Theme | Description |
-|-------|-------------|
-| **primary** | A professional blue primary with purple secondary accents |
-| **secondary** | A purple primary with blue secondary accents |
-| **game-dev** | A vibrant pink primary with yellow accents for gaming |
-| **robotics** | A technical blue primary with accent blue for precision |
-| **it** | A clean green primary with gray accents for IT |
+### 1. The Foundation
 
-## Initialize mcoli-ui
+Ensure your project is initialized with shadcn/ui. This sets up the structural foundation for our library to integrate perfectly.
 
-Once shadcn/ui is set up, you can initialize mcoli-ui to add Micro Club's themes.
+- **New Projects**: Start strong with [shadcn/create](https://ui.shadcn.com/create).
+- **Existing Projects**: Add the base via the [official installation guide](https://ui.shadcn.com/docs/installation).
 
-### Interactive Mode
+### 2. Ignite the Library
 
-The `init` command will prompt you to select a theme with a visual color picker:
+Initialize mcoli-ui to set up our exclusive theme system and registry configuration.
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -41,86 +37,13 @@ The `init` command will prompt you to select a theme with a visual color picker:
 npx mcoli-ui@latest init
     ```
   </Tab>
-  <Tab>
-    ```sh
-pnpm dlx mcoli-ui@latest init
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn dlx mcoli-ui@latest init
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bunx mcoli-ui@latest init
-    ```
-  </Tab>
 </Tabs>
 
-### Direct Theme Selection
+During initialization, you can pick from our 5 signature themes: **Primary**, **Secondary**, **Game Dev**, **Robotics**, and **IT**.
 
-You can also specify the theme directly as an argument:
+### 3. Deploy Your First Component
 
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-  <Tab>
-    ```sh
-npx mcoli-ui@latest init primary
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-pnpm dlx mcoli-ui@latest init primary
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn dlx mcoli-ui@latest init primary
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bunx mcoli-ui@latest init primary
-    ```
-  </Tab>
-</Tabs>
-
-Replace `primary` with any available theme: `primary`, `secondary`, `game-dev`, `robotics`, or `it`.
-
-### Global CLI Installation
-
-Alternatively, you can install the CLI globally:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-  <Tab>
-    ```sh
-npm install -g mcoli-ui@latest
-mcoli-ui init primary
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-pnpm add -g mcoli-ui@latest
-mcoli-ui init primary
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn global add mcoli-ui@latest
-mcoli-ui init primary
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bun add -g mcoli-ui@latest
-mcoli-ui init primary
-    ```
-  </Tab>
-</Tabs>
-
-## Add Components
-
-After initializing a theme, you can add individual mcoli-ui components:
+Inject a premium component into your `components/ui` directory instantly:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -128,32 +51,15 @@ After initializing a theme, you can add individual mcoli-ui components:
 npx mcoli-ui@latest add mc-button
     ```
   </Tab>
-  <Tab>
-    ```sh
-pnpm dlx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn dlx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bunx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
 </Tabs>
 
 ## Why mcoli-ui?
 
-- **Copy & Paste**: Own your code. Components are copied directly into your project.
-- **Themeable**: Pre-built themes that integrate seamlessly with shadcn/ui.
-- **Custom Components**: Micro Club-specific components built on Radix UI primitives.
-- **Type-Safe**: Written in TypeScript for better developer experience.
+- **Unique Visual Identity**: Bring the bold, department-inspired DNA of MicroClub to any project.
+- **Next-Gen Tech**: Fully optimized for **Next.js 16**, **Tailwind CSS v4**, and **TypeScript 6**.
+- **Battle-Tested**: Every component is visually verified via Storybook and Chromatic for maximum reliability.
 
-## References
+## Connect With Us
 
-- [shadcn/ui](https://ui.shadcn.com/) - Base component library and registry system
-- [Tailwind CSS](https://tailwindcss.com) - Utility-first CSS framework
-- [Radix UI](https://radix-ui.com/) - Unstyled, accessible UI components
+- [GitHub Repository](https://github.com/MicroClub-USTHB/mcoli-ui)
+- [Official Website](https://mcoli-ui.microclub.info)

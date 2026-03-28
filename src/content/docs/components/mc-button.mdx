@@ -1,7 +1,13 @@
 ---
 title: MC Button
-description: A versatile button component with multiple variants and sizes for MicroClub UI.
+description: A premium, high-performance button component from the MicroClub UI library.
 ---
+
+## Overview
+
+The `mc-button` is a core component of the MicroClub UI library. Built on the **@base-ui/react** button primitive, it combines world-class accessibility with MicroClub's signature styling via **Tailwind CSS v4**.
+
+As a part of the MicroClub library, this component is designed for **instant deployment into your codebase**, giving you full ownership of its look and behavior.
 
 ## Preview
 
@@ -14,9 +20,9 @@ description: A versatile button component with multiple variants and sizes for M
   </Tab>
 </Tabs>
 
-## Installation
+## Add to Your Project
 
-### CLI
+Deploy the `mc-button` directly to your `components/ui` directory:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -24,68 +30,31 @@ description: A versatile button component with multiple variants and sizes for M
 npx mcoli-ui@latest add mc-button
     ```
   </Tab>
-  <Tab>
-    ```sh
-pnpm dlx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn dlx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bunx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
 </Tabs>
 
-### Manual
+### Manual Setup
+
+If you prefer manual control:
 
 <Steps>
 
-<Step>Install the following dependencies</Step>
+<Step>Install the core dependencies</Step>
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npm install clsx tailwind-merge @base-ui/react class-variance-authority
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-pnpm add clsx tailwind-merge @base-ui/react class-variance-authority
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn add clsx tailwind-merge @base-ui/react class-variance-authority
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bun add clsx tailwind-merge @base-ui/react class-variance-authority
+npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
     ```
   </Tab>
 </Tabs>
 
-<Step>Add a classname utility function</Step>
-
-```tsx
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-
-export const cn = (...inputs: ClassValue[]) => {
-  return twMerge(clsx(inputs));
-};
-```
-
-<Step>Copy and paste the following code into your project</Step>
+<Step>Copy the source code</Step>
 
 <ComponentSource name='mc-button' />
 
-<Step>Update the import paths to match your project setup</Step>
+<Step>Adjust import paths</Step>
+
+Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
 
 </Steps>
 

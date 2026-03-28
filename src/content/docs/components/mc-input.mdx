@@ -1,7 +1,13 @@
 ---
 title: MC Input
-description: A tactile, accessible input component with icon support and multiple variants.
+description: A tactile, high-performance input component from the MicroClub UI library.
 ---
+
+## Overview
+
+The `mc-input` is a versatile component of the MicroClub UI library. Built on the **@base-ui/react** input primitive, it delivers elite accessibility and tactile interaction, wrapped in MicroClub's unique **Tailwind CSS v4** design tokens.
+
+Deploy this component instantly into your project to achieve professional, accessible forms without the bulk of a global dependency.
 
 ## Preview
 
@@ -14,9 +20,9 @@ description: A tactile, accessible input component with icon support and multipl
   </Tab>
 </Tabs>
 
-## Installation
+## Add to Your Project
 
-### CLI
+Deploy the `mc-input` directly to your `components/ui` directory:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -24,28 +30,15 @@ description: A tactile, accessible input component with icon support and multipl
 npx mcoli-ui@latest add mc-input
     ```
   </Tab>
-  <Tab>
-    ```sh
-pnpm dlx mcoli-ui@latest add mc-input
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn dlx mcoli-ui@latest add mc-input
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bunx mcoli-ui@latest add mc-input
-    ```
-  </Tab>
 </Tabs>
 
-### Manual
+### Manual Setup
+
+If you prefer manual control:
 
 <Steps>
 
-<Step>Install the following dependencies</Step>
+<Step>Install the core dependencies</Step>
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
@@ -53,28 +46,15 @@ bunx mcoli-ui@latest add mc-input
 npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
     ```
   </Tab>
-  <Tab>
-    ```sh
-pnpm add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-yarn add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
-    ```
-  </Tab>
-  <Tab>
-    ```sh
-bun add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
-    ```
-  </Tab>
 </Tabs>
 
-<Step>Copy and paste the following code into your project</Step>
+<Step>Copy the source code</Step>
 
 <ComponentSource name='mc-input' />
 
-<Step>Update the import paths to match your project setup</Step>
+<Step>Adjust import paths</Step>
+
+Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
 
 </Steps>
 

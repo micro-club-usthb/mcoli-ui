@@ -16,12 +16,12 @@ const dmSansDmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Mcoli UI – Micro Club UI Components Library",
+  title: "Mcoli UI – MicroClub UI Components Library",
   description:
-    "Official React UI component library by Micro Club. Reusable, accessible, and customizable components for modern web apps. Built with Next.js and shadcn/ui. Documented and showcased using Fumadocs.",
+    "Official React UI component library by MicroClub. Reusable, accessible, and customizable components for modern web apps. Built with Next.js and shadcn/ui. Documented and showcased using Fumadocs.",
   keywords: [
     "Mcoli UI",
-    "Micro Club",
+    "MicroClub",
     "UI components",
     "React",
     "Next.js",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "Documentation",
     "Fumadocs",
   ],
-  authors: [{ name: "Micro Club" }],
+  authors: [{ name: "MicroClub" }],
   openGraph: {
-    title: "Mcoli UI – Micro Club UI Components Library",
+    title: "Mcoli UI – MicroClub UI Components Library",
     description:
       "Reusable, accessible, and customizable React components for modern web applications. Built with Next.js and shadcn/ui. Documented and showcased using Fumadocs.",
     url: "https://github.com/MicroClub-USTHB/mcoli-ui",

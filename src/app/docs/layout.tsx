@@ -2,14 +2,18 @@ import * as React from "react";
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import { source } from "@/lib/source";
-import Logo from "@/components/Logo";
+import LogoIcon from "@/components/LogoIcon";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <DocsLayout
       tree={source.pageTree}
       nav={{
-        title: <Logo />,
+        title: (
+          <div className="transition-opacity hover:opacity-80">
+            <LogoIcon />
+          </div>
+        ),
         transparentMode: "top",
         children: (
           <div className="mr-1">
