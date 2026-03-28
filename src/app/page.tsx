@@ -23,7 +23,7 @@ export default function Home() {
             className="flex items-center gap-3 transition-opacity hover:opacity-80"
           >
             <Logo />
-            <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
+            <span className="font-bold text-xl hidden sm:inline-block">
               Mcoli UI
             </span>
           </Link>

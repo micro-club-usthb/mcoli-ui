@@ -193,10 +193,10 @@ function Colors() {
   return (
     <section className="w-full max-w-[1200px] mx-auto space-y-6 sm:space-y-8 px-4">
       <div className="space-y-2 text-center sm:text-left mb-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+        <h2 className="header-sm md:header-md font-bold text-foreground">
           Color Palette
         </h2>
-        <p className="text-sm sm:text-base text-muted-foreground font-dm-sans px-2 sm:px-0">
+        <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
           The comprehensive color system powering the theme engine.
         </p>
       </div>
@@ -272,11 +272,11 @@ function Colors() {
         </div>
 
         {/* Semantic Colors */}
-        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-1">
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-3">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-sm font-semibold text-foreground">Semantic</h3>
             <span className="text-[10px] font-mono text-muted-foreground">
-              roles
+              --success, --warning, --destructive, --info
             </span>
           </div>
           <div className="grid grid-cols-2 gap-2">

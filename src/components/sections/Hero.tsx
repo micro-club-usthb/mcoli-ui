@@ -9,7 +9,7 @@ function Hero() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[500px] md:w-[800px] h-[200px] sm:h-[300px] md:h-[400px] bg-primary/20 blur-[80px] sm:blur-[120px] rounded-full pointer-events-none -z-10 transition-colors duration-700 ease-in-out" />
 
       {/* Main Heading */}
-      <h1 className="max-w-6xl font-extrabold tracking-tighter text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[80px] xl:leading-[90px] text-foreground mb-4 sm:mb-6 font-plus-jakarta-sans z-10">
+      <h1 className="max-w-6xl font-extrabold header-md sm:header-lg md:header-xl xl:header-xl text-foreground mb-4 sm:mb-6 z-10">
         Ship professional themed UIs, <br className="hidden sm:block" />
         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-primary/50">
           faster than ever.
@@ -17,7 +17,7 @@ function Hero() {
       </h1>
 
       {/* Subtitle */}
-      <p className="max-w-2xl sm:max-w-3xl text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 font-dm-sans leading-relaxed z-10 px-2 sm:px-0">
+      <p className="max-w-2xl sm:max-w-3xl paragraph-md sm:paragraph-lg md:paragraph-xl text-muted-foreground mb-8 sm:mb-10 z-10 px-2 sm:px-0">
         Mcoli UI is a premium component registry and theming engine. Copy,
         paste, and customize accessible components directly into your
         applications.

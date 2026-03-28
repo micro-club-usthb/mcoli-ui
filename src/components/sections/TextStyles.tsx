@@ -2,10 +2,10 @@ function TextStyles() {
   return (
     <section className="w-full max-w-[1200px] mx-auto space-y-6 sm:space-y-8 px-4">
       <div className="space-y-2 text-center sm:text-left mb-6">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground font-plus-jakarta-sans">
+        <h2 className="header-sm md:header-md font-bold text-foreground">
           Typography Scale
         </h2>
-        <p className="text-sm sm:text-base text-muted-foreground font-dm-sans px-2 sm:px-0">
+        <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
           Precision-tracked fluid typography system.
         </p>
       </div>
@@ -14,11 +14,11 @@ function TextStyles() {
         {/* Headers */}
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm flex flex-col gap-6 overflow-hidden">
           <div className="flex items-center justify-between border-b border-border/50 pb-2">
-            <h3 className="font-semibold text-foreground font-plus-jakarta-sans">
+            <h3 className="header-xs font-semibold text-foreground">
               Headings
             </h3>
             <span className="text-[10px] font-mono text-muted-foreground">
-              .header-*
+              header-*
             </span>
           </div>
           <div className="flex flex-col gap-6 text-foreground overflow-x-auto no-scrollbar">
