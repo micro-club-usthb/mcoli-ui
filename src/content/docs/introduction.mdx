@@ -16,39 +16,39 @@ Forget rigid, black-box component libraries. mcoli-ui is a **modern UI toolkit**
 - **Peak Performance**: No runtime overhead. No unused dependencies. Just clean, optimized code that lives in your repository.
 - **Total Freedom**: Since the components are part of your project, you can customize them to fit your specific vision.
 
-## Ready to Launch?
+## Get Started
 
-mcoli-ui integrates seamlessly with any modern React project that follows the shadcn workflow.
+mcoli-ui integrates seamlessly with any modern React project. Follow our step-by-step guide to initialize and start building.
 
-### 1. The Foundation
+<Callout>
+  **New to mcoli-ui?** Head to the [Installation](/docs/installation) guide for a complete walkthrough.
+</Callout>
 
-Ensure your project is initialized with shadcn/ui. This sets up the structural foundation for our library to integrate perfectly.
-
-- **New Projects**: Start strong with [shadcn/create](https://ui.shadcn.com/create).
-- **Existing Projects**: Add the base via the [official installation guide](https://ui.shadcn.com/docs/installation).
-
-### 2. Ignite the Library
-
-Initialize mcoli-ui to set up our exclusive theme system and registry configuration.
+Quick start with your terminal:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
 npx mcoli-ui@latest init
+npx mcoli-ui@latest add mc-button
     ```
   </Tab>
-</Tabs>
-
-During initialization, you can pick from our 5 signature themes: **Primary**, **Secondary**, **Game Dev**, **Robotics**, and **IT**.
-
-### 3. Deploy Your First Component
-
-Inject a premium component into your `components/ui` directory instantly:
-
-<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
     ```sh
-npx mcoli-ui@latest add mc-button
+pnpm dlx mcoli-ui@latest init
+pnpm dlx mcoli-ui@latest add mc-button
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+yarn dlx mcoli-ui@latest init
+yarn dlx mcoli-ui@latest add mc-button
+    ```
+  </Tab>
+  <Tab>
+    ```sh
+bunx mcoli-ui@latest init
+bunx mcoli-ui@latest add mc-button
     ```
   </Tab>
 </Tabs>
