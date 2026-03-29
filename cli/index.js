@@ -2,15 +2,22 @@
 
 import { config } from "dotenv";
 import { execSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import inquirer from "inquirer";
-import ora from "ora";
-import chalk from "chalk";
+import { createSpinner } from "nanospinner";
+import ansis from "ansis";
 
-config();
+config({ quiet: true });
 
-const themes = [
+// =============================================================================
+// CONSTANTS
+// =============================================================================
+
+const REGISTRY_URL =
+  process.env.MCOLI_UI_REGISTRY_URL || "https://mcoli-ui.microclub.info";
+
+const THEMES = [
   {
     name: "Primary",
     value: "primary",
@@ -43,51 +50,47 @@ const themes = [
   },
 ];
 
-const validThemeValues = themes.map((t) => t.value);
+const VALID_THEMES = THEMES.map((t) => t.value);
+const SHADCN_DOCS_URL = "https://ui.shadcn.com/docs/installation";
 
-const REGISTRY_URL =
-  process.env.MCOLI_UI_REGISTRY_URL || "https://mcoli-ui.microclub.info";
-
-const args = process.argv.slice(2);
-
-if (args.length < 1) {
-  console.log("Usage: npx mcoli-ui <command>");
-  console.log("Commands:");
-  console.log(
-    "  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)",
-  );
-  console.log("  add [...packages]  Add mcoli-ui components");
-  console.log("\nAvailable themes:");
-  themes.forEach((theme) => {
-    console.log(`  ${chalk.cyan(theme.value.padEnd(12))} ${theme.description}`);
-  });
-  console.log(`\nRegistry URL: ${chalk.gray(REGISTRY_URL)}`);
-  process.exit(1);
-}
-
-const command = args[0];
-
-if (command === "init") {
-  handleInit(args.slice(1));
-} else if (command === "add") {
-  handleAdd(args.slice(1));
-} else {
-  console.log(`Unknown command: ${command}`);
-  console.log("Usage: npx mcoli-ui <command>");
-  console.log("Commands:");
-  console.log(
-    "  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)",
-  );
-  console.log("  add [...packages]  Add mcoli-ui components");
-  process.exit(1);
-}
+// =============================================================================
+// UTILITIES
+// =============================================================================
 
 function createColorSwatch(hexColors) {
-  return hexColors.map((hex) => chalk.bgHex(hex)("  ")).join("");
+  return hexColors.map((hex) => ansis.bgHex(hex)("  ")).join("");
 }
 
-async function interactiveThemeSelect() {
-  const choices = themes.map((theme, index) => ({
+function logError(message) {
+  console.error(`${ansis.red("Error:")} ${message}`);
+}
+
+function logSuccess(message) {
+  console.log(`${ansis.green("✓")} ${message}`);
+}
+
+function checkShadcnInitialized() {
+  const componentsJsonPath = join(process.cwd(), "components.json");
+
+  if (!existsSync(componentsJsonPath)) {
+    logError(`${ansis.bold("shadcn/ui")} is required but not initialized.`);
+    console.log("\nPlease initialize shadcn/ui first:");
+    console.log(`  ${ansis.cyan("npx shadcn@latest init")}\n`);
+    console.log(
+      `For more information, visit: ${ansis.underline(SHADCN_DOCS_URL)}`,
+    );
+    process.exit(1);
+  }
+
+  return componentsJsonPath;
+}
+
+// =============================================================================
+// HELPERS
+// =============================================================================
+
+async function promptThemeSelection() {
+  const choices = THEMES.map((theme, index) => ({
     name: `${index + 1}. ${theme.name.padEnd(10)} ${createColorSwatch(theme.colors)}  ${theme.description}`,
     value: theme.value,
     short: theme.name,
@@ -107,56 +110,92 @@ async function interactiveThemeSelect() {
   return answer.theme;
 }
 
-function handleInit(themeArgs) {
-  const componentsJsonPath = join(process.cwd(), "components.json");
+function showHelp() {
+  console.log(
+    `${ansis.bold("Usage:")} npx mcoli-ui <command> ${ansis.gray("[options]")}`,
+  );
+  console.log();
+  console.log(`${ansis.bold("Commands:")}`);
+  console.log(
+    `  ${ansis.cyan("init")} [theme]     ${ansis.gray("Initialize mcoli-ui theme (requires shadcn/ui)")}`,
+  );
+  console.log(
+    `  ${ansis.cyan("add")} <component>  ${ansis.gray("Add mcoli-ui component(s) to your project)")}`,
+  );
+  console.log(
+    `  ${ansis.cyan("list")}             ${ansis.gray("List all available mcoli-ui components")}`,
+  );
+  console.log();
+  console.log(`${ansis.bold("Options:")}`);
+  console.log(
+    `  ${ansis.cyan("--help")}, -h        ${ansis.gray("Show this help message")}`,
+  );
+  console.log();
+  console.log(`${ansis.bold("Examples:")}`);
+  console.log(`  ${ansis.gray("# Initialize with a specific theme")}`);
+  console.log(`  npx mcoli-ui init primary`);
+  console.log();
+  console.log(`  ${ansis.gray("# Add a component")}`);
+  console.log(`  npx mcoli-ui add mc-button`);
+  console.log();
+  console.log(`  ${ansis.gray("# Add multiple components")}`);
+  console.log(`  npx mcoli-ui add mc-button mc-input`);
+  console.log();
+  console.log(`  ${ansis.gray("# List available components")}`);
+  console.log(`  npx mcoli-ui list`);
+  console.log();
+  console.log(`${ansis.bold("Available themes:")}`);
+  THEMES.forEach((theme) => {
+    console.log(`  ${ansis.cyan(theme.value.padEnd(12))} ${theme.description}`);
+  });
+  console.log();
+  console.log(`Registry URL: ${ansis.gray(REGISTRY_URL)}`);
+}
 
-  if (!existsSync(componentsJsonPath)) {
-    console.error(
-      `${chalk.red("Error:")} ${chalk.bold("shadcn/ui")} is required but not initialized.`,
-    );
-    console.log("\nPlease initialize shadcn/ui first:");
-    console.log(`  ${chalk.cyan("npx shadcn@latest init")}\n`);
+function showAvailableThemes() {
+  console.log("\nAvailable themes:");
+  THEMES.forEach((theme, index) => {
     console.log(
-      "For more information, visit: " +
-        chalk.underline("https://ui.shadcn.com/docs/installation"),
+      `  ${ansis.cyan(String(index + 1).padStart(2) + ".")} ${ansis.bold(theme.name.padEnd(12))} ${createColorSwatch(theme.colors)}  ${theme.description}`,
     );
-    process.exit(1);
-  }
+  });
+  console.log("\nOr run without arguments for interactive selection.");
+}
 
-  const checkSpinner = ora(
-    `${chalk.green("✓")} shadcn/ui found, proceeding with mcoli-ui theme...`,
+// =============================================================================
+// COMMAND HANDLERS
+// =============================================================================
+
+function handleInit(themeArgs) {
+  checkShadcnInitialized();
+
+  const spinner = createSpinner(
+    `${ansis.green("✓")} shadcn/ui found, proceeding with mcoli-ui theme...`,
   ).start();
-  checkSpinner.succeed("shadcn/ui configuration detected");
+  spinner.success({ text: "shadcn/ui configuration detected" });
 
-  const selectedThemeArg = themeArgs[0]?.toLowerCase();
+  const selectedTheme = themeArgs[0]?.toLowerCase();
 
-  if (selectedThemeArg && validThemeValues.includes(selectedThemeArg)) {
-    const theme = themes.find((t) => t.value === selectedThemeArg);
-    const themeName = theme?.name || selectedThemeArg;
-
-    checkSpinner.info(`Theme selected: ${chalk.cyan(themeName)}`);
-
-    addTheme(selectedThemeArg, themeName);
+  // Theme provided as argument
+  if (selectedTheme && VALID_THEMES.includes(selectedTheme)) {
+    const theme = THEMES.find((t) => t.value === selectedTheme);
+    const themeName = theme?.name || selectedTheme;
+    spinner.info({ text: `Theme selected: ${ansis.cyan(themeName)}` });
+    addTheme(selectedTheme, themeName);
     return;
   }
 
-  if (selectedThemeArg && !validThemeValues.includes(selectedThemeArg)) {
-    console.error(
-      `${chalk.red("Error:")} Invalid theme "${chalk.bold(selectedThemeArg)}"`,
-    );
-    console.log("\nAvailable themes:");
-    themes.forEach((theme, index) => {
-      console.log(
-        `  ${chalk.cyan(String(index + 1).padStart(2) + ".")} ${chalk.bold(theme.name.padEnd(12))} ${createColorSwatch(theme.colors)}  ${theme.description}`,
-      );
-    });
-    console.log("\nOr run without arguments for interactive selection.");
+  // Invalid theme provided
+  if (selectedTheme && !VALID_THEMES.includes(selectedTheme)) {
+    logError(`Invalid theme "${ansis.bold(selectedTheme)}"`);
+    showAvailableThemes();
     process.exit(1);
   }
 
-  interactiveThemeSelect()
+  // No theme provided - interactive mode
+  promptThemeSelection()
     .then((selectedTheme) => {
-      const theme = themes.find((t) => t.value === selectedTheme);
+      const theme = THEMES.find((t) => t.value === selectedTheme);
       const themeName = theme?.name || selectedTheme;
       addTheme(selectedTheme, themeName);
     })
@@ -167,72 +206,215 @@ function handleInit(themeArgs) {
 }
 
 function addTheme(themeValue, themeName) {
-  const themeSpinner = ora(
-    `Adding ${chalk.yellow(themeName)} mcoli-ui theme...`,
+  const spinner = createSpinner(
+    `Adding ${ansis.yellow(themeName)} mcoli-ui theme...`,
   ).start();
+
   try {
     execSync(`npx shadcn@latest add ${REGISTRY_URL}/r/${themeValue}.json`, {
       stdio: "inherit",
     });
-    themeSpinner.succeed(
-      `Successfully added ${chalk.green(themeName)} mcoli-ui theme`,
-    );
+    spinner.success({
+      text: `Successfully added ${ansis.green(themeName)} mcoli-ui theme`,
+    });
   } catch (error) {
-    themeSpinner.fail(`Failed to add ${chalk.red(themeName)} theme`);
+    spinner.error({ text: `Failed to add ${ansis.red(themeName)} theme` });
     console.error(`Error adding ${themeName} theme:`, error);
     process.exit(1);
   }
 
-  const completeSpinner = ora("Finalizing mcoli-ui setup...").start();
-  completeSpinner.succeed("mcoli-ui theme setup complete!");
+  const completeSpinner = createSpinner("Finalizing mcoli-ui setup...").start();
+  completeSpinner.success({ text: "mcoli-ui theme setup complete!" });
 }
 
-function handleAdd(packageNames) {
-  const componentsJsonPath = join(process.cwd(), "components.json");
+function handleAdd(componentNames) {
+  checkShadcnInitialized();
 
-  if (!existsSync(componentsJsonPath)) {
-    console.error(
-      `${chalk.red("Error:")} ${chalk.bold("shadcn/ui")} is required but not initialized.`,
-    );
-    console.log("\nPlease initialize shadcn/ui first:");
-    console.log(`  ${chalk.cyan("npx shadcn@latest init")}\n`);
-    console.log(
-      "For more information, visit: " +
-        chalk.underline("https://ui.shadcn.com/docs/installation"),
-    );
-    process.exit(1);
-  }
-
-  if (packageNames.length === 0) {
+  if (componentNames.length === 0) {
     console.log("Usage: npx mcoli-ui add [...packages]");
     process.exit(1);
   }
 
-  for (const packageName of packageNames) {
-    if (!packageName.trim()) {
-      continue;
-    }
+  for (const componentName of componentNames) {
+    if (!componentName.trim()) continue;
 
-    const addSpinner = ora(
-      `Adding ${chalk.yellow(packageName)} mcoli-ui component...`,
+    const spinner = createSpinner(
+      `Adding ${ansis.yellow(componentName)} mcoli-ui component...`,
     ).start();
 
     try {
-      const url = new URL(`r/${packageName}.json`, REGISTRY_URL);
-
+      const url = new URL(`r/${componentName}.json`, REGISTRY_URL);
       execSync(`npx shadcn@latest add ${url.toString()}`, {
         stdio: "inherit",
       });
-
-      addSpinner.succeed(
-        `Successfully added ${chalk.green(packageName)} component`,
-      );
+      spinner.success({
+        text: `Successfully added ${ansis.green(componentName)} component`,
+      });
     } catch (error) {
-      addSpinner.fail(`Failed to add ${chalk.red(packageName)} component`);
+      spinner.error({
+        text: `Failed to add ${ansis.red(componentName)} component`,
+      });
       console.error(
-        `Error adding ${chalk.red(packageName)}:`,
+        `Error adding ${ansis.red(componentName)}:`,
         error instanceof Error ? error.message : String(error),
       );
     }
   }
+}
+
+async function handleList() {
+  const spinner = createSpinner("Fetching available components...").start();
+
+  try {
+    const indexUrl = new URL("r/index.json", REGISTRY_URL);
+    const response = await fetch(indexUrl.toString());
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    spinner.success({
+      text: `Found ${ansis.green(String(data.length))} components`,
+    });
+
+    displayComponents(data);
+  } catch {
+    spinner.stop();
+    await tryLocalRegistry();
+  }
+}
+
+function displayComponents(data) {
+  console.log();
+  console.log(`${ansis.bold("Available components:")}`);
+  console.log();
+
+  const items = extractComponents(data);
+  const maxNameLength = Math.max(...items.map((i) => i.name.length), 8);
+
+  items.forEach((item) => {
+    console.log(
+      `  ${ansis.cyan(item.name.padEnd(maxNameLength))}  ${item.description}`,
+    );
+  });
+
+  console.log();
+  console.log(
+    `  ${ansis.gray("Run")} npx mcoli-ui add <component> ${ansis.gray("to add a component")}`,
+  );
+  console.log();
+}
+
+function extractComponents(data) {
+  if (Array.isArray(data)) {
+    return data.map((item) => ({
+      name: item.name || item.component || "Unknown",
+      description: item.description || "",
+    }));
+  }
+
+  if (data.components) {
+    return Object.entries(data.components).map(([name, info]) => ({
+      name,
+      description: info?.description || "",
+    }));
+  }
+
+  return [];
+}
+
+async function tryLocalRegistry() {
+  const localRegistryPath = join(
+    process.cwd(),
+    "src/__registry__/registry.autogenerated.json",
+  );
+
+  if (!existsSync(localRegistryPath)) {
+    showListError();
+    return;
+  }
+
+  try {
+    const registryData = JSON.parse(readFileSync(localRegistryPath, "utf-8"));
+    const components =
+      registryData.items?.filter(
+        (item) => item.type === "registry:component",
+      ) || [];
+
+    if (components.length === 0) {
+      showListError();
+      return;
+    }
+
+    console.log(`${ansis.bold("Available components (from local registry):")}`);
+    console.log();
+
+    const maxNameLength = Math.max(
+      ...components.map((c) => (c.name || "").length),
+      8,
+    );
+
+    components.forEach((item) => {
+      console.log(
+        `  ${ansis.cyan((item.name || "").padEnd(maxNameLength))}  ${item.description || ""}`,
+      );
+    });
+
+    console.log();
+    console.log(
+      `  ${ansis.gray("Run")} npx mcoli-ui add <component> ${ansis.gray("to add a component")}`,
+    );
+    console.log();
+  } catch {
+    showListError();
+  }
+}
+
+function showListError() {
+  console.log(
+    `${ansis.red("Error:")} Could not fetch component list from registry`,
+  );
+  console.log(`  ${ansis.gray("Registry URL:")} ${REGISTRY_URL}`);
+  console.log();
+  console.log(
+    `${ansis.yellow("Note:")} Registry may not be deployed or accessible.`,
+  );
+  console.log(
+    `  ${ansis.gray("You can manually add components using:")} npx mcoli-ui add <component-name>`,
+  );
+  process.exit(1);
+}
+
+// =============================================================================
+// MAIN
+// =============================================================================
+
+const args = process.argv.slice(2);
+
+// Show help if no args or help flag
+if (args.length === 0 || args[0] === "--help" || args[0] === "-h") {
+  showHelp();
+  process.exit(0);
+}
+
+const command = args[0];
+
+switch (command) {
+  case "init":
+    handleInit(args.slice(1));
+    break;
+  case "add":
+    handleAdd(args.slice(1));
+    break;
+  case "list":
+    handleList();
+    break;
+  default:
+    console.log(
+      `${ansis.red("Error:")} Unknown command: ${ansis.bold(command)}`,
+    );
+    console.log();
+    showHelp();
+    process.exit(1);
 }
