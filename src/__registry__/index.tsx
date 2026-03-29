@@ -72,16 +72,6 @@ export const Index: Record<string, any> ={
       type: "registry:component",
     }],
   },
-  "mc-input": {
-    name: "mc-input",
-    description: "A text input component for MicroClub UI",
-    type: "registry:component",
-    files: [{
-      path: "src/registry/ui/mc-input.tsx",
-      content: "import * as React from \"react\"\nimport { Input as InputPrimitive } from \"@base-ui/react/input\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst inputVariants = cva(\n  \"flex h-9 w-full rounded-lg border border-transparent bg-clip-padding px-3 py-1 text-sm transition-all outline-none select-none file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-input/50 border-border hover:bg-input/80 focus-visible:bg-background\",\n        filled: \"bg-muted/50 border-transparent hover:bg-muted/80 focus-visible:bg-background focus-visible:border-ring\",\n        outline: \"bg-transparent border-border hover:border-ring/50 focus-visible:border-ring\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  }\n)\n\nexport interface McInputProps\n  extends Omit<InputPrimitive.Props, 'variant'>,\n    VariantProps<typeof inputVariants> {\n  label?: string\n  hint?: string\n  leftIcon?: React.ReactNode\n  rightIcon?: React.ReactNode\n}\n\nconst McInput = React.forwardRef<HTMLInputElement, McInputProps>(\n  ({ className, variant, label, hint, leftIcon, rightIcon, id, ...props }, ref) => {\n    const generatedId = React.useId()\n    const inputId = id || generatedId\n\n    return (\n      <div className=\"flex flex-col w-full gap-1.5 group/input-wrapper\">\n        {label && (\n          <label \n            htmlFor={inputId}\n            className=\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground\"\n          >\n            {label}\n          </label>\n        )}\n        <div className=\"relative flex items-center group/input w-full\">\n          {leftIcon && (\n            <div className=\"absolute left-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors\">\n              {leftIcon}\n            </div>\n          )}\n          <InputPrimitive\n            ref={ref}\n            id={inputId}\n            className={cn(\n              inputVariants({ variant, className }),\n              leftIcon && \"pl-10\",\n              rightIcon && \"pr-10\"\n            )}\n            {...props}\n          />\n          {rightIcon && (\n            <div className=\"absolute right-3 flex items-center justify-center pointer-events-none text-muted-foreground group-focus-within/input:text-ring transition-colors\">\n              {rightIcon}\n            </div>\n          )}\n        </div>\n        {hint && (\n          <p className=\"text-[0.8rem] text-muted-foreground transition-colors group-focus-within/input-wrapper:text-foreground/70\">\n            {hint}\n          </p>\n        )}\n      </div>\n    )\n  }\n)\nMcInput.displayName = \"McInput\"\n\nexport { McInput, inputVariants }\n",
-      type: "registry:component",
-    }],
-  },
   "mc-button-demo": {
     name: "mc-button-demo",
     description: "Demo for MicroClub Button",
@@ -93,17 +83,5 @@ export const Index: Record<string, any> ={
     }],
     component: React.lazy(() => import("@/registry/examples/mc-button-demo.tsx")),
     source: "import { McButton } from \"../ui/mc-button\";\n\nexport default function McButtonDemo() {\n  return <McButton>Button</McButton>;\n}\n",
-  },
-  "mc-input-demo": {
-    name: "mc-input-demo",
-    description: "Demo for MicroClub Input",
-    type: "registry:example",
-    files: [{
-      path: "src/registry/examples/mc-input-demo.tsx",
-      content: "import { McInput } from \"@/registry/ui/mc-input\"\nimport { Search } from \"lucide-react\"\n\nexport default function McInputDemo() {\n  return (\n    <div className=\"flex w-full max-w-sm items-center p-6\">\n      <McInput \n        placeholder=\"Search components...\" \n        leftIcon={<Search className=\"size-4\" />} \n      />\n    </div>\n  )\n}\n",
-      type: "registry:example",
-    }],
-    component: React.lazy(() => import("@/registry/examples/mc-input-demo.tsx")),
-    source: "import { McInput } from \"@/registry/ui/mc-input\"\nimport { Search } from \"lucide-react\"\n\nexport default function McInputDemo() {\n  return (\n    <div className=\"flex w-full max-w-sm items-center p-6\">\n      <McInput \n        placeholder=\"Search components...\" \n        leftIcon={<Search className=\"size-4\" />} \n      />\n    </div>\n  )\n}\n",
   },
 }
