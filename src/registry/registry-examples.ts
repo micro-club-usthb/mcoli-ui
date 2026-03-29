@@ -12,8 +12,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    registryDependencies: [
-      "https://mcoli.microclub.info/r/mc-button.json",
-    ],
+    registryDependencies: ["https://mcoli-ui.microclub.info/r/mc-button.json"],
   },
 ];

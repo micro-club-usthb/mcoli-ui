@@ -39,21 +39,23 @@ const themes = [
     name: "IT",
     value: "it",
     description: "Clean and professional",
-    colors: ["#25C059", "#25C059"],
+    colors: ["#34D399", "#BEFFD4"],
   },
 ];
 
 const validThemeValues = themes.map((t) => t.value);
 
 const REGISTRY_URL =
-  process.env.MCOLI_UI_REGISTRY_URL || "https://mcoli.microclub.info";
+  process.env.MCOLI_UI_REGISTRY_URL || "https://mcoli-ui.microclub.info";
 
 const args = process.argv.slice(2);
 
 if (args.length < 1) {
   console.log("Usage: npx mcoli-ui <command>");
   console.log("Commands:");
-  console.log("  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)");
+  console.log(
+    "  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)",
+  );
   console.log("  add [...packages]  Add mcoli-ui components");
   console.log("\nAvailable themes:");
   themes.forEach((theme) => {
@@ -73,7 +75,9 @@ if (command === "init") {
   console.log(`Unknown command: ${command}`);
   console.log("Usage: npx mcoli-ui <command>");
   console.log("Commands:");
-  console.log("  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)");
+  console.log(
+    "  init [theme]     Initialize mcoli-ui theme (requires shadcn/ui)",
+  );
   console.log("  add [...packages]  Add mcoli-ui components");
   process.exit(1);
 }

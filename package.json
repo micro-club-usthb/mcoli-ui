@@ -9,7 +9,7 @@
   "author": {
     "name": "HADJ ARAB Adel",
     "email": "hadjarabadel.2411@gmail.com",
-    "url": "https://mcoli.microclub.info/"
+    "url": "https://mcoli-ui.microclub.info/"
   },
   "scripts": {
     "dev": "next dev --turbopack",
