@@ -4,7 +4,7 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "mcoli-ui": "./cli/index.ts"
+    "mcoli-ui": "cli/index.js"
   },
   "author": {
     "name": "HADJ ARAB Adel",

@@ -82,7 +82,7 @@ if (command === "init") {
   process.exit(1);
 }
 
-function createColorSwatch(hexColors: string[]): string {
+function createColorSwatch(hexColors) {
   return hexColors.map((hex) => chalk.bgHex(hex)("  ")).join("");
 }
 
@@ -107,7 +107,7 @@ async function interactiveThemeSelect() {
   return answer.theme;
 }
 
-function handleInit(themeArgs: string[]) {
+function handleInit(themeArgs) {
   const componentsJsonPath = join(process.cwd(), "components.json");
 
   if (!existsSync(componentsJsonPath)) {
@@ -166,7 +166,7 @@ function handleInit(themeArgs: string[]) {
     });
 }
 
-function addTheme(themeValue: string, themeName: string) {
+function addTheme(themeValue, themeName) {
   const themeSpinner = ora(
     `Adding ${chalk.yellow(themeName)} mcoli-ui theme...`,
   ).start();
@@ -187,7 +187,7 @@ function addTheme(themeValue: string, themeName: string) {
   completeSpinner.succeed("mcoli-ui theme setup complete!");
 }
 
-function handleAdd(packageNames: string[]) {
+function handleAdd(packageNames) {
   const componentsJsonPath = join(process.cwd(), "components.json");
 
   if (!existsSync(componentsJsonPath)) {
