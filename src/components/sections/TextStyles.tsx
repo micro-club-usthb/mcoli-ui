@@ -6,7 +6,7 @@ function TextStyles() {
           Typography Scale
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          Precision-tracked fluid typography system.
+          Precision-tracked fluid typography system
         </p>
       </div>
 

@@ -26,7 +26,7 @@ export function Showcase() {
         <p className="paragraph-sm sm:paragraph-md md:paragraph-lg text-muted-foreground max-w-2xl mx-auto font-dm-sans px-2 sm:px-0">
           Every single semantic variable mapped. Change the theme in the
           navigation bar to see the entire grid adapt instantly with perfect
-          contrast ratios.
+          contrast ratios
         </p>
       </div>
 

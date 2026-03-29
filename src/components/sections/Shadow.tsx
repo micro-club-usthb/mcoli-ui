@@ -16,7 +16,7 @@ function Shadow() {
           Elevation & Shadows
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          Layer depth utilizing tailored box-shadow utilities.
+          Layer depth utilizing tailored box-shadow utilities
         </p>
       </div>
 

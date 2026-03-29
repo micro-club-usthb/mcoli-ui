@@ -197,7 +197,7 @@ function Colors() {
           Color Palette
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          The comprehensive color system powering the theme engine.
+          The comprehensive color system powering the theme engine
         </p>
       </div>
 

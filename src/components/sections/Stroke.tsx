@@ -13,7 +13,7 @@ function Stroke() {
           Stroke Widths
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          Border thickness scale for component boundaries.
+          Border thickness scale for component boundaries
         </p>
       </div>
 

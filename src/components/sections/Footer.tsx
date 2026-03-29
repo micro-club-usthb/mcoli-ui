@@ -13,20 +13,30 @@ const footerLinks = {
   resources: {
     title: "Resources",
     links: [
-      { label: "Changelog", href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CHANGELOG.md" },
-      { label: "Contributing", href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CONTRIBUTING.md" },
+      {
+        label: "Changelog",
+        href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CHANGELOG.md",
+      },
+      {
+        label: "Contributing",
+        href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CONTRIBUTING.md",
+      },
     ],
   },
   legal: {
     title: "Legal",
     links: [
-      { label: "License", href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/LICENSE" },
+      {
+        label: "License",
+        href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/LICENSE",
+      },
     ],
   },
 };
 
 function FooterLink({ href, label }: { href: string; label: string }) {
-  const isExternal = href.startsWith("http") || href.endsWith(".md") || href === "/LICENSE";
+  const isExternal =
+    href.startsWith("http") || href.endsWith(".md") || href === "/LICENSE";
 
   if (isExternal) {
     return (
@@ -42,7 +52,10 @@ function FooterLink({ href, label }: { href: string; label: string }) {
   }
 
   return (
-    <Link href={href} className="text-muted-foreground hover:text-foreground transition-colors text-sm">
+    <Link
+      href={href}
+      className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+    >
       {label}
     </Link>
   );
@@ -57,21 +70,30 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
+            <Link
+              href="/"
+              className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            >
               <MCLogo size={40} />
             </Link>
             <p className="text-sm text-muted-foreground">
-              Stop building from scratch. Elevate your UI with MicroClub DNA.
+              Stop building from scratch. Elevate your UI with MicroClub DNA
             </p>
           </div>
 
           {/* Links */}
           {Object.entries(footerLinks).map(([key, section]) => (
             <div key={key} className="flex flex-col gap-3">
-              <h3 className="font-semibold text-foreground text-sm">{section.title}</h3>
+              <h3 className="font-semibold text-foreground text-sm">
+                {section.title}
+              </h3>
               <div className="flex flex-col gap-2">
                 {section.links.map((link) => (
-                  <FooterLink key={link.href} href={link.href} label={link.label} />
+                  <FooterLink
+                    key={link.href}
+                    href={link.href}
+                    label={link.label}
+                  />
                 ))}
               </div>
             </div>
@@ -81,7 +103,7 @@ function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border/50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} MColi UI. All rights reserved.
+            © {currentYear} Mcoli UI. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
             Built by{" "}
