@@ -125,44 +125,44 @@ When adding a new item, you will create/edit these files:
 
 | Component            | Design State | Dev State |
 | -------------------- | ------------ | --------- |
-| `mc-button`          | Designed     | Developed |
-| `mc-input`           | Designed     | Developed |
-| `mc-textarea`        | Designed     | Pending   |
-| `mc-input-opt`       | Designed     | Pending   |
-| `mc-checkbox`        | Designed     | Pending   |
-| `mc-radio-group`     | Designed     | Pending   |
-| `mc-card`            | Designed     | Pending   |
-| `mc-select`          | Designed     | Pending   |
-| `mc-combobox`        | Designed     | Pending   |
-| `mc-switch`          | Designed     | Pending   |
-| `mc-navigation-menu` | Designed     | Pending   |
-| `mc-side-bar`        | Designed     | Pending   |
-| `mc-tabs`            | Designed     | Pending   |
-| `mc-breadcrumb`      | Designed     | Pending   |
-| `mc-pagination`      | Designed     | Pending   |
-| `mc-dialog`          | Pending      | Pending   |
-| `mc-alert-dialog`    | Pending      | Pending   |
-| `mc-alert`           | Pending      | Pending   |
-| `mc-sonner`          | Pending      | Pending   |
-| `mc-tooltip`         | Pending      | Pending   |
-| `mc-popover`         | Pending      | Pending   |
-| `mc-dropdown-menu`   | Pending      | Pending   |
-| `mc-context-menu`    | Pending      | Pending   |
-| `mc-data-table`      | Pending      | Pending   |
-| `mc-accordion`       | Pending      | Pending   |
-| `mc-collapsible`     | Pending      | Pending   |
-| `mc-separator`       | Pending      | Pending   |
-| `mc-progress`        | Pending      | Pending   |
-| `mc-calendar`        | Pending      | Pending   |
-| `mc-scrollarea`      | Pending      | Pending   |
-| `mc-skeleton`        | Pending      | Pending   |
-| `mc-badge`           | Pending      | Pending   |
-| `mc-tag`             | Pending      | Pending   |
-| `mc-avatar`          | Pending      | Pending   |
-| `mc-drawer`          | Pending      | Pending   |
-| `mc-hover-card`      | Pending      | Pending   |
-| `mc-slider`          | Pending      | Pending   |
-| `mc-carousel`        | Pending      | Pending   |
+| `mc-button`          | ✅           | ✅        |
+| `mc-input`           | ✅           | ✅        |
+| `mc-textarea`        | ✅           |           |
+| `mc-input-otp`       | ✅           |           |
+| `mc-checkbox`        | ✅           |           |
+| `mc-radio-group`     | ✅           |           |
+| `mc-card`            | ✅           |           |
+| `mc-select`          | ✅           |           |
+| `mc-combobox`        | ✅           |           |
+| `mc-switch`          | ✅           |           |
+| `mc-navigation-menu` | ✅           |           |
+| `mc-sidebar`         | ✅           |           |
+| `mc-tabs`            | ✅           |           |
+| `mc-breadcrumb`      | ✅           |           |
+| `mc-pagination`      | ✅           |           |
+| `mc-dialog`          |              |           |
+| `mc-alert-dialog`    |              |           |
+| `mc-alert`           |              |           |
+| `mc-sonner`          |              |           |
+| `mc-tooltip`         |              |           |
+| `mc-popover`         |              |           |
+| `mc-dropdown-menu`   |              |           |
+| `mc-context-menu`    |              |           |
+| `mc-data-table`      |              |           |
+| `mc-accordion`       |              |           |
+| `mc-collapsible`     |              |           |
+| `mc-separator`       |              |           |
+| `mc-progress`        |              |           |
+| `mc-calendar`        |              |           |
+| `mc-scrollarea`      |              |           |
+| `mc-skeleton`        |              |           |
+| `mc-badge`           |              |           |
+| `mc-tag`             |              |           |
+| `mc-avatar`          |              |           |
+| `mc-drawer`          |              |           |
+| `mc-hover-card`      |              |           |
+| `mc-slider`          |              |           |
+| `mc-carousel`        |              |           |
 
 # Important Notes
 
