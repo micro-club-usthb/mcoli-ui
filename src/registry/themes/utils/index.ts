@@ -5,7 +5,6 @@ import { gameDevTheme } from "../gameDevTheme";
 import { roboticsTheme } from "../roboticsTheme";
 import { itTheme } from "../itTheme";
 import { commonCSS, REGISTRY_URL, staticVars } from "@/registry/consts";
-import { commonColors } from "../common/colors";
 
 type ThemeConfig = {
   theme: {

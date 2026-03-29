@@ -64,4 +64,5 @@ chromatic.config.json
 components.json
 next-env.d.ts
 vitest.shims.d.ts
+
 *.ts.bak

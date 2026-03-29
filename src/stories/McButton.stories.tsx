@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 import { McButton } from '@/registry/ui/mc-button';
-import { fn } from '@vitest/spy';
 import { ArrowRight, Plus, Mail } from 'lucide-react';
 
 const meta: Meta<typeof McButton> = {
@@ -32,7 +31,6 @@ const meta: Meta<typeof McButton> = {
     destructive: false,
     isLoading: false,
     disabled: false,
-    onClick: fn(),
   },
 };
 

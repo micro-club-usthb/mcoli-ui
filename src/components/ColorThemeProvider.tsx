@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 export type ThemePalette =
   | "primary"
@@ -24,14 +24,10 @@ export function ColorThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [colorTheme, setColorThemeState] = useState<ThemePalette>("primary");
-
-  // Load the saved theme on mount
-  useEffect(() => {
-    const stored =
-      (localStorage.getItem("mcoli-ui-color-theme") as ThemePalette) || "primary";
-    setColorThemeState(stored);
-  }, []);
+  const [colorTheme, setColorThemeState] = useState<ThemePalette>(() => {
+    if (typeof window === "undefined") return "primary";
+    return (localStorage.getItem("mcoli-ui-color-theme") as ThemePalette) || "primary";
+  });
 
   const setColorTheme = (theme: ThemePalette) => {
     setColorThemeState(theme);

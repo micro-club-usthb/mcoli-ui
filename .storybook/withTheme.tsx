@@ -6,6 +6,7 @@ import { RootProvider } from "fumadocs-ui/provider/next";
 export const withTheme: Decorator = (Story, context) => {
   const { theme, mode } = context.globals;
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme || "primary");
     if (mode === "dark") {
