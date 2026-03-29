@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { McButton } from '@/registry/ui/mc-button';
-import { fn } from '@storybook/test';
+import { fn } from '@vitest/spy';
 import { ArrowRight, Plus, Mail } from 'lucide-react';
 
 const meta: Meta<typeof McButton> = {

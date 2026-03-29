@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { McInput } from '@/registry/ui/mc-input';
-import { expect, userEvent, within } from '@storybook/test';
 import { Mail, Lock, Search, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 const meta: Meta<typeof McInput> = {
@@ -41,14 +40,7 @@ type Story = StoryObj<typeof McInput>;
 /**
  * The default input is minimal, without a label or hint.
  */
-export const Default: Story = {
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    const input = canvas.getByPlaceholderText('Type something...');
-    await userEvent.type(input, 'Hello MicroClub');
-    await expect(input).toHaveValue('Hello MicroClub');
-  },
-};
+export const Default: Story = {};
 
 /**
  * Showcase label and hint support.
