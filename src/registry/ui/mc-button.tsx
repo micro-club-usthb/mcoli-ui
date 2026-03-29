@@ -1,75 +1,175 @@
 import * as React from "react";
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
+import { LinkIcon, Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:not-aria-[haspopup]:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-lg border border-transparent bg-clip-padding whitespace-nowrap transition-all outline-none select-none disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+        primary:
+          "bg-primary text-primary-foreground hover:bg-secondary-foreground hover:text-secondary active:bg-secondary-foreground active:text-secondary active:border-4 active:border-secondary disabled:bg-muted disabled:text-muted-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
-        ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
-        destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent active:text-accent-foreground active:border-4 active:border-secondary disabled:bg-muted disabled:text-muted-foreground",
+        tertiary:
+          "bg-primary-foreground text-primary hover:text-accent-foreground active:text-accent-foreground active:border-4 active:border-secondary disabled:bg-muted disabled:text-muted-foreground",
+        link: "bg-transparent p-0 text-foreground underline hover:text-accent-foreground active:text-accent-foreground disabled:text-muted-foreground",
       },
-
       size: {
-        default: "h-9 gap-2 px-4",
-        xs: "h-7 gap-1.5 rounded-md px-2.5 text-xs [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-8 gap-1.5 rounded-md px-3 text-[0.8rem] [&_svg:not([class*='size-'])]:size-3.5",
-        lg: "h-11 gap-2.5 px-6 text-base",
-        icon: "size-9",
-        "icon-xs": "size-7 rounded-md [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-8 rounded-md [&_svg:not([class*='size-'])]:size-3.5",
-        "icon-lg": "size-11",
+        sm: "px-3.5 py-2 text-sm font-medium",
+        md: "px-4 py-2.5 text-sm font-medium",
+        lg: "px-[1.125rem] py-2.5 text-base font-medium",
+        xl: "px-5 py-3 text-base font-medium",
+      },
+      icon: {
+        none: "",
+        leading: "gap-2",
+        trailing: "gap-2",
+        dot: "gap-2",
+        only: "",
+      },
+      destructive: {
+        true: "",
+        false: "",
       },
     },
+    compoundVariants: [
+      {
+        variant: "link",
+        className: "px-0 py-0",
+      },
+      {
+        icon: "only",
+        size: "sm",
+        className: "p-2",
+      },
+      {
+        icon: "only",
+        size: "md",
+        className: "p-2.5",
+      },
+      {
+        icon: "only",
+        size: "lg",
+        className: "p-3",
+      },
+      {
+        icon: "only",
+        size: "xl",
+        className: "p-3.5",
+      },
+      // Destructive overrides
+      {
+        destructive: true,
+        variant: "primary",
+        className:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/90 active:border-destructive/20",
+      },
+      {
+        destructive: true,
+        variant: "secondary",
+        className:
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 active:border-destructive/20",
+      },
+      {
+        destructive: true,
+        variant: "tertiary",
+        className:
+          "text-destructive hover:bg-destructive/10 active:border-destructive/20",
+      },
+      {
+        destructive: true,
+        variant: "link",
+        className:
+          "text-destructive hover:text-destructive/80 active:text-destructive/80",
+      },
+    ],
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: "primary",
+      size: "md",
+      icon: "none",
+      destructive: false,
     },
   },
 );
 
 export interface McButtonProps
-  extends ButtonPrimitive.Props,
-    VariantProps<typeof buttonVariants> {
-  leftIcon?: React.ReactNode;
-  rightIcon?: React.ReactNode;
+  extends Omit<ButtonPrimitive.Props, "icon">,
+    Omit<VariantProps<typeof buttonVariants>, "icon"> {
+  iconDefinition?: React.ReactNode;
+  icon?: "none" | "leading" | "trailing" | "dot" | "only";
+  isLoading?: boolean;
 }
 
 function McButton({
   className,
-  variant,
+  variant = "primary",
   size,
-  leftIcon,
-  rightIcon,
+  icon = "none",
+  destructive,
+  iconDefinition,
+  isLoading,
   children,
+  disabled,
   ...props
 }: McButtonProps) {
+  const isLink = variant === "link";
+  const effectiveIcon =
+    isLink && (icon === "leading" || icon === "trailing") && !iconDefinition ? (
+      <LinkIcon />
+    ) : (
+      iconDefinition
+    );
+
   return (
     <ButtonPrimitive
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      disabled={disabled || isLoading}
+      className={cn(
+        buttonVariants({
+          variant,
+          size,
+          icon: icon === "none" ? "none" : icon,
+          destructive,
+          className,
+        }),
+        isLoading && "gap-2",
+      )}
       {...props}
     >
-      {leftIcon && (
-        <span data-slot="left-icon" className="inline-flex shrink-0">
-          {leftIcon}
-        </span>
+      {isLoading ? (
+        <Loader2 className="size-4 animate-spin shrink-0" />
+      ) : (
+        <>
+          {icon === "dot" && (
+            <span
+              data-slot="dot"
+              className="size-2.5 shrink-0 rounded-full bg-current"
+            />
+          )}
+          {icon === "leading" && effectiveIcon && (
+            <span
+              data-slot="leading-icon"
+              className="size-4 shrink-0 [&_svg]:size-full"
+            >
+              {effectiveIcon}
+            </span>
+          )}
+        </>
       )}
-      {children}
-      {rightIcon && (
-        <span data-slot="right-icon" className="inline-flex shrink-0">
-          {rightIcon}
+
+      {icon !== "only" && children}
+      {icon === "only" && !isLoading && effectiveIcon}
+
+      {icon === "trailing" && !isLoading && effectiveIcon && (
+        <span
+          data-slot="trailing-icon"
+          className="size-4 shrink-0 [&_svg]:size-full"
+        >
+          {effectiveIcon}
         </span>
       )}
     </ButtonPrimitive>

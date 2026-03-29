@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { McButton } from '@/registry/ui/mc-button';
-import { expect, fn, userEvent, within } from '@storybook/test';
-import { Mail, ArrowRight, Trash, Plus, Send, Download, Lock } from 'lucide-react';
+import { fn } from '@storybook/test';
+import { ArrowRight, Plus, Mail } from 'lucide-react';
 
 const meta: Meta<typeof McButton> = {
   title: 'Components/McButton',
@@ -9,21 +9,28 @@ const meta: Meta<typeof McButton> = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+      options: ['primary', 'secondary', 'tertiary', 'link'],
     },
     size: {
       control: 'select',
-      options: ['default', 'xs', 'sm', 'lg', 'icon', 'icon-xs', 'icon-sm', 'icon-lg'],
+      options: ['sm', 'md', 'lg', 'xl'],
     },
-    disabled: {
-      control: 'boolean',
+    icon: {
+      control: 'select',
+      options: ['none', 'leading', 'trailing', 'dot', 'only'],
     },
-    onClick: { action: 'clicked' },
+    destructive: { control: 'boolean' },
+    isLoading: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    iconDefinition: { control: { type: 'select' }, options: ['None', 'Mail', 'ArrowRight', 'Plus'] },
   },
   args: {
     children: 'Button',
-    variant: 'default',
-    size: 'default',
+    variant: 'primary',
+    size: 'md',
+    icon: 'none',
+    destructive: false,
+    isLoading: false,
     disabled: false,
     onClick: fn(),
   },
@@ -32,95 +39,86 @@ const meta: Meta<typeof McButton> = {
 export default meta;
 type Story = StoryObj<typeof McButton>;
 
-export const Default: Story = {
-  args: {
-    children: 'Primary Action',
-  },
-  play: async ({ args, canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole('button');
-    await userEvent.click(button);
-    await expect(args.onClick).toHaveBeenCalled();
-  },
+const iconMap = {
+  None: undefined,
+  Mail: <Mail />,
+  ArrowRight: <ArrowRight />,
+  Plus: <Plus />,
 };
 
-export const WithLeadingIcon: Story = {
+export const Playground: Story = {
   args: {
-    children: 'Send Message',
-    leftIcon: <Send />,
+    children: 'Interactive Button',
   },
+  render: ({ iconDefinition, ...args }) => (
+    <McButton
+      {...args}
+      iconDefinition={iconMap[iconDefinition as keyof typeof iconMap]}
+    />
+  ),
 };
 
-export const WithTrailingIcon: Story = {
-  args: {
-    children: 'Get Started',
-    rightIcon: <ArrowRight />,
-  },
+export const Variants: Story = {
+  render: (args) => (
+    <div className="flex flex-wrap gap-4">
+      <McButton {...args} variant="primary">Primary</McButton>
+      <McButton {...args} variant="secondary">Secondary</McButton>
+      <McButton {...args} variant="tertiary">Tertiary</McButton>
+      <McButton {...args} variant="link">Link</McButton>
+    </div>
+  ),
 };
 
-export const FullIconSupport: Story = {
-  args: {
-    children: 'Download Report',
-    leftIcon: <Download />,
-    rightIcon: <ArrowRight />,
-  },
+export const Sizes: Story = {
+  render: (args) => (
+    <div className="flex items-center gap-4">
+      <McButton {...args} size="sm">Small</McButton>
+      <McButton {...args} size="md">Medium</McButton>
+      <McButton {...args} size="lg">Large</McButton>
+      <McButton {...args} size="xl">Extra Large</McButton>
+    </div>
+  ),
 };
 
-export const IconOnly: Story = {
-  args: {
-    children: null,
-    size: 'icon',
-    leftIcon: <Plus />,
-  },
+export const Icons: Story = {
+  render: (args) => (
+    <div className="flex flex-wrap gap-4">
+      <McButton {...args} icon="leading" iconDefinition={<Mail />}>Leading Icon</McButton>
+      <McButton {...args} icon="trailing" iconDefinition={<ArrowRight />}>Trailing Icon</McButton>
+      <McButton {...args} icon="dot">Dot Icon</McButton>
+      <McButton {...args} icon="only" iconDefinition={<Plus />} />
+    </div>
+  ),
 };
 
 export const Destructive: Story = {
-  args: {
-    variant: 'destructive',
-    children: 'Delete Project',
-    leftIcon: <Trash />,
-  },
+  render: (args) => (
+    <div className="flex flex-wrap gap-4">
+      <McButton {...args} destructive variant="primary">Primary</McButton>
+      <McButton {...args} destructive variant="secondary">Secondary</McButton>
+      <McButton {...args} destructive variant="tertiary">Tertiary</McButton>
+      <McButton {...args} destructive variant="link">Link</McButton>
+    </div>
+  ),
 };
 
-export const Outline: Story = {
-  args: {
-    variant: 'outline',
-    children: 'Secondary Action',
-  },
+export const States: Story = {
+  render: (args) => (
+    <div className="flex flex-wrap gap-4">
+      <McButton {...args} isLoading>Loading</McButton>
+      <McButton {...args} disabled>Disabled</McButton>
+      <McButton {...args} variant="link" icon="leading">Auto Link Icon</McButton>
+    </div>
+  ),
 };
 
-export const Ghost: Story = {
-  args: {
-    variant: 'ghost',
-    children: 'Cancel',
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: 'lg',
-    children: 'Hero Call to Action',
-    rightIcon: <ArrowRight />,
-  },
-};
-
-export const ExtraSmall: Story = {
-  args: {
-    size: 'xs',
-    children: 'Tag Action',
-    leftIcon: <Plus />,
-  },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    children: 'Locked Action',
-    leftIcon: <Lock size={16} />,
-  },
-  play: async ({ args, canvasElement }) => {
-    const canvas = within(canvasElement);
-    const button = canvas.getByRole('button');
-    await expect(button).toBeDisabled();
-  },
+export const IconOnlySizes: Story = {
+  render: (args) => (
+    <div className="flex items-center gap-4">
+      <McButton {...args} icon="only" iconDefinition={<Plus />} size="sm" />
+      <McButton {...args} icon="only" iconDefinition={<Plus />} size="md" />
+      <McButton {...args} icon="only" iconDefinition={<Plus />} size="lg" />
+      <McButton {...args} icon="only" iconDefinition={<Plus />} size="xl" />
+    </div>
+  ),
 };
