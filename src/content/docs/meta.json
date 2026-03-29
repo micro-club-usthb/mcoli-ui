@@ -1,0 +1,5 @@
+{
+  "title": "Documentation",
+  "description": "mcoli-ui documentation",
+  "pages": ["introduction", "installation", "theming", "components"]
+}

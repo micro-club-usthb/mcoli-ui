@@ -14,7 +14,7 @@ function BorderRadius() {
           Border Radius
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          Consistent curvature mapped to CSS variables.
+          Consistent curvature mapped to CSS variables
         </p>
       </div>
 

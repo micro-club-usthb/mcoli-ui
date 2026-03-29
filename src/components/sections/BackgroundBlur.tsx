@@ -14,7 +14,7 @@ function BackgroundBlur() {
           Background Blur
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          Frosted glassmorphism utilities for surfaces and overlays.
+          Frosted glassmorphism utilities for surfaces and overlays
         </p>
       </div>
 

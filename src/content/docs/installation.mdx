@@ -1,0 +1,91 @@
+---
+title: Installation
+description: Get started with mcoli-ui in minutes. Set up your project with our signature themes and component registry.
+---
+
+This guide walks you through setting up mcoli-ui in your project. Whether you're starting fresh or integrating with an existing codebase, we've got you covered.
+
+## Prerequisites
+
+Before installing mcoli-ui, ensure your project meets these requirements:
+
+- **React 18+** with **Next.js 14+** (App Router recommended)
+- **Tailwind CSS v4** installed and configured
+- **TypeScript 5.7+** for full type safety
+- **Node.js 18+** as your runtime
+
+## Step 1: Set Up shadcn/ui Base
+
+mcoli-ui builds on the shadcn/ui foundation. If you don't have it yet:
+
+- **New Projects**: Create with [shadcn/create](https://ui.shadcn.com/create)
+- **Existing Projects**: Add via [official installation](https://ui.shadcn.com/docs/installation)
+
+This establishes the core registry structure and configuration that mcoli-ui extends.
+
+## Step 2: Initialize mcoli-ui
+
+Run the initialization command to set up our exclusive theme system and registry:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mcoli-ui@latest init
+    ```
+  </Tab>
+</Tabs>
+
+The init command will:
+
+- Install required dependencies
+- Configure the mcoli-ui registry
+- Set up your chosen theme
+- Create `mcoli-ui.json` configuration file
+
+### Choosing Your Theme
+
+During initialization, select from our 5 signature themes:
+
+| Theme | Description |
+|-------|-------------|
+| **Primary** | Bold blue tones with professional depth |
+| **Secondary** | Rich purple for creative accents |
+| **Game Dev** | Vibrant cyan/pink for gaming projects |
+| **Robotics** | Industrial orange/steel for engineering |
+| **IT** | Clean teal for tech-focused applications |
+
+Each theme comes with carefully crafted color ramps, semantic tokens, and component presets.
+
+## Step 3: Add Your First Component
+
+Once initialized, add components to your project:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mcoli-ui@latest add mc-button
+    ```
+  </Tab>
+</Tabs>
+
+This injects the component source directly into `components/ui`, giving you full ownership and customization power.
+
+### Available Components
+
+Check what's available in the registry:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+    ```sh
+npx mcoli-ui@latest list
+    ```
+  </Tab>
+</Tabs>
+
+## Next Steps
+
+Now that you're set up:
+
+- Explore [Components](/docs/components) to browse available UI elements
+- Learn about [Theming](/docs/theming) to customize your theme
+- Check [GitHub](https://github.com/MicroClub-USTHB/mcoli-ui) for updates

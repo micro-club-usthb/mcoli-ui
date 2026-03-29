@@ -1,8 +1,19 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, Copy, Terminal, GitFork } from "lucide-react";
+import { ArrowRight, Terminal, GitFork, Check, Copy } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 function Hero() {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async () => {
+    await navigator.clipboard.writeText("npx mcoli-ui@latest init");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <section className="relative flex flex-col items-center justify-center w-full overflow-hidden text-center px-4 sm:px-6">
       {/* 2026 Era Ambient Glow - Reacts to Theme Primary Color */}
@@ -12,7 +23,7 @@ function Hero() {
       <h1 className="max-w-6xl font-extrabold header-md sm:header-lg md:header-xl xl:header-xl text-foreground mb-4 sm:mb-6 z-10">
         Ship professional themed UIs, <br className="hidden sm:block" />
         <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary to-primary/50">
-          faster than ever.
+          faster than ever
         </span>
       </h1>
 
@@ -20,7 +31,7 @@ function Hero() {
       <p className="max-w-2xl sm:max-w-3xl paragraph-md sm:paragraph-lg md:paragraph-xl text-muted-foreground mb-8 sm:mb-10 z-10 px-2 sm:px-0">
         Mcoli UI is a premium component registry and theming engine. Copy,
         paste, and customize accessible components directly into your
-        applications.
+        applications
       </p>
 
       {/* Call to Actions */}
@@ -59,8 +70,11 @@ function Hero() {
           <span className="text-primary font-semibold">npx</span>{" "}
           mcoli-ui@latest init
         </span>
-        <button className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-md hover:bg-accent self-end sm:self-auto">
-          <Copy className="size-4" />
+        <button
+          onClick={copyToClipboard}
+          className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-md hover:bg-accent self-end sm:self-auto"
+        >
+          {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
         </button>
       </div>
     </section>

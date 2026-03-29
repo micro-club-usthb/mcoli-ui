@@ -14,7 +14,7 @@ function Blur() {
           Element Blur
         </h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
-          Standard blur filter utilities for foreground elements.
+          Standard blur filter utilities for foreground elements
         </p>
       </div>
 
