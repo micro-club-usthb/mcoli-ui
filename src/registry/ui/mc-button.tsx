@@ -11,11 +11,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          "bg-primary text-primary-foreground hover:bg-secondary-foreground hover:text-secondary active:bg-secondary-foreground active:text-secondary active:border-4 active:border-secondary disabled:bg-muted disabled:text-muted-foreground",
+          "bg-primary text-primary-foreground hover:bg-secondary-foreground hover:text-secondary active:bg-secondary-foreground active:text-secondary active:ring-4 active:ring-secondary disabled:bg-muted disabled:text-muted-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent active:text-accent-foreground active:border-4 active:border-secondary disabled:bg-muted disabled:text-muted-foreground",
+          "bg-secondary text-secondary-foreground hover:bg-accent hover:text-accent-foreground active:bg-accent active:text-accent-foreground active:ring-4 active:ring-secondary disabled:bg-muted disabled:text-muted-foreground",
         tertiary:
-          "bg-primary-foreground text-primary hover:text-accent-foreground active:text-accent-foreground active:border-4 active:border-secondary disabled:bg-muted disabled:text-muted-foreground",
+          "bg-primary-foreground text-primary hover:text-accent-foreground active:text-accent-foreground active:ring-4 active:ring-secondary disabled:bg-muted disabled:text-muted-foreground",
         link: "bg-transparent p-0 text-foreground underline hover:text-accent-foreground active:text-accent-foreground disabled:text-muted-foreground",
       },
       size: {
@@ -66,19 +66,19 @@ const buttonVariants = cva(
         destructive: true,
         variant: "primary",
         className:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/90 active:border-destructive/20",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 active:bg-destructive/90 active:ring-4 active:ring-destructive/20",
       },
       {
         destructive: true,
         variant: "secondary",
         className:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 active:border-destructive/20",
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 active:ring-4 active:ring-destructive/20",
       },
       {
         destructive: true,
         variant: "tertiary",
         className:
-          "text-destructive hover:bg-destructive/10 active:border-destructive/20",
+          "text-destructive hover:bg-destructive/10 active:ring-4 active:ring-destructive/20",
       },
       {
         destructive: true,

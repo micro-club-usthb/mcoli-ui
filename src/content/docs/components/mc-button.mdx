@@ -64,7 +64,7 @@ Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
 import { McButton } from "@/components/ui/mc-button"
 
 export default function Example() {
-  return <McButton>Click me</McButton>
+  return <McButton variant="primary">Click me</McButton>
 }
 ```
 
@@ -73,11 +73,9 @@ export default function Example() {
 ### Variants
 
 ```tsx
-<McButton variant="default">Default</McButton>
+<McButton variant="primary">Primary</McButton>
 <McButton variant="secondary">Secondary</McButton>
-<McButton variant="destructive">Destructive</McButton>
-<McButton variant="outline">Outline</McButton>
-<McButton variant="ghost">Ghost</McButton>
+<McButton variant="tertiary">Tertiary</McButton>
 <McButton variant="link">Link</McButton>
 ```
 
@@ -85,47 +83,53 @@ export default function Example() {
 
 ```tsx
 <McButton size="sm">Small</McButton>
-<McButton size="default">Default</McButton>
+<McButton size="md">Medium</McButton>
 <McButton size="lg">Large</McButton>
+<McButton size="xl">Extra Large</McButton>
 ```
 
-### Icon Buttons
+### Icons Support
+
+The `mc-button` features a unified icon system using the `icon` and `iconDefinition` props.
 
 ```tsx
-import { ArrowRight } from "lucide-react"
+import { Mail, ArrowRight, Plus } from "lucide-react"
 
-<McButton size="icon-sm" variant="outline">
-  <ArrowRight />
+<McButton icon="leading" iconDefinition={<Mail />}>
+  Send Email
 </McButton>
-<McButton size="icon" variant="outline">
-  <ArrowRight />
+
+<McButton icon="trailing" iconDefinition={<ArrowRight />}>
+  Get Started
 </McButton>
-<McButton size="icon-lg" variant="outline">
-  <ArrowRight />
+
+<McButton icon="dot">
+  Status Online
+</McButton>
+
+<McButton icon="only" iconDefinition={<Plus />} />
+```
+
+### States
+
+Handle loading and destructive actions with dedicated boolean props.
+
+```tsx
+<McButton isLoading>Processing...</McButton>
+
+<McButton destructive variant="primary">
+  Delete Account
 </McButton>
 ```
 
-### With Icons
+### Link Variant
+
+The `link` variant automatically includes a `LinkIcon` when an icon mode is selected but no `iconDefinition` is provided.
 
 ```tsx
-import { ArrowRight } from "lucide-react"
-
-<McButton>
-  <ArrowRight />
-  Button with Icon
+<McButton variant="link" icon="leading">
+  View Documentation
 </McButton>
-<McButton variant="outline">
-  Button with Icon
-  <ArrowRight />
-</McButton>
-```
-
-### Composition (Polymorphic)
-
-Use the `render` prop to render the button as a different element or component:
-
-```tsx
-<McButton render={<a href="https://microclub.info">Visit MicroClub</a>} />
 ```
 
 ## API Reference
@@ -134,9 +138,13 @@ Use the `render` prop to render the button as a different element or component:
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `variant` | `"default" \| "secondary" \| "destructive" \| "outline" \| "ghost" \| "link"` | `"default"` | The visual style of the button |
-| `size` | `"default" \| "sm" \| "lg" \| "icon" \| "icon-sm" \| "icon-lg"` | `"default"` | The size of the button |
-| `render` | `ReactElement \| ((props: HTMLProps) => ReactElement)` | `undefined` | Allows you to replace the component's HTML element with a different tag, or compose it with another component |
+| `variant` | `"primary" \| "secondary" \| "tertiary" \| "link"` | `"primary"` | The visual style of the button |
+| `size` | `"sm" \| "md" \| "lg" \| "xl"` | `"md"` | The size of the button |
+| `icon` | `"none" \| "leading" \| "trailing" \| "dot" \| "only"` | `"none"` | The placement mode for icons |
+| `iconDefinition` | `ReactNode` | `undefined` | The icon to render (except for "dot" mode) |
+| `destructive` | `boolean` | `false` | Applies a destructive theme to the current variant |
+| `isLoading` | `boolean` | `false` | Shows a spinner and disables interactions |
+| `render` | `ReactElement \| ((props: HTMLProps) => ReactElement)` | `undefined` | Polymorphic render prop from Base UI |
 | `className` | `string` | `undefined` | Additional CSS classes |
 
-All other props from `@base-ui/react/button` are also supported.
+All other props from `@base-ui/react/button` are supported.
