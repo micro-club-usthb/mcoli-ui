@@ -3,7 +3,7 @@
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "../ui/mc-input-OTP"
+    } from "../ui/mc-input-otp"
 export default function McInputOtp() {
   return (  <div className="flex items-center justify-center min-h-screen w-full bg-background">
     <InputOTP maxLength={6}>
