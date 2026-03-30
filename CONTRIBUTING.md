@@ -6,6 +6,22 @@ This guide covers how to add a new registry item (component, hook, or theme) to 
 
 **At this stage, our focus is explicitly on implementing remaining planned registry items (components).** We ask that you prioritize these before proposing other features or architectural changes.
 
+## How to Run
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server (Next.js docs site)
+npm run dev
+
+# Run Storybook for component development
+npm run storybook
+
+# Build the registry (required before submitting PR)
+npm run build:registry
+```
+
 ## Choosing Your Path
 
 - **[Internal Contributors](#internal-contributors)**: You have push access to the repository.
