@@ -44,35 +44,35 @@ Example: `git switch -c component/mc-button`
 
 ### Step 3: Create the Registry Item
 
-Create your component file in `src/registry/ui/mc-<name>.tsx`.
+Create your component file in `packages/ui/registry/ui/mc-<name>.tsx`.
 
 - Prefix with `mc-` (e.g., `mc-button.tsx`)
 - Use `@base-ui/react` primitives for high-quality, accessible building blocks
 - Utilize Tailwind CSS v4 for styling
 
-Example file: [`src/registry/ui/mc-button.tsx`](src/registry/ui/mc-button.tsx)
+Example file: [`packages/ui/registry/ui/mc-button.tsx`](packages/ui/registry/ui/mc-button.tsx)
 
 ### Step 4: Register the Item
 
-Edit [`src/registry/registry-ui.ts`](src/registry/registry-ui.ts) and add your entry. This metadata allows the shadcn-based CLI to discover and distribute your code.
+Edit [`packages/ui/registry/registry-ui.ts`](packages/ui/registry/registry-ui.ts) and add your entry. This metadata allows the shadcn-based CLI to discover and distribute your code.
 
 ### Step 5: Create Demo
 
-Create a demo for the documentation in `src/registry/examples/mc-<name>-demo.tsx`.
+Create a demo for the documentation in `packages/ui/registry/examples/mc-<name>-demo.tsx`.
 
-Example file: [`src/registry/examples/mc-button-demo.tsx`](src/registry/examples/mc-button-demo.tsx)
+Example file: [`packages/ui/registry/examples/mc-button-demo.tsx`](packages/ui/registry/examples/mc-button-demo.tsx)
 
 ### Step 6: Create Storybook Story
 
-Create a story in `src/stories/Mc<Name>.stories.tsx` for visual testing and regression checks.
+Create a story in `packages/ui/stories/Mc<Name>.stories.tsx` for visual testing and regression checks.
 
-Example file: [`src/stories/McButton.stories.tsx`](src/stories/McButton.stories.tsx)
+Example file: [`packages/ui/stories/McButton.stories.tsx`](packages/ui/stories/McButton.stories.tsx)
 
 ### Step 7: Create Documentation
 
-Create an MDX file in `src/content/docs/components/mc-<name>.mdx` using Fumadocs components.
+Create an MDX file in `packages/ui/content/docs/components/mc-<name>.mdx` using Fumadocs components.
 
-Example file: [`src/content/docs/components/mc-button.mdx`](src/content/docs/components/mc-button.mdx)
+Example file: [`packages/ui/content/docs/components/mc-button.mdx`](packages/ui/content/docs/components/mc-button.mdx)
 
 ### Step 8: Build and Test
 
@@ -113,13 +113,13 @@ External contributors should follow the same technical steps but start with a fo
 
 When adding a new item, you will create/edit these files:
 
-| File                                                                                     | Purpose                       |
-| ---------------------------------------------------------------------------------------- | ----------------------------- |
-| [`src/registry/ui/mc-<name>.tsx`](src/registry/ui/mc-button.tsx)                         | The actual code to distribute |
-| [`src/registry/registry-ui.ts`](src/registry/registry-ui.ts)                             | Metadata for CLI discovery    |
-| [`src/registry/examples/mc-<name>-demo.tsx`](src/registry/examples/mc-button-demo.tsx)   | Live demo for documentation   |
-| [`src/stories/Mc<Name>.stories.tsx`](src/stories/McButton.stories.tsx)                   | Visual testing in Storybook   |
-| [`src/content/docs/components/mc-<name>.mdx`](src/content/docs/components/mc-button.mdx) | Markdown documentation        |
+| File                                                                                                   | Purpose                       |
+| ------------------------------------------------------------------------------------------------------ | ----------------------------- |
+| [`packages/ui/registry/ui/mc-<name>.tsx`](packages/ui/registry/ui/mc-button.tsx)                       | The actual code to distribute |
+| [`packages/ui/registry/registry-ui.ts`](packages/ui/registry/registry-ui.ts)                           | Metadata for CLI discovery    |
+| [`packages/ui/registry/examples/mc-<name>-demo.tsx`](packages/ui/registry/examples/mc-button-demo.tsx) | Live demo for documentation   |
+| [`packages/ui/stories/Mc<Name>.stories.tsx`](packages/ui/stories/McButton.stories.tsx)                 | Visual testing in Storybook   |
+| [`packages/ui/content/docs/components/mc-<name>.mdx`](packages/ui/content/docs/components/mc-button.mdx)| Markdown documentation        |
 
 ### Planned Components
 
