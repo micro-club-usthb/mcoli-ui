@@ -1,6 +1,6 @@
 {
-  "name": "mcoli-ui-cli",
-  "version": "0.1.0",
+  "name": "mcoli-ui",
+  "version": "0.2.0",
   "license": "MIT",
   "type": "module",
   "description": "CLI tool for mcoli-ui",
@@ -19,6 +19,6 @@
     "nanospinner": "^1.2.2"
   },
   "peerDependencies": {
-    "mcoli-ui": "*"
+    "@mcoli/ui": "*"
   }
 }
