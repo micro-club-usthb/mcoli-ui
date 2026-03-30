@@ -74,6 +74,10 @@ Figma is where designers create the visual designs. Here's how to translate desi
 - Check the **Code** tab in the Inspector for CSS
 - **Test exact values in Storybook** do not guess!
 
+**Color Reference:**
+
+When you see a color in Figma (e.g., "Muted Foreground"), check the theming docs at https://mcoli-ui.microclub.info/docs/theming to find the matching Tailwind class. For example, "Muted Foreground" becomes `text-muted-foreground`, "Primary" becomes `bg-primary`, etc.
+
 **Resources:**
 
 - Figma for Developers: https://www.arbazmurme.info/blog/figma-for-developers-a-realworld-example-of-turning-design-into-code
