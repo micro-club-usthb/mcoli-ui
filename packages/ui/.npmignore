@@ -1,17 +1,13 @@
-# Documentation
-docs/
-src/
+# Documentation (Next.js app for docs site - not part of the library)
+app/
+content/
 stories/
 
 # Configuration files
 next.config.*
 tsconfig*
-tailwind.config.*
 postcss.config.*
-vitest.config.*
-playwright.config.*
 eslint.config.*
-.prettierrc*
 
 # Git
 .git/
@@ -19,7 +15,6 @@ eslint.config.*
 
 # Development
 .env*
-node_modules/
 
 # Build outputs
 .next/
@@ -27,6 +22,7 @@ node_modules/
 dist/
 build/
 .turbo/
+.node/
 
 # Testing
 coverage/
@@ -39,30 +35,29 @@ coverage/
 *.swp
 *.swo
 
-# Registry and public assets (for the website)
-public/
+# Registry build outputs (regenerated on install)
 __registry__/
 
-# Scripts
+# Scripts (internal build scripts)
 scripts/
-
-# Content
-content/
 
 # Storybook
 .storybook/
 storybook-static/
 build-storybook.log
 debug-storybook.log
+chromatic.config.json
 
-# Fumadocs / MDX
+# Fumadocs / MDX (docs-specific)
 .source/
 source.config.ts
+components.json
 
 # Other build artifacts
-chromatic.config.json
-components.json
 next-env.d.ts
 vitest.shims.d.ts
+
+# Package-specific
+package-lock.json
 
 *.ts.bak
