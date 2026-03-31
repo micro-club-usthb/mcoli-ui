@@ -3,6 +3,124 @@ title: MC Checkbox
 description: A control that allows the user to toggle between checked and not checked.
 ---
 
-<Callout type="warn">
-  This component is coming soon. Check our [contributing guide](/docs/introduction#contributing) for more information.
-</Callout>
+## Overview
+
+The `mc-checkbox` is a core form control of the MicroClub UI library. Built on the **@base-ui/react** checkbox primitive, it provides accessible state handling and keyboard interactions while keeping MicroClub styling and theme tokens.
+
+As part of the MicroClub library, this component is designed for **instant deployment into your codebase**, with full control over behavior and appearance.
+
+## Preview
+
+<Tabs items={["preview", "code"]}>
+  <Tab>
+    <ComponentPreview name="mc-checkbox-demo" />
+  </Tab>
+  <Tab>
+    <ComponentSource name="mc-checkbox-demo" />
+  </Tab>
+</Tabs>
+
+## Add to Your Project
+
+Deploy `mc-checkbox` directly to your `components/ui` directory:
+
+<Tabs items={["npm", "pnpm", "yarn", "bun"]}>
+  <Tab>
+  ```sh 
+  npx mcoli-ui@latest add mc-checkbox 
+  ```
+  </Tab>
+</Tabs>
+
+### Manual Setup
+
+If you prefer manual control:
+
+<Steps>
+
+<Step>Install the core dependencies</Step>
+
+<Tabs items={["npm", "pnpm", "yarn", "bun"]}>
+  <Tab>
+    ```sh
+    npm install clsx tailwind-merge @base-ui/react
+    class-variance-authority lucide-react 
+    ```
+  </Tab>
+</Tabs>
+
+<Step>Copy the source code</Step>
+
+<ComponentSource name="mc-checkbox" />
+
+<Step>Adjust import paths</Step>
+
+Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
+
+</Steps>
+
+## Usage
+
+```tsx
+import { McCheckbox } from "@/components/ui/mc-checkbox";
+
+export default function Example() {
+  return <McCheckbox text="Remember me" />;
+}
+```
+
+## Examples
+
+### Sizes
+
+```tsx
+<McCheckbox size="sm" text="Small checkbox" />
+<McCheckbox size="md" text="Medium checkbox" />
+```
+
+### Intents
+
+```tsx
+<McCheckbox intent="default" text="Default" />
+<McCheckbox intent="primary" text="Primary" />
+<McCheckbox intent="secondary" text="Secondary" />
+<McCheckbox intent="game-dev" text="Game Dev" />
+<McCheckbox intent="robotics" text="Robotics" />
+<McCheckbox intent="it" text="IT" />
+```
+
+### With Support Text
+
+```tsx
+<McCheckbox
+  text="Remember me"
+  supportText="Save my login details for next time."
+/>
+```
+
+### States
+
+```tsx
+<McCheckbox text="Unchecked" checked={false} />
+<McCheckbox text="Checked" checked />
+<McCheckbox text="Disabled" disabled />
+<McCheckbox text="Disabled checked" checked disabled />
+```
+
+## API Reference
+
+### Props
+
+| Prop             | Type                                                                        | Default     | Description                                       |
+| ---------------- | --------------------------------------------------------------------------- | ----------- | ------------------------------------------------- |
+| `size`           | `"sm" \| "md"`                                                              | `"md"`      | The checkbox size                                 |
+| `intent`         | `"default" \| "primary" \| "secondary" \| "game-dev" \| "robotics" \| "it"` | `"default"` | Visual color intent                               |
+| `text`           | `string`                                                                    | `undefined` | Main label displayed next to the checkbox         |
+| `supportText`    | `string`                                                                    | `undefined` | Secondary helper text under the main label        |
+| `checked`        | `boolean`                                                                   | `undefined` | Controlled checked state                          |
+| `defaultChecked` | `boolean`                                                                   | `undefined` | Uncontrolled initial checked state                |
+| `disabled`       | `boolean`                                                                   | `false`     | Disables interactions and applies disabled styles |
+| `className`      | `string`                                                                    | `undefined` | Additional CSS classes for the checkbox root      |
+| `render`         | `ReactElement \| ((props: HTMLProps) => ReactElement)`                      | `undefined` | Polymorphic render prop from Base UI              |
+
+All other props from `@base-ui/react/checkbox` are supported.
