@@ -104,7 +104,13 @@ git pull upstream dev
 git checkout -c component/mc-checkbox
 ```
 
-### Step 3: Implement the Component
+### Step 4: Copy Environment File
+
+```bash
+cp .env.example .env
+```
+
+### Step 5: Implement the Component
 
 A starter file exists at: `packages/ui/registry/ui/mc-checkbox.tsx`
 
@@ -123,7 +129,7 @@ This uses `@base-ui/react/checkbox`. Adapt it to match the MC Design System.
 - Make it accessible (ARIA attributes)
 - Match Figma design exactly (colors, spacing, typography)
 
-### Step 4: Register the Component
+### Step 6: Register the Component
 
 Edit: `packages/ui/registry/registry-ui.ts`
 
@@ -138,13 +144,13 @@ Edit: `packages/ui/registry/registry-ui.ts`
 },
 ```
 
-### Step 5: Create Demo
+### Step 7: Create Demo
 
 Create: `packages/ui/registry/examples/mc-checkbox-demo.tsx`
 
 Shows the component in action with different configurations.
 
-### Step 6: Create StoryBook Story
+### Step 8: Create StoryBook Story
 
 Create: `packages/ui/stories/McCheckbox.stories.tsx`
 
@@ -156,13 +162,13 @@ Create stories for:
 - Checked/unchecked/indeterminate states
 - **ALL 5 themes in light/dark modes** — test every combination!
 
-### Step 7: Create Documentation
+### Step 9: Create Documentation
 
 Create: `packages/ui/content/docs/components/mc-checkbox.mdx`
 
 Document props, variants, and usage examples.
 
-### Step 8: Test & Build
+### Step 10: Test & Build
 
 ```bash
 # Run Storybook to visually test — VERIFY ALL THEMES
@@ -174,7 +180,13 @@ npm run build:registry
 
 **CRITICAL: Test your component in Storybook for all themes before submitting!**
 
-### Step 9: Submit PR
+### Step 11: Add to Registry Examples
+
+Edit: `packages/ui/registry/registry-examples.ts`
+
+Add your demo to the `examples` array to link it with the registry.
+
+### Step 12: Submit PR
 
 ```bash
 git add .
@@ -192,6 +204,7 @@ Create a PR targeting `dev` and link issue #6.
 | ----------------------------------------------------- | ------------------- |
 | `packages/ui/registry/ui/mc-checkbox.tsx`             | Main component code |
 | `packages/ui/registry/registry-ui.ts`                 | Registry metadata   |
+| `packages/ui/registry/registry-examples.ts`           | Links demo to registry |
 | `packages/ui/registry/examples/mc-checkbox-demo.tsx`  | Live demo           |
 | `packages/ui/stories/McCheckbox.stories.tsx`          | StoryBook stories   |
 | `packages/ui/content/docs/components/mc-checkbox.mdx` | Documentation       |
