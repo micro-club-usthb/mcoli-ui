@@ -1,8 +1,170 @@
 ---
 title: MC Input OTP
-description: A secure one-time password input component.
+description: A one-time password input component with grouped slots and separator support.
 ---
 
-<Callout type="warn">
-  This component is coming soon. Check our [contributing guide](/docs/introduction#contributing) for more information.
-</Callout>
+## Overview
+
+The `mc-input-otp` is a composable OTP input component for the MicroClub UI library. Built on top of the **input-otp** primitive, it provides accessible, keyboard-friendly one-time password inputs with MicroClub's signature styling via **Tailwind CSS v4**.
+
+As part of the MicroClub library, this component is designed for **instant deployment into your codebase**, giving you full ownership of its look and behavior.
+
+## Preview
+
+<Tabs items={['preview', 'code']}>
+  <Tab>
+    <ComponentPreview name='mc-input-otp-demo'/>
+  </Tab>
+  <Tab>
+    <ComponentSource name='mc-input-otp-demo' />
+  </Tab>
+</Tabs>
+
+## Add to Your Project
+
+Deploy the `mc-input-otp` directly to your `components/ui` directory:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+```sh
+npx mcoli-ui@latest add mc-input-otp
+```
+  </Tab>
+</Tabs>
+
+### Manual Setup
+
+If you prefer manual control:
+
+<Steps>
+<Step>Install the core dependencies</Step>
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>
+```sh
+npm install input-otp clsx tailwind-merge lucide-react
+```
+  </Tab>
+</Tabs>
+
+<Step>Copy the source code</Step>
+<ComponentSource name='mc-input-otp' />
+
+<Step>Adjust import paths</Step>
+Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
+</Steps>
+
+## Usage
+```tsx
+import {
+  InputOtp,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/mc-input-otp"
+
+export default function Example() {
+  return (
+    <InputOtp maxLength={6}>
+      <InputOTPGroup>
+        <InputOTPSlot index={0} />
+        <InputOTPSlot index={1} />
+        <InputOTPSlot index={2} />
+      </InputOTPGroup>
+      <InputOTPSeparator />
+      <InputOTPGroup>
+        <InputOTPSlot index={3} />
+        <InputOTPSlot index={4} />
+        <InputOTPSlot index={5} />
+      </InputOTPGroup>
+    </InputOtp>
+  )
+}
+```
+
+## Examples
+
+### With Separator
+
+The `InputOTPSeparator` renders a minus icon between groups for visual clarity.
+```tsx
+<InputOtp maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOtp>
+```
+
+### Without Separator
+```tsx
+<InputOtp maxLength={4}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+    <InputOTPSlot index={3} />
+  </InputOTPGroup>
+</InputOtp>
+```
+
+### Custom Length
+```tsx
+<InputOtp maxLength={8}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+    <InputOTPSlot index={6} />
+    <InputOTPSlot index={7} />
+  </InputOTPGroup>
+</InputOtp>
+```
+
+## API Reference
+
+### InputOtp
+
+The root component that manages OTP input state.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `maxLength` | `number` | — | **Required.** Total number of OTP digits |
+| `containerClassName` | `string` | `undefined` | Additional CSS classes for the outer container |
+| `className` | `string` | `undefined` | Additional CSS classes for the input element |
+
+All other props from the `input-otp` `OTPInput` primitive are supported.
+
+### InputOTPGroup
+
+A wrapper that groups a set of `InputOTPSlot` components together.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | `undefined` | Additional CSS classes |
+
+### InputOTPSlot
+
+An individual character slot within a group.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `index` | `number` | — | **Required.** The position of this slot in the OTP sequence |
+| `className` | `string` | `undefined` | Additional CSS classes |
+
+### InputOTPSeparator
+
+A visual divider rendered between `InputOTPGroup` components. Renders a `MinusIcon` by default.
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `...props` | `React.ComponentProps<"div">` | — | All standard div props are supported |
