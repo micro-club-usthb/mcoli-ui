@@ -4,7 +4,7 @@ import { OTPInput, OTPInputContext } from "input-otp"
 import { cn } from "@/lib/utils"
 import { MinusIcon } from "lucide-react"
 
-function mcInputOtp({
+ function InputOtp({
   className,
   containerClassName,
   ...props
@@ -81,4 +81,4 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
   )
 }
 
-export { InputOTP, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
+export { InputOtp, InputOTPGroup, InputOTPSlot, InputOTPSeparator }
