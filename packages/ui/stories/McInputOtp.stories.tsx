@@ -1,21 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/nextjs-vite';
-import { InputOtp, InputOTPGroup, InputOTPSeparator, InputOTPSlot } 
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { McInputOtp, InputOTPGroup, InputOTPSeparator, InputOTPSlot } 
   from '@/registry/ui/mc-input-otp';
 
-const meta: Meta<typeof InputOtp> = {
-  title: 'Components/InputOtp',
-  component: InputOtp,
+const meta: Meta<typeof McInputOtp> = {
+  title: 'Components/McInputOtp',
+  component: McInputOtp,
   argTypes: {},
   args: {},
 };
 
 export default meta;
-type Story = StoryObj<typeof InputOtp>;
+type Story = StoryObj<typeof McInputOtp>;
 
 export const Playground: Story = {
   render: () => (
     <div className="flex flex-col items-center gap-2 justify-center min-h-screen w-full bg-background">
-      <InputOtp maxLength={6}>
+      <McInputOtp maxLength={6}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />
           <InputOTPSlot index={1} />
@@ -27,9 +27,9 @@ export const Playground: Story = {
           <InputOTPSlot index={4} />
           <InputOTPSlot index={5} />
         </InputOTPGroup>
-      </InputOtp>
+      </McInputOtp>
 
-      <InputOtp maxLength={6}>
+      <McInputOtp maxLength={6}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />
           <InputOTPSlot index={1} />
@@ -38,9 +38,9 @@ export const Playground: Story = {
           <InputOTPSlot index={4} />
           <InputOTPSlot index={5} />
         </InputOTPGroup>
-      </InputOtp>
+      </McInputOtp>
 
-       <InputOtp maxLength={6}>
+       <McInputOtp maxLength={6}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />
           <InputOTPSlot index={1} />
@@ -55,7 +55,7 @@ export const Playground: Story = {
           <InputOTPSlot index={4} />
           <InputOTPSlot index={5} />
         </InputOTPGroup>
-      </InputOtp>
+      </McInputOtp>
 
 
     </div>
