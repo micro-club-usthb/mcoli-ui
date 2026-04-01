@@ -2176,10 +2176,10 @@
     },
     {
       "name": "mc-input-otp",
-      "title": "MicroClub Input otp",
+      "title": "MicroClub Input OTP",
       "description": "An OTP input component for MicroClub UI",
       "dependencies": [
-        "@base-ui/react"
+        "input-otp"
       ],
       "files": [
         {
