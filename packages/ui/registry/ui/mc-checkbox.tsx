@@ -22,22 +22,6 @@ const checkboxVariants =cva(
   }
 )
 
-const colorVariants = cva("", {
-  variants: {
-    intent: {
-      default: "border-muted-foreground text-muted-foreground hover:border-primary data-checked:border-primary data-checked:text-primary",
-      primary: "border-primary text-primary hover:border-primary data-checked:border-primary data-checked:text-primary",
-      secondary: "border-secondary text-secondary hover:border-secondary data-checked:border-secondary data-checked:text-secondary",
-      "game-dev": "border-primary text-primary hover:border-primary data-checked:border-primary data-checked:text-primary",
-      robotics: "border-primary text-primary hover:border-primary data-checked:border-primary data-checked:text-primary",
-      it: "border-primary text-primary hover:border-primary data-checked:border-primary data-checked:text-primary"
-    }
-  },
-  defaultVariants: {
-    intent: "default"
-  }
-})
-
 const labelTextVariants = cva("font-semibold", {
   variants: {
     size: {
@@ -72,7 +56,6 @@ export interface McCheckboxProps
     VariantProps<typeof checkboxVariants> {
       text?: string
       supportText?: string
-      intent?: "default" | "primary" | "secondary" | "game-dev" | "robotics" | "it"
     }
 
 
@@ -81,7 +64,6 @@ function McCheckbox({
   size,
   text,
   supportText,
-  intent,
   id,
   disabled,
   ...restProps
@@ -106,7 +88,7 @@ function McCheckbox({
         data-slot="checkbox"
         className={cn(
           checkboxVariants({ size }),
-          colorVariants({ intent }),
+          "border-muted-foreground text-muted-foreground hover:border-primary data-checked:border-primary data-checked:text-primary",
           "relative rounded-[4px] bg-background outline-none transition-colors",
           "focus-visible:ring-3 focus-visible:ring-ring/50",
           "active:ring-4 active:ring-ring/50",
