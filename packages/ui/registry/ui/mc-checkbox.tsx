@@ -11,8 +11,8 @@ const checkboxVariants =cva(
   {
     variants: {
       size: {
-        sm: "h-4 w-4",
-        md: "h-5 w-5"
+        sm: "size-4 [&_[data-slot=checkbox-indicator]>svg]:size-3",
+        md: "size-5 [&_[data-slot=checkbox-indicator]>svg]:size-4"
       },
     }
     ,
@@ -35,18 +35,6 @@ const colorVariants = cva("", {
   },
   defaultVariants: {
     intent: "default"
-  }
-})
-
-const indicatorVariants = cva("absolute inset-0 grid place-items-center text-current opacity-100 transition-none", {
-  variants: {
-    size: {
-      sm: "[&>svg]:h-3 [&>svg]:w-3",
-      md: "[&>svg]:h-3.5 [&>svg]:w-3.5"
-    }
-  },
-  defaultVariants: {
-    size: "md"
   }
 })
 
@@ -132,10 +120,11 @@ function McCheckbox({
       >
         <CheckboxPrimitive.Indicator
           data-slot="checkbox-indicator"
-          className={indicatorVariants({ size })}
+          className="absolute inset-0 grid place-items-center text-current opacity-100 transition-none"
         >
-          <CheckIcon />
+          <CheckIcon className="translate-x-[0.5px] translate-y-[0.5px]" />
         </CheckboxPrimitive.Indicator>
+
       </CheckboxPrimitive.Root>
 
       {(text || helperText) && (
