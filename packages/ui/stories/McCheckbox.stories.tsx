@@ -10,10 +10,6 @@ const meta: Meta<typeof McCheckbox> = {
       control: "select",
       options: ["sm", "md"],
     },
-    intent: {
-      control: "select",
-      options: ["default", "primary", "secondary", "game-dev", "robotics", "it"],
-    },
     disabled: { control: "boolean" },
     defaultChecked: { control: "boolean" },
     checked: {
@@ -25,7 +21,6 @@ const meta: Meta<typeof McCheckbox> = {
   },
   args: {
     size: "md",
-    intent: "default",
     text: "Remember me",
     supportText: "",
     disabled: false,
