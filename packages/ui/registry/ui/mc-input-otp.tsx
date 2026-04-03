@@ -55,7 +55,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "relative bg-secondary/50  focus:ring-2  border-input flex size-8 items-center justify-center border-y border-r  text-sm transition-all outline-none first:rounded-l-sm first:border-l last:rounded-r-sm aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:ring-2 data-[active=true]:ring-ring/90 data-[active=true]:aria-invalid:border-destructive data-[active=true]:aria-invalid:ring-destructive/20 dark:bg-input/30 dark:data-[active=true]:aria-invalid:ring-destructive/40",
+        "relative  bg-input focus:ring-2  border-border flex size-10 items-center justify-center border-y border-r  text-sm transition-all outline-none first:rounded-l-sm first:border-l last:rounded-s-2xl aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:ring-2 data-[active=true]:ring-ring/90 data-[active=true]:aria-invalid:border-destructive data-[active=true]:aria-invalid:ring-destructive/20 dark:bg-input/30 dark:data-[active=true]:aria-invalid:ring-destructive/40",
         className
       )}
       {...props}
@@ -78,7 +78,7 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
       role="separator"
       {...props}
     >
-      <MinusIcon strokeWidth={1.25} />
+      <MinusIcon strokeWidth={1.25} className=" text-muted-foreground" />
     </div>
   )
 }
