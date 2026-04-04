@@ -1,13 +1,11 @@
 <p align="center">
-  <img src="./public/logo-light.svg" alt="mcoli-ui light" width="360" style="margin-right: 32px;" />
-  <img src="./public/logo-dark.svg" alt="mcoli-ui dark" width="360" />
+  <img src="./public/banner.svg" alt="mcoli-ui dark" width="1000" />
 </p>
 
 <p align="center">
-  <b>Stop building from scratch. Elevate your UI with MicroClub DNA.</b>
-</p>
-
-<p align="center">
+  <a href="https://www.npmjs.com/package/mcoli-ui">
+    <img src="https://img.shields.io/npm/dw/mcoli-ui" alt="npm downloads" />
+  </a>
   <a href="https://github.com/MicroClub-USTHB/mcoli-ui/stargazers">
     <img src="https://img.shields.io/github/stars/MicroClub-USTHB/mcoli-ui?style=flat" alt="stars" />
   </a>
@@ -21,7 +19,7 @@
 
 ---
 
-## Build Faster. Design Better.
+## Build Faster
 
 **mcoli-ui** is the premier React component library that brings professional-grade UI components with a bold **MicroClub DNA** to developers everywhere. We’ve combined world-class design standards with an elite visual identity to help you build stunning web applications in record time.
 
@@ -32,7 +30,7 @@ Stop fighting with generic components. **Infuse your project with signature UI.*
 - **Elite Visual Identity**: 5 custom-engineered themes (Primary, Secondary, Game Dev, Robotics, IT) infused with our signature DNA.
 - **Instant Deployment**: Inject high-performance components directly into your workspace with a single command.
 - **Rock-Solid Accessibility**: Built on top of **@base-ui/react** for world-class accessible primitives and behavior.
-- **Peak Performance**: Optimized for the future with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript 6**.
+- **Peak Performance**: Optimized for the future with **Next.js 16**, **Tailwind CSS v4**, and **TypeScript**.
 - **Ultimate Customization**: Your code, your vision. Since components are copied directly to your project, you have 100% control.
 
 ## Quick Start
@@ -78,7 +76,7 @@ mcoli-ui is more than just a registry; it’s a **Professional Component Library
 <div align="center">
   <img src="https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
   <img src="https://img.shields.io/badge/Tailwind_CSS_v4-38BDF8?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-  <img src="https://img.shields.io/badge/TypeScript_6-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
   <img src="https://img.shields.io/badge/Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white" alt="Storybook" />
 </div>
 
