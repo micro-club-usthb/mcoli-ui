@@ -2188,6 +2188,21 @@
         }
       ],
       "type": "registry:component"
+    },
+    {
+      "name": "mc-checkbox",
+      "title": "MicroClub Checkbox",
+      "description": "A checkbox component for MicroClub UI",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "files": [
+        {
+          "path": "registry/ui/mc-checkbox.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "type": "registry:component"
     }
   ]
 }
