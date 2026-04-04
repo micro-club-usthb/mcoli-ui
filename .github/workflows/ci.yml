@@ -21,13 +21,17 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
-      - run: npm run lint
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run lint
 
   typecheck:
     name: Type Check
@@ -36,13 +40,17 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
-      - run: npm run typecheck
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run typecheck
 
   build:
     name: Build
@@ -51,13 +59,17 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          cache: pnpm
 
-      - run: npm ci
-      - run: npm run build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
 
   chromatic:
     name: Chromatic
@@ -82,16 +94,21 @@ jobs:
               - '**/storybook/**'
 
       - if: steps.filter.outputs.changed == 'true'
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - if: steps.filter.outputs.changed == 'true'
         uses: actions/setup-node@v6
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
+          cache: pnpm
 
       - if: steps.filter.outputs.changed == 'true'
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - if: steps.filter.outputs.changed == 'true'
-        run: npm run build-storybook
+        run: pnpm run build-storybook
 
       - if: steps.filter.outputs.changed == 'true'
         name: Publish to Chromatic
