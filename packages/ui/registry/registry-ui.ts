@@ -14,4 +14,17 @@ export const ui: Registry['items'] = [
     ],
     dependencies: ['@base-ui/react'],
   },
+  {
+    name: 'mc-checkbox',
+    type: 'registry:component',
+    title: 'MicroClub Checkbox',
+    description: 'A checkbox component for MicroClub UI',
+    files: [
+      {
+        path: 'ui/mc-checkbox.tsx',
+        type: 'registry:component',
+      }
+    ],
+    dependencies: ['@base-ui/react'],
+  }
 ];
