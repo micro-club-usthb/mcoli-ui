@@ -1,4 +1,5 @@
 import type { Registry } from "shadcn/schema";
+import { REGISTRY_URL } from "./consts/index";
 
 export const examples: Registry["items"] = [
   {
@@ -12,7 +13,7 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    registryDependencies: ["https://mcoli-ui.microclub.info/r/mc-button.json"],
+    registryDependencies: [`${REGISTRY_URL}/r/mc-button.json`],
   },
   {
     name: "mc-checkbox-demo",
@@ -25,6 +26,6 @@ export const examples: Registry["items"] = [
         type: "registry:example",
       },
     ],
-    registryDependencies: ["https://mcoli-ui.microclub.info/r/mc-checkbox.json"],
+    registryDependencies: [`${REGISTRY_URL}/r/mc-checkbox.json`],
   },
 ];
