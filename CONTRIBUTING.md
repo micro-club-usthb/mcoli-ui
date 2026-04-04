@@ -10,19 +10,19 @@ This guide covers how to add a new registry item (component, hook, or theme) to 
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Copy environment variables
 cp packages/ui/.env.example packages/ui/.env
 
 # Run development server (Next.js docs site)
-npm run dev
+pnpm run dev
 
 # Run Storybook for component development
-npm run storybook
+pnpm run storybook
 
 # Build the registry (required before submitting PR)
-npm run build:registry
+pnpm run build:registry
 ```
 
 ## Choosing Your Path
@@ -42,7 +42,7 @@ If you have push access to the repository, follow these steps.
 2. Create a branch from `dev` (naming: `component/mc-<name>`)
 3. Implement the item (e.g., component using `@base-ui/react` primitives)
 4. Create stories, examples, and documentation
-5. Test with Storybook and verify registry build (`npm run build:registry`)
+5. Test with Storybook and verify registry build (`pnpm run build:registry`)
 6. Create a pull request targeting `dev`
 
 ## Step-by-Step
@@ -110,10 +110,10 @@ Then build and test:
 
 ```bash
 # Build the registry metadata (registry.json)
-npm run build:registry
+pnpm run build:registry
 
 # Run storybook for visual verification
-npm run storybook
+pnpm run storybook
 ```
 
 ### Step 9: Create a Pull Request
@@ -204,4 +204,4 @@ When adding a new item, you will create/edit these files:
 - **Prefix Everything**: All registry items MUST use the `mc-` prefix.
 - **Base UI**: Use `@base-ui/react` for underlying logic to ensure accessibility.
 - **Themes and Modes**: Every item must be tested in all 5 themes in both light and dark modes.
-- **Build Verification**: Ensure `npm run build:registry` passes before submitting.
+- **Build Verification**: Ensure `pnpm run build:registry` passes before submitting.
