@@ -1,9 +1,4 @@
-import { config } from "dotenv";
-
-config();
-
-export const REGISTRY_URL =
-  process.env.MCOLI_UI_REGISTRY_URL || "https://mcoli-ui.microclub.info";
+export const REGISTRY_URL = "https://mcoli-ui.microclub.info";
 
 export const commonCSS = {
   "@layer base": {

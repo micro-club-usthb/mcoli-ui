@@ -10,7 +10,9 @@
     "lint": "pnpm --filter @mcoli/ui lint",
     "typecheck": "pnpm --filter @mcoli/ui typecheck",
     "storybook": "pnpm --filter @mcoli/ui storybook",
-    "build-storybook": "pnpm --filter @mcoli/ui build-storybook"
+    "build-storybook": "pnpm --filter @mcoli/ui build-storybook",
+    "cli": "pnpm --filter mcoli-ui",
+    "cli:dev": "MCOLI_UI_REGISTRY_URL=http://localhost:3000 pnpm --filter mcoli-ui"
   },
   "pnpm": {
     "overrides": {

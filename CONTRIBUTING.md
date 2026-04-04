@@ -12,9 +12,6 @@ This guide covers how to add a new registry item (component, hook, or theme) to 
 # Install dependencies
 pnpm install
 
-# Copy environment variables
-cp packages/ui/.env.example packages/ui/.env
-
 # Run development server (Next.js docs site)
 pnpm run dev
 
@@ -23,6 +20,20 @@ pnpm run storybook
 
 # Build the registry (required before submitting PR)
 pnpm run build:registry
+```
+
+## Testing CLI Locally
+
+To test the CLI with your locally built registry (localhost:3000):
+
+```bash
+# First, run the dev server
+pnpm run dev
+
+# In another terminal, test CLI commands
+pnpm cli:dev init primary
+pnpm cli:dev add mc-button
+pnpm cli:dev list
 ```
 
 ## Choosing Your Path
@@ -99,14 +110,7 @@ Example file: [`packages/ui/content/docs/components/mc-button.mdx`](packages/ui/
 
 ### Step 9: Build and Test
 
-First, copy the example environment file:
-
-```bash
-cd packages/ui
-cp .env.example .env
-```
-
-Then build and test:
+Build and test:
 
 ```bash
 # Build the registry metadata (registry.json)
@@ -116,7 +120,7 @@ pnpm run build:registry
 pnpm run storybook
 ```
 
-### Step 9: Create a Pull Request
+### Step 10: Create a Pull Request
 
 ```bash
 git add .
