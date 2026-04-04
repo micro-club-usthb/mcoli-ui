@@ -107,6 +107,7 @@ git checkout -c component/mc-checkbox
 ### Step 4: Copy Environment File
 
 ```bash
+cd packages/ui
 cp .env.example .env
 ```
 
