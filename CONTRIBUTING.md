@@ -13,7 +13,7 @@ This guide covers how to add a new registry item (component, hook, or theme) to 
 npm install
 
 # Copy environment variables
-cp .env.example .env
+cp packages/ui/.env.example packages/ui/.env
 
 # Run development server (Next.js docs site)
 npm run dev
@@ -102,6 +102,7 @@ Example file: [`packages/ui/content/docs/components/mc-button.mdx`](packages/ui/
 First, copy the example environment file:
 
 ```bash
+cd packages/ui
 cp .env.example .env
 ```
 
