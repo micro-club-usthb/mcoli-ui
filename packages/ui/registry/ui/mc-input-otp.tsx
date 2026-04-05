@@ -16,10 +16,7 @@ function McInputOtp({
   return (
     <OTPInput
       data-slot="input-otp"
-      containerClassName={cn(
-        'cn-input-otp flex items-center has-disabled:opacity-50',
-        containerClassName
-      )}
+      containerClassName={cn('flex items-center has-disabled:opacity-50', containerClassName)}
       spellCheck={false}
       className={cn('disabled:cursor-not-allowed', className)}
       {...props}
@@ -27,20 +24,13 @@ function McInputOtp({
   );
 }
 
-function InputOTPGroup({ className, ...props }: React.ComponentProps<'div'>) {
+function McInputOtpGroup({ className, ...props }: React.ComponentProps<'div'>) {
   return (
-    <div
-      data-slot="input-otp-group"
-      className={cn(
-        'flex items-center rounded-lg has-aria-invalid:border-destructive has-aria-invalid:ring-3 has-aria-invalid:ring-destructive/20 dark:has-aria-invalid:ring-destructive/40',
-        className
-      )}
-      {...props}
-    />
+    <div data-slot="input-otp-group" className={cn('flex items-center', className)} {...props} />
   );
 }
 
-function InputOTPSlot({
+function McInputOtpSlot({
   index,
   className,
   ...props
@@ -55,7 +45,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        'relative  bg-input focus:ring-2  border-border flex size-10 items-center justify-center border-y border-r  text-sm transition-all outline-none first:rounded-l-sm first:border-l last:rounded-s-2xl aria-invalid:border-destructive data-[active=true]:z-10 data-[active=true]:border-ring data-[active=true]:ring-2 data-[active=true]:ring-ring/90 data-[active=true]:aria-invalid:border-destructive data-[active=true]:aria-invalid:ring-destructive/20 dark:bg-input/30 dark:data-[active=true]:aria-invalid:ring-destructive/40',
+        'relative flex size-10 items-center justify-center border border-border bg-input text-sm transition-all outline-none first:rounded-l-md last:rounded-r-md last:mr-0 [&:not(:last-child)]:-mr-px data-[active=true]:z-10 data-[active=true]:border-transparent data-[active=true]:ring-2 data-[active=true]:ring-border',
         className
       )}
       {...props}
@@ -70,17 +60,17 @@ function InputOTPSlot({
   );
 }
 
-function InputOTPSeparator({ ...props }: React.ComponentProps<'div'>) {
+function McInputOtpSeparator({ ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       data-slot="input-otp-separator"
-      className="flex items-center mx-2 [&_svg:not([class*='size-4'])]:size-6"
+      className="flex items-center mx-2"
       role="separator"
       {...props}
     >
-      <MinusIcon strokeWidth={1.25} className=" text-muted-foreground" />
+      <MinusIcon size={24} strokeWidth={1.25} className="text-muted-foreground" />
     </div>
   );
 }
 
-export { McInputOtp, InputOTPGroup, InputOTPSlot, InputOTPSeparator };
+export { McInputOtp, McInputOtpGroup, McInputOtpSlot, McInputOtpSeparator };

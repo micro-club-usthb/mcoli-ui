@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import {
   McInputOtp,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
+  McInputOtpGroup,
+  McInputOtpSeparator,
+  McInputOtpSlot,
 } from '@/registry/ui/mc-input-otp';
 
 const meta: Meta<typeof McInputOtp> = {
@@ -16,49 +16,49 @@ const meta: Meta<typeof McInputOtp> = {
 export default meta;
 type Story = StoryObj<typeof McInputOtp>;
 
-export const Playground: Story = {
+export const Showcase: Story = {
   render: () => (
-    <div className="flex flex-col items-center gap-2 justify-center min-h-screen w-full bg-background">
+    <div className="flex flex-col items-center gap-8 justify-center">
       <McInputOtp maxLength={6}>
-        <InputOTPGroup>
-          <InputOTPSlot index={0} />
-          <InputOTPSlot index={1} />
-          <InputOTPSlot index={2} />
-        </InputOTPGroup>
-        <InputOTPSeparator />
-        <InputOTPGroup>
-          <InputOTPSlot index={3} />
-          <InputOTPSlot index={4} />
-          <InputOTPSlot index={5} />
-        </InputOTPGroup>
+        <McInputOtpGroup>
+          <McInputOtpSlot index={0} />
+          <McInputOtpSlot index={1} />
+          <McInputOtpSlot index={2} />
+          <McInputOtpSlot index={3} />
+          <McInputOtpSlot index={4} />
+          <McInputOtpSlot index={5} />
+        </McInputOtpGroup>
       </McInputOtp>
 
       <McInputOtp maxLength={6}>
-        <InputOTPGroup>
-          <InputOTPSlot index={0} />
-          <InputOTPSlot index={1} />
-          <InputOTPSlot index={2} />
-          <InputOTPSlot index={3} />
-          <InputOTPSlot index={4} />
-          <InputOTPSlot index={5} />
-        </InputOTPGroup>
+        <McInputOtpGroup>
+          <McInputOtpSlot index={0} />
+          <McInputOtpSlot index={1} />
+          <McInputOtpSlot index={2} />
+        </McInputOtpGroup>
+        <McInputOtpSeparator />
+        <McInputOtpGroup>
+          <McInputOtpSlot index={3} />
+          <McInputOtpSlot index={4} />
+          <McInputOtpSlot index={5} />
+        </McInputOtpGroup>
       </McInputOtp>
 
       <McInputOtp maxLength={6}>
-        <InputOTPGroup>
-          <InputOTPSlot index={0} />
-          <InputOTPSlot index={1} />
-        </InputOTPGroup>
-        <InputOTPSeparator />
-        <InputOTPGroup>
-          <InputOTPSlot index={2} />
-          <InputOTPSlot index={3} />
-        </InputOTPGroup>
-        <InputOTPSeparator />
-        <InputOTPGroup>
-          <InputOTPSlot index={4} />
-          <InputOTPSlot index={5} />
-        </InputOTPGroup>
+        <McInputOtpGroup>
+          <McInputOtpSlot index={0} />
+          <McInputOtpSlot index={1} />
+        </McInputOtpGroup>
+        <McInputOtpSeparator />
+        <McInputOtpGroup>
+          <McInputOtpSlot index={2} />
+          <McInputOtpSlot index={3} />
+        </McInputOtpGroup>
+        <McInputOtpSeparator />
+        <McInputOtpGroup>
+          <McInputOtpSlot index={4} />
+          <McInputOtpSlot index={5} />
+        </McInputOtpGroup>
       </McInputOtp>
     </div>
   ),

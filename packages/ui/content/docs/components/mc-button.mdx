@@ -25,7 +25,10 @@ As a part of the MicroClub library, this component is designed for **instant dep
 Deploy the `mc-button` directly to your `components/ui` directory:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-  <Tab>```sh npx mcoli-ui@latest add mc-button ```</Tab>
+  <Tab value="npm">npx mcoli-ui@latest add mc-button</Tab>
+  <Tab value="pnpm">pnpm dlx mcoli-ui@latest add mc-button</Tab>
+  <Tab value="yarn">yarn dlx mcoli-ui@latest add mc-button</Tab>
+  <Tab value="bun">bunx mcoli-ui@latest add mc-button</Tab>
 </Tabs>
 
 ### Manual Setup
@@ -37,8 +40,17 @@ If you prefer manual control:
 <Step>Install the core dependencies</Step>
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-  <Tab>
-    ```sh npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react ```
+  <Tab value="npm">
+    npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+  <Tab value="pnpm">
+    pnpm add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+  <Tab value="yarn">
+    yarn add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+  <Tab value="bun">
+    bun add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
   </Tab>
 </Tabs>
 

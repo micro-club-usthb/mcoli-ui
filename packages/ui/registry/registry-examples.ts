@@ -16,6 +16,19 @@ export const examples: Registry['items'] = [
     registryDependencies: [`${REGISTRY_URL}/r/mc-button.json`],
   },
   {
+    name: 'mc-input-otp-demo',
+    type: 'registry:example',
+    title: 'MicroClub Input OTP Demo',
+    description: 'Demo for MicroClub Input OTP',
+    files: [
+      {
+        path: 'examples/mc-input-otp-demo.tsx',
+        type: 'registry:example',
+      },
+    ],
+    registryDependencies: [`${REGISTRY_URL}/r/mc-input-otp.json`],
+  },
+  {
     name: 'mc-checkbox-demo',
     type: 'registry:example',
     title: 'MicroClub Checkbox Demo',

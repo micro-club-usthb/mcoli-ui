@@ -1,20 +1,23 @@
-import { McInputOtp, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '../ui/mc-input-otp';
+import {
+  McInputOtp,
+  McInputOtpGroup,
+  McInputOtpSeparator,
+  McInputOtpSlot,
+} from '../ui/mc-input-otp';
 export default function McInputOtpDemo() {
   return (
-    <div className="flex items-center justify-center min-h-screen w-full bg-background">
-      <McInputOtp maxLength={6}>
-        <InputOTPGroup>
-          <InputOTPSlot index={0} />
-          <InputOTPSlot index={1} />
-          <InputOTPSlot index={2} />
-        </InputOTPGroup>
-        <InputOTPSeparator />
-        <InputOTPGroup>
-          <InputOTPSlot index={3} />
-          <InputOTPSlot index={4} />
-          <InputOTPSlot index={5} />
-        </InputOTPGroup>
-      </McInputOtp>
-    </div>
+    <McInputOtp maxLength={6}>
+      <McInputOtpGroup>
+        <McInputOtpSlot index={0} />
+        <McInputOtpSlot index={1} />
+        <McInputOtpSlot index={2} />
+      </McInputOtpGroup>
+      <McInputOtpSeparator />
+      <McInputOtpGroup>
+        <McInputOtpSlot index={3} />
+        <McInputOtpSlot index={4} />
+        <McInputOtpSlot index={5} />
+      </McInputOtpGroup>
+    </McInputOtp>
   );
 }
