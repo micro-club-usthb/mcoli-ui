@@ -1,4 +1,5 @@
 'use client';
+
 import { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox';
 import { cn } from '@/lib/utils';
 import { CheckIcon } from 'lucide-react';
@@ -88,7 +89,7 @@ function McCheckbox({
           'relative rounded-[4px] bg-background outline-none transition-colors',
           'focus-visible:ring-3 focus-visible:ring-ring/50',
           'active:ring-4 active:ring-ring/50',
-          'disabled:cursor-not-allowed disabled:pointer-events-none disabled:border-muted-foreground disabled:bg-muted/30 disabled:text-muted-foreground disabled:hover:border-muted-foreground disabled:focus-visible:ring-0 disabled:focus-visible:ring-transparent disabled:active:ring-0 data-[disabled]:cursor-not-allowed data-[disabled]:pointer-events-none data-[disabled]:border-muted-foreground data-[disabled]:bg-muted/30 data-[disabled]:text-muted-foreground data-[disabled]:hover:border-muted-foreground data-[disabled]:focus-visible:ring-0 data-[disabled]:focus-visible:ring-transparent data-[disabled]:active:ring-0',
+          'disabled:cursor-not-allowed disabled:pointer-events-none disabled:border-muted-foreground disabled:bg-muted/30 disabled:text-muted-foreground disabled:hover:border-muted-foreground disabled:focus-visible:ring-0 disabled:focus-visible:ring-transparent disabled:active:ring-0 data-disabled:cursor-not-allowed data-disabled:pointer-events-none data-disabled:border-muted-foreground data-disabled:bg-muted/30 data-disabled:text-muted-foreground data-disabled:hover:border-muted-foreground data-disabled:focus-visible:ring-0 data-disabled:focus-visible:ring-transparent data-disabled:active:ring-0',
           className
         )}
         aria-labelledby={labelId}

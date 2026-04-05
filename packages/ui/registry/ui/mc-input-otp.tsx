@@ -45,7 +45,7 @@ function McInputOtpSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        'relative flex size-10 items-center justify-center border border-border bg-input text-sm transition-all outline-none first:rounded-l-md last:rounded-r-md last:mr-0 [&:not(:last-child)]:-mr-px data-[active=true]:z-10 data-[active=true]:border-transparent data-[active=true]:ring-2 data-[active=true]:ring-border',
+        'relative flex size-10 items-center justify-center border border-border bg-input text-sm transition-all outline-none first:rounded-l-md last:rounded-r-md last:mr-0 not-last:-mr-px data-[active=true]:z-10 data-[active=true]:border-transparent data-[active=true]:ring-2 data-[active=true]:ring-border',
         className
       )}
       {...props}
