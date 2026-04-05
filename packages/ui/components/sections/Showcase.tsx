@@ -11,7 +11,7 @@ import {
   Search,
   Settings,
   ShieldAlert,
-} from "lucide-react";
+} from 'lucide-react';
 
 export function Showcase() {
   return (
@@ -20,13 +20,10 @@ export function Showcase() {
       <div className="absolute inset-0 -z-10 h-full w-full bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] opacity-30"></div>
 
       <div className="space-y-4 text-center">
-        <h2 className="header-sm md:header-md font-bold text-foreground">
-          The Variable Anatomy
-        </h2>
+        <h2 className="header-sm md:header-md font-bold text-foreground">The Variable Anatomy</h2>
         <p className="paragraph-sm sm:paragraph-md md:paragraph-lg text-muted-foreground max-w-2xl mx-auto font-dm-sans px-2 sm:px-0">
-          Every single semantic variable mapped. Change the theme in the
-          navigation bar to see the entire grid adapt instantly with perfect
-          contrast ratios
+          Every single semantic variable mapped. Change the theme in the navigation bar to see the
+          entire grid adapt instantly with perfect contrast ratios
         </p>
       </div>
 
@@ -38,9 +35,7 @@ export function Showcase() {
             <div className="flex items-center gap-2 font-medium">
               <LayoutTemplate className="size-4 text-primary" /> Base UI
             </div>
-            <span className="text-[10px] font-mono opacity-50">
-              --background & --surface
-            </span>
+            <span className="text-[10px] font-mono opacity-50">--background & --surface</span>
           </div>
           <div className="p-6 flex-1 flex items-center justify-center bg-background text-foreground">
             <div className="w-full relative">
@@ -51,12 +46,8 @@ export function Showcase() {
                 className="w-full h-10 pl-9 pr-4 rounded-md border border-input bg-background text-sm ring-2 ring-ring/50 outline-none"
               />
               <div className="mt-2 flex justify-between px-1">
-                <span className="text-[10px] font-mono text-muted-foreground">
-                  --input
-                </span>
-                <span className="text-[10px] font-mono text-muted-foreground">
-                  --ring
-                </span>
+                <span className="text-[10px] font-mono text-muted-foreground">--input</span>
+                <span className="text-[10px] font-mono text-muted-foreground">--ring</span>
               </div>
             </div>
           </div>
@@ -66,8 +57,7 @@ export function Showcase() {
         <div className="flex flex-col rounded-2xl border border-border bg-card shadow-lg overflow-hidden">
           <div className="p-4 border-b border-border flex items-center justify-between">
             <div className="flex items-center gap-2 font-medium text-card-foreground">
-              <MousePointerClick className="size-4 text-primary" /> Action
-              States
+              <MousePointerClick className="size-4 text-primary" /> Action States
             </div>
           </div>
           <div className="p-6 flex-1 flex flex-col justify-center gap-4 bg-card text-card-foreground">
@@ -119,23 +109,17 @@ export function Showcase() {
             <div className="flex items-center gap-3 p-3 rounded-lg bg-success text-success-foreground border border-success/20">
               <CheckCircle2 className="size-4" />
               <span className="text-sm font-medium flex-1">Completed</span>
-              <span className="text-[10px] font-mono opacity-70">
-                --success
-              </span>
+              <span className="text-[10px] font-mono opacity-70">--success</span>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-lg bg-warning text-warning-foreground border border-warning/20">
               <AlertCircle className="size-4" />
               <span className="text-sm font-medium flex-1">Warning</span>
-              <span className="text-[10px] font-mono opacity-70">
-                --warning
-              </span>
+              <span className="text-[10px] font-mono opacity-70">--warning</span>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-lg bg-destructive text-destructive-foreground border border-destructive/20">
               <AlertTriangle className="size-4" />
               <span className="text-sm font-medium flex-1">Destructive</span>
-              <span className="text-[10px] font-mono opacity-70">
-                --destructive
-              </span>
+              <span className="text-[10px] font-mono opacity-70">--destructive</span>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-lg bg-info text-info-foreground border border-info/20">
               <Info className="size-4" />
@@ -172,9 +156,7 @@ export function Showcase() {
               <h4 className="font-semibold mb-1 flex items-center justify-between">
                 Dropdown Menu <ChevronRight className="size-4" />
               </h4>
-              <p className="text-sm opacity-80 mb-4">
-                Highest elevation for floating elements.
-              </p>
+              <p className="text-sm opacity-80 mb-4">Highest elevation for floating elements.</p>
               <div className="mt-auto space-y-2">
                 <div className="h-8 bg-accent rounded-md w-full" />
               </div>
@@ -197,11 +179,11 @@ export function Showcase() {
             </span>
             <div className="flex items-end justify-between h-20 gap-2">
               {[
-                "var(--chart-1)",
-                "var(--chart-2)",
-                "var(--chart-3)",
-                "var(--chart-4)",
-                "var(--chart-5)",
+                'var(--chart-1)',
+                'var(--chart-2)',
+                'var(--chart-3)',
+                'var(--chart-4)',
+                'var(--chart-5)',
               ].map((color, i) => (
                 <div
                   key={i}
@@ -215,18 +197,14 @@ export function Showcase() {
           {/* Sidebar Row */}
           <div className="p-5 bg-sidebar text-sidebar-foreground flex-1 flex flex-col gap-3">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono opacity-50">
-                --sidebar (bg & text)
-              </span>
+              <span className="text-[10px] font-mono opacity-50">--sidebar (bg & text)</span>
               <PanelLeftClose className="size-4 opacity-50" />
             </div>
             <div className="flex items-center gap-2 p-2 rounded bg-sidebar-primary text-sidebar-primary-foreground text-sm font-medium">
-              <div className="size-4 rounded-sm bg-background/20" />{" "}
-              --sidebar-primary
+              <div className="size-4 rounded-sm bg-background/20" /> --sidebar-primary
             </div>
             <div className="flex items-center gap-2 p-2 rounded bg-sidebar-accent text-sidebar-accent-foreground text-sm font-medium border border-sidebar-border ring-1 ring-sidebar-ring">
-              <div className="size-4 rounded-sm bg-sidebar-foreground/20" />{" "}
-              --sidebar-accent
+              <div className="size-4 rounded-sm bg-sidebar-foreground/20" /> --sidebar-accent
             </div>
           </div>
         </div>
@@ -234,4 +212,3 @@ export function Showcase() {
     </section>
   );
 }
-

@@ -10,19 +10,79 @@ This guide covers how to add a new registry item (component, hook, or theme) to 
 
 ```bash
 # Install dependencies
-npm install
-
-# Copy environment variables
-cp .env.example .env
+pnpm install
 
 # Run development server (Next.js docs site)
-npm run dev
+pnpm run dev
 
 # Run Storybook for component development
-npm run storybook
+pnpm run storybook
 
 # Build the registry (required before submitting PR)
-npm run build:registry
+pnpm run build:registry
+
+# Format code (required before submitting PR)
+pnpm run format
+
+# Check code formatting
+pnpm run format:check
+```
+
+## Commit Conventions
+
+We use **Conventional Commits** for all commit messages. This enables automated changelog generation and semantic versioning.
+
+### Format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+```
+
+### Types
+
+| Type       | Description                                                                    |
+| ---------- | ------------------------------------------------------------------------------ |
+| `feat`     | A new feature                                                                  |
+| `fix`      | A bug fix                                                                      |
+| `docs`     | Documentation only changes                                                     |
+| `style`    | Changes that don't affect code meaning (formatting, missing semi-colons, etc.) |
+| `refactor` | Code change that neither fixes a bug nor adds a feature                        |
+| `perf`     | A code change that improves performance                                        |
+| `test`     | Adding or correcting tests                                                     |
+| `chore`    | Changes to build process, dependencies, or auxiliary tools                     |
+| `ci`       | Changes to CI configuration files and scripts                                  |
+
+### Breaking Changes
+
+Add `!` after type/scope or include `BREAKING CHANGE:` in footer:
+
+```
+feat!: remove legacy API
+
+BREAKING CHANGE: The old API endpoint has been removed.
+```
+
+### Examples
+
+```bash
+git commit -m "feat: add mc-button component"
+git commit -m "fix: resolve input focus issue"
+git commit -m "docs: update mc-button documentation"
+git commit -m "refactor: simplify button styles"
+```
+
+## Testing CLI Locally
+
+```bash
+# First, run the dev server
+pnpm run dev
+
+# In another terminal, test CLI commands
+pnpm cli:dev init primary
+pnpm cli:dev add mc-button
+pnpm cli:dev list
 ```
 
 ## Choosing Your Path
@@ -42,7 +102,7 @@ If you have push access to the repository, follow these steps.
 2. Create a branch from `dev` (naming: `component/mc-<name>`)
 3. Implement the item (e.g., component using `@base-ui/react` primitives)
 4. Create stories, examples, and documentation
-5. Test with Storybook and verify registry build (`npm run build:registry`)
+5. Test with Storybook and verify registry build (`pnpm run build:registry`)
 6. Create a pull request targeting `dev`
 
 ## Step-by-Step
@@ -99,23 +159,17 @@ Example file: [`packages/ui/content/docs/components/mc-button.mdx`](packages/ui/
 
 ### Step 9: Build and Test
 
-First, copy the example environment file:
-
-```bash
-cp .env.example .env
-```
-
-Then build and test:
+Build and test:
 
 ```bash
 # Build the registry metadata (registry.json)
-npm run build:registry
+pnpm run build:registry
 
 # Run storybook for visual verification
-npm run storybook
+pnpm run storybook
 ```
 
-### Step 9: Create a Pull Request
+### Step 10: Create a Pull Request
 
 ```bash
 git add .
@@ -144,14 +198,14 @@ External contributors should follow the same technical steps but start with a fo
 
 When adding a new item, you will create/edit these files:
 
-| File                                                                                                   | Purpose                       |
-| ------------------------------------------------------------------------------------------------------ | ----------------------------- |
-| [`packages/ui/registry/ui/mc-<name>.tsx`](packages/ui/registry/ui/mc-button.tsx)                       | The actual code to distribute |
-| [`packages/ui/registry/registry-ui.ts`](packages/ui/registry/registry-ui.ts)                           | Metadata for CLI discovery    |
-| [`packages/ui/registry/registry-examples.ts`](packages/ui/registry/registry-examples.ts)                | Links demos to registry       |
-| [`packages/ui/registry/examples/mc-<name>-demo.tsx`](packages/ui/registry/examples/mc-button-demo.tsx) | Live demo for documentation   |
-| [`packages/ui/stories/Mc<Name>.stories.tsx`](packages/ui/stories/McButton.stories.tsx)                 | Visual testing in Storybook   |
-| [`packages/ui/content/docs/components/mc-<name>.mdx`](packages/ui/content/docs/components/mc-button.mdx)| Markdown documentation        |
+| File                                                                                                     | Purpose                       |
+| -------------------------------------------------------------------------------------------------------- | ----------------------------- |
+| [`packages/ui/registry/ui/mc-<name>.tsx`](packages/ui/registry/ui/mc-button.tsx)                         | The actual code to distribute |
+| [`packages/ui/registry/registry-ui.ts`](packages/ui/registry/registry-ui.ts)                             | Metadata for CLI discovery    |
+| [`packages/ui/registry/registry-examples.ts`](packages/ui/registry/registry-examples.ts)                 | Links demos to registry       |
+| [`packages/ui/registry/examples/mc-<name>-demo.tsx`](packages/ui/registry/examples/mc-button-demo.tsx)   | Live demo for documentation   |
+| [`packages/ui/stories/Mc<Name>.stories.tsx`](packages/ui/stories/McButton.stories.tsx)                   | Visual testing in Storybook   |
+| [`packages/ui/content/docs/components/mc-<name>.mdx`](packages/ui/content/docs/components/mc-button.mdx) | Markdown documentation        |
 
 ### Planned Components
 
@@ -198,9 +252,10 @@ When adding a new item, you will create/edit these files:
 
 # Important Notes
 
+- **Format Before Committing**: Always run `pnpm run format` before committing your changes.
 - **Distribution First**: Remember that this code will be copied into user's projects. Keep it clean and self-contained.
 - **Figma First**: Always refer to the designs in Figma for colors, spacing, and variants.
 - **Prefix Everything**: All registry items MUST use the `mc-` prefix.
 - **Base UI**: Use `@base-ui/react` for underlying logic to ensure accessibility.
 - **Themes and Modes**: Every item must be tested in all 5 themes in both light and dark modes.
-- **Build Verification**: Ensure `npm run build:registry` passes before submitting.
+- **Build Verification**: Ensure `pnpm run build:registry` passes before submitting.

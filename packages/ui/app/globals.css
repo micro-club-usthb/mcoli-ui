@@ -1,8 +1,8 @@
-@import "tailwindcss";
-@import "fumadocs-ui/css/shadcn.css";
-@import "fumadocs-ui/css/preset.css";
-@import "tw-animate-css";
-@import "shadcn/tailwind.css";
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/shadcn.css';
+@import 'fumadocs-ui/css/preset.css';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
 
 @theme inline {
   --color-accent-blue-50: #0066ff;
@@ -209,7 +209,7 @@
 
 /* 1. PRIMARY THEME (Default Fallback) */
 :root,
-[data-theme="primary"] {
+[data-theme='primary'] {
   --background: #ffffff;
   --foreground: #000350;
   --primary: #0006b1;
@@ -259,7 +259,7 @@
 }
 
 .dark,
-.dark[data-theme="primary"] {
+.dark[data-theme='primary'] {
   --background: #0a0a0a;
   --foreground: #fafafa;
   --primary: #d9ddff;
@@ -309,7 +309,7 @@
 }
 
 /* 2. SECONDARY THEME */
-[data-theme="secondary"] {
+[data-theme='secondary'] {
   --background: #ffffff;
   --foreground: #370958;
   --primary: #6a0dad;
@@ -358,7 +358,7 @@
   --radius-2xl: 0.75rem;
 }
 
-.dark[data-theme="secondary"] {
+.dark[data-theme='secondary'] {
   --background: #0f172a;
   --foreground: #e6e9ff;
   --primary: #8b5cf6;
@@ -408,7 +408,7 @@
 }
 
 /* 3. GAME-DEV THEME */
-[data-theme="game-dev"] {
+[data-theme='game-dev'] {
   --background: #fdf6e3;
   --foreground: #2e3133;
   --primary: #d04f99;
@@ -457,7 +457,7 @@
   --radius-2xl: 1rem;
 }
 
-.dark[data-theme="game-dev"] {
+.dark[data-theme='game-dev'] {
   --background: #141c27;
   --foreground: #f3e3ea;
   --primary: #fbe2a7;
@@ -507,7 +507,7 @@
 }
 
 /* 4. ROBOTICS THEME */
-[data-theme="robotics"] {
+[data-theme='robotics'] {
   --background: #ffffff;
   --foreground: #000000;
   --primary: #001eff;
@@ -556,7 +556,7 @@
   --radius-2xl: 0.25rem;
 }
 
-.dark[data-theme="robotics"] {
+.dark[data-theme='robotics'] {
   --background: #000000;
   --foreground: #ffffff;
   --primary: #2563ef;
@@ -606,7 +606,7 @@
 }
 
 /* 5. IT THEME */
-[data-theme="it"] {
+[data-theme='it'] {
   --background: #ffffff;
   --foreground: #374151;
   --primary: #34d399;
@@ -655,7 +655,7 @@
   --radius-2xl: 0.75rem;
 }
 
-.dark[data-theme="it"] {
+.dark[data-theme='it'] {
   --background: #0f172a;
   --foreground: #d1d5db;
   --primary: #34d399;

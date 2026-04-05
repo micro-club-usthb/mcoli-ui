@@ -1,17 +1,17 @@
-import { ModeToggle } from "@/components/ModeToggle";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import BackgroundBlur from "@/components/sections/BackgroundBlur";
-import Blur from "@/components/sections/Blur";
-import BorderRadius from "@/components/sections/BorderRadius";
-import Colors from "@/components/sections/Colors";
-import Footer from "@/components/sections/Footer";
-import Hero from "@/components/sections/Hero";
-import Shadow from "@/components/sections/Shadow";
-import { Showcase } from "@/components/sections/Showcase";
-import Stroke from "@/components/sections/Stroke";
-import TextStyles from "@/components/sections/TextStyles";
-import Link from "next/link";
-import Logo from "@/components/Logo";
+import { ModeToggle } from '@/components/ModeToggle';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import BackgroundBlur from '@/components/sections/BackgroundBlur';
+import Blur from '@/components/sections/Blur';
+import BorderRadius from '@/components/sections/BorderRadius';
+import Colors from '@/components/sections/Colors';
+import Footer from '@/components/sections/Footer';
+import Hero from '@/components/sections/Hero';
+import Shadow from '@/components/sections/Shadow';
+import { Showcase } from '@/components/sections/Showcase';
+import Stroke from '@/components/sections/Stroke';
+import TextStyles from '@/components/sections/TextStyles';
+import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function Home() {
   return (

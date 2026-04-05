@@ -1,0 +1,13 @@
+node_modules
+.pnpm-store
+dist
+build
+.next
+.storybook/storybook-static
+coverage
+.changeset
+*.log
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+bun.lockb

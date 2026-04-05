@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
+import * as React from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+import { cn } from '@/lib/utils';
 
 export function ModeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
@@ -19,17 +19,17 @@ export function ModeToggle() {
   }
 
   // We use resolvedTheme so it accurately detects Dark Mode even if set to "system"
-  const isDark = resolvedTheme === "dark";
+  const isDark = resolvedTheme === 'dark';
 
   return (
     <button
       type="button"
       role="switch"
       aria-checked={isDark}
-      onClick={() => setTheme(isDark ? "light" : "dark")}
+      onClick={() => setTheme(isDark ? 'light' : 'dark')}
       className={cn(
-        "relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background",
-        isDark ? "bg-primary" : "bg-muted",
+        'relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+        isDark ? 'bg-primary' : 'bg-muted'
       )}
     >
       <span className="sr-only">Toggle theme</span>
@@ -37,17 +37,15 @@ export function ModeToggle() {
       {/* Sliding Thumb */}
       <span
         className={cn(
-          "pointer-events-none relative inline-block h-6 w-6 rounded-full bg-background shadow ring-0 transition-transform duration-300 ease-in-out",
-          isDark ? "translate-x-5" : "translate-x-0",
+          'pointer-events-none relative inline-block h-6 w-6 rounded-full bg-background shadow ring-0 transition-transform duration-300 ease-in-out',
+          isDark ? 'translate-x-5' : 'translate-x-0'
         )}
       >
         {/* Sun Icon (Fades out in Dark Mode) */}
         <span
           className={cn(
-            "absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ease-in-out",
-            isDark
-              ? "opacity-0 duration-100 ease-out"
-              : "opacity-100 duration-200 ease-in",
+            'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ease-in-out',
+            isDark ? 'opacity-0 duration-100 ease-out' : 'opacity-100 duration-200 ease-in'
           )}
           aria-hidden="true"
         >
@@ -57,10 +55,8 @@ export function ModeToggle() {
         {/* Moon Icon (Fades in in Dark Mode) */}
         <span
           className={cn(
-            "absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ease-in-out",
-            isDark
-              ? "opacity-100 duration-200 ease-in"
-              : "opacity-0 duration-100 ease-out",
+            'absolute inset-0 flex h-full w-full items-center justify-center transition-opacity duration-300 ease-in-out',
+            isDark ? 'opacity-100 duration-200 ease-in' : 'opacity-0 duration-100 ease-out'
           )}
           aria-hidden="true"
         >

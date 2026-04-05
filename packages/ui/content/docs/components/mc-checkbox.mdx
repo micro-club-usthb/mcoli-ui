@@ -3,6 +3,129 @@ title: MC Checkbox
 description: A control that allows the user to toggle between checked and not checked.
 ---
 
-<Callout type="warn">
-  This component is coming soon. Check our [contributing guide](/docs/introduction#contributing) for more information.
-</Callout>
+## Overview
+
+The `mc-checkbox` is a core form control of the MicroClub UI library. Built on the **@base-ui/react** checkbox primitive, it provides accessible state handling and keyboard interactions while keeping MicroClub styling and theme tokens.
+
+As a part of the MicroClub library, this component is designed for **instant deployment into your codebase**, giving you full ownership of its look and behavior.
+
+## Preview
+
+<Tabs items={['preview', 'code']}>
+  <Tab>
+    <ComponentPreview name="mc-checkbox-demo" />
+  </Tab>
+  <Tab>
+    <ComponentSource name="mc-checkbox-demo" />
+  </Tab>
+</Tabs>
+
+## Add to Your Project
+
+Deploy the `mc-checkbox` directly to your `components/ui` directory:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">npx mcoli-ui@latest add mc-checkbox</Tab>
+  <Tab value="pnpm">pnpm dlx mcoli-ui@latest add mc-checkbox</Tab>
+  <Tab value="yarn">yarn dlx mcoli-ui@latest add mc-checkbox</Tab>
+  <Tab value="bun">bunx mcoli-ui@latest add mc-checkbox</Tab>
+</Tabs>
+
+### Manual Setup
+
+If you prefer manual control:
+
+<Steps>
+
+<Step>Install the core dependencies</Step>
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">
+    npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+  <Tab value="pnpm">
+    pnpm add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+  <Tab value="yarn">
+    yarn add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+  <Tab value="bun">
+    bun add clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
+  </Tab>
+</Tabs>
+
+<Step>Copy the source code</Step>
+
+<ComponentSource name="mc-checkbox" />
+
+<Step>Adjust import paths</Step>
+
+Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
+
+</Steps>
+
+## Usage
+
+```tsx
+import { McCheckbox } from '@/components/ui/mc-checkbox';
+
+export default function Example() {
+  return <McCheckbox text="Remember me" />;
+}
+```
+
+## Examples
+
+### Sizes
+
+```tsx
+<McCheckbox size="sm" text="Small checkbox" />
+<McCheckbox size="md" text="Medium checkbox" />
+```
+
+### With Support Text
+
+```tsx
+<McCheckbox text="Remember me" supportText="Save my login details for next time." />
+```
+
+### States
+
+```tsx
+<McCheckbox text="Unchecked" checked={false} />
+<McCheckbox text="Checked" checked />
+<McCheckbox text="Disabled" disabled />
+<McCheckbox text="Disabled checked" checked disabled />
+```
+
+### Controlled
+
+Manage the checked state programmatically with `checked` and `onCheckedChange`.
+
+```tsx
+import { useState } from 'react';
+import { McCheckbox } from '@/components/ui/mc-checkbox';
+
+export default function Example() {
+  const [checked, setChecked] = useState(false);
+
+  return <McCheckbox text="I agree to the terms" checked={checked} onCheckedChange={setChecked} />;
+}
+```
+
+## API Reference
+
+### Props
+
+| Prop              | Type                                   | Default     | Description                                       |
+| ----------------- | -------------------------------------- | ----------- | ------------------------------------------------- |
+| `size`            | `"sm" \| "md"`                         | `"sm"`      | The checkbox size                                 |
+| `text`            | `string`                               | `undefined` | Main label displayed next to the checkbox         |
+| `supportText`     | `string`                               | `undefined` | Secondary helper text under the main label        |
+| `checked`         | `boolean`                              | `undefined` | Controlled checked state                          |
+| `onCheckedChange` | `(boolean \| "indeterminate") => void` | `undefined` | Callback when checked state changes               |
+| `disabled`        | `boolean`                              | `false`     | Disables interactions and applies disabled styles |
+| `id`              | `string`                               | `undefined` | Custom ID for the checkbox input                  |
+| `className`       | `string`                               | `undefined` | Additional CSS classes for the checkbox root      |
+
+All other props from `@base-ui/react/checkbox` are supported.

@@ -3,20 +3,30 @@
   "version": "0.1.0",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "dev": "npm run dev -w packages/ui",
-    "build": "npm run build -w packages/ui",
-    "start": "npm run start -w packages/ui",
-    "lint": "npm run lint -w packages/ui",
-    "typecheck": "npm run typecheck -w packages/ui",
-    "storybook": "npm run storybook -w packages/ui",
-    "build-storybook": "npm run build-storybook -w packages/ui"
+    "dev": "pnpm --filter @mcoli/ui dev",
+    "build": "pnpm --filter @mcoli/ui build",
+    "start": "pnpm --filter @mcoli/ui start",
+    "lint": "pnpm --filter @mcoli/ui lint",
+    "typecheck": "pnpm --filter @mcoli/ui typecheck",
+    "storybook": "pnpm --filter @mcoli/ui storybook",
+    "build-storybook": "pnpm --filter @mcoli/ui build-storybook",
+    "cli": "pnpm --filter mcoli-ui",
+    "cli:dev": "MCOLI_UI_REGISTRY_URL=http://localhost:3000 pnpm --filter mcoli-ui",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,md,mdx,json}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "eslint": "^9",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.1",
     "typescript": "^5.7.2"
   }
 }

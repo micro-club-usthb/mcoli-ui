@@ -3,6 +3,174 @@ title: MC Input OTP
 description: A secure one-time password input component.
 ---
 
-<Callout type="warn">
-  This component is coming soon. Check our [contributing guide](/docs/introduction#contributing) for more information.
-</Callout>
+## Overview
+
+The `mc-input-otp` is a secure input component for entering one-time passwords (OTP). Built on the **input-otp** library, it provides a smooth typing experience with support for grouping slots and visual separators.
+
+As a part of the MicroClub library, this component is designed for **instant deployment into your codebase**, giving you full ownership of its look and behavior.
+
+## Preview
+
+<Tabs items={['preview', 'code']}>
+  <Tab>
+    <ComponentPreview name="mc-input-otp-demo" />
+  </Tab>
+  <Tab>
+    <ComponentSource name="mc-input-otp-demo" />
+  </Tab>
+</Tabs>
+
+## Add to Your Project
+
+Deploy the `mc-input-otp` directly to your `components/ui` directory:
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">npx mcoli-ui@latest add mc-input-otp</Tab>
+  <Tab value="pnpm">pnpm dlx mcoli-ui@latest add mc-input-otp</Tab>
+  <Tab value="yarn">yarn dlx mcoli-ui@latest add mc-input-otp</Tab>
+  <Tab value="bun">bunx mcoli-ui@latest add mc-input-otp</Tab>
+</Tabs>
+
+### Manual Setup
+
+If you prefer manual control:
+
+<Steps>
+
+<Step>Install the core dependencies</Step>
+
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab value="npm">npm install clsx tailwind-merge input-otp lucide-react</Tab>
+  <Tab value="pnpm">pnpm add clsx tailwind-merge input-otp lucide-react</Tab>
+  <Tab value="yarn">yarn add clsx tailwind-merge input-otp lucide-react</Tab>
+  <Tab value="bun">bun add clsx tailwind-merge input-otp lucide-react</Tab>
+</Tabs>
+
+<Step>Copy the source code</Step>
+
+<ComponentSource name="mc-input-otp" />
+
+<Step>Adjust import paths</Step>
+
+Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
+
+</Steps>
+
+## Usage
+
+```tsx
+import {
+  McInputOtp,
+  McInputOtpGroup,
+  McInputOtpSeparator,
+  McInputOtpSlot,
+} from '@/components/ui/mc-input-otp';
+
+export default function Example() {
+  return (
+    <McInputOtp maxLength={6}>
+      <McInputOtpGroup>
+        <McInputOtpSlot index={0} />
+        <McInputOtpSlot index={1} />
+        <McInputOtpSlot index={2} />
+      </McInputOtpGroup>
+      <McInputOtpSeparator />
+      <McInputOtpGroup>
+        <McInputOtpSlot index={3} />
+        <McInputOtpSlot index={4} />
+        <McInputOtpSlot index={5} />
+      </McInputOtpGroup>
+    </McInputOtp>
+  );
+}
+```
+
+## Examples
+
+### With Separator
+
+Group OTP slots with a visual separator between groups.
+
+```tsx
+<McInputOtp maxLength={6}>
+  <McInputOtpGroup>
+    <McInputOtpSlot index={0} />
+    <McInputOtpSlot index={1} />
+    <McInputOtpSlot index={2} />
+  </McInputOtpGroup>
+  <McInputOtpSeparator />
+  <McInputOtpGroup>
+    <McInputOtpSlot index={3} />
+    <McInputOtpSlot index={4} />
+    <McInputOtpSlot index={5} />
+  </McInputOtpGroup>
+</McInputOtp>
+```
+
+### Without Separator
+
+Use a single group for continuous OTP input.
+
+```tsx
+<McInputOtp maxLength={6}>
+  <McInputOtpGroup>
+    <McInputOtpSlot index={0} />
+    <McInputOtpSlot index={1} />
+    <McInputOtpSlot index={2} />
+    <McInputOtpSlot index={3} />
+    <McInputOtpSlot index={4} />
+    <McInputOtpSlot index={5} />
+  </McInputOtpGroup>
+</McInputOtp>
+```
+
+### Multiple Separators
+
+Create custom groupings with multiple separators.
+
+```tsx
+<McInputOtp maxLength={6}>
+  <McInputOtpGroup>
+    <McInputOtpSlot index={0} />
+    <McInputOtpSlot index={1} />
+  </McInputOtpGroup>
+  <McInputOtpSeparator />
+  <McInputOtpGroup>
+    <McInputOtpSlot index={2} />
+    <McInputOtpSlot index={3} />
+  </McInputOtpGroup>
+  <McInputOtpSeparator />
+  <McInputOtpGroup>
+    <McInputOtpSlot index={4} />
+    <McInputOtpSlot index={5} />
+  </McInputOtpGroup>
+</McInputOtp>
+```
+
+## API Reference
+
+### Props
+
+| Prop                 | Type     | Default     | Description                              |
+| -------------------- | -------- | ----------- | ---------------------------------------- |
+| `maxLength`          | `number` | `undefined` | The maximum number of OTP characters     |
+| `containerClassName` | `string` | `undefined` | Additional CSS classes for the container |
+| `className`          | `string` | `undefined` | Additional CSS classes                   |
+
+All other props from `input-otp` are supported.
+
+### Components
+
+| Component             | Description                     |
+| --------------------- | ------------------------------- |
+| `McInputOtp`          | The root OTP input container    |
+| `McInputOtpGroup`     | A group of OTP slots            |
+| `McInputOtpSlot`      | Individual OTP input slot       |
+| `McInputOtpSeparator` | Visual separator between groups |
+
+### McInputOtpSlot Props
+
+| Prop        | Type     | Default      | Description                     |
+| ----------- | -------- | ------------ | ------------------------------- |
+| `index`     | `number` | **required** | The index of the slot (0-based) |
+| `className` | `string` | `undefined`  | Additional CSS classes          |

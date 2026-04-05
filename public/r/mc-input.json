@@ -3,9 +3,7 @@
   "name": "mc-input",
   "title": "MicroClub Input",
   "description": "A text input component for MicroClub UI",
-  "dependencies": [
-    "@base-ui/react"
-  ],
+  "dependencies": ["@base-ui/react"],
   "files": [
     {
       "path": "src/registry/ui/mc-input.tsx",
