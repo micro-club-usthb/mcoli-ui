@@ -11,9 +11,7 @@
         "provider": "google",
         "import": "DM_Sans",
         "variable": "--font-dm-sans",
-        "subsets": [
-          "latin"
-        ]
+        "subsets": ["latin"]
       }
     },
     {
@@ -24,9 +22,7 @@
         "provider": "google",
         "import": "Plus_Jakarta_Sans",
         "variable": "--font-plus-jakarta-sans",
-        "subsets": [
-          "latin"
-        ]
+        "subsets": ["latin"]
       }
     },
     {
@@ -2163,9 +2159,7 @@
       "name": "mc-button",
       "title": "MicroClub Button",
       "description": "A button component for MicroClub UI",
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/ui/mc-button.tsx",
@@ -2178,9 +2172,7 @@
       "name": "mc-input-otp",
       "title": "MicroClub Input OTP",
       "description": "An OTP input component for MicroClub UI",
-      "dependencies": [
-        "input-otp"
-      ],
+      "dependencies": ["input-otp"],
       "files": [
         {
           "path": "registry/ui/mc-input-otp.tsx",
@@ -2193,9 +2185,7 @@
       "name": "mc-checkbox",
       "title": "MicroClub Checkbox",
       "description": "A checkbox component for MicroClub UI",
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "registry/ui/mc-checkbox.tsx",

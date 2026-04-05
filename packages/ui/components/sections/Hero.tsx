@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { ArrowRight, Terminal, GitFork, Check, Copy } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import Link from 'next/link';
+import { ArrowRight, Terminal, GitFork, Check, Copy } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 function Hero() {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = async () => {
-    await navigator.clipboard.writeText("npx mcoli-ui@latest init");
+    await navigator.clipboard.writeText('npx mcoli-ui@latest init');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -29,9 +29,8 @@ function Hero() {
 
       {/* Subtitle */}
       <p className="max-w-2xl sm:max-w-3xl paragraph-md sm:paragraph-lg md:paragraph-xl text-muted-foreground mb-8 sm:mb-10 z-10 px-2 sm:px-0">
-        Mcoli UI is a premium component registry and theming engine. Copy,
-        paste, and customize accessible components directly into your
-        applications
+        Mcoli UI is a premium component registry and theming engine. Copy, paste, and customize
+        accessible components directly into your applications
       </p>
 
       {/* Call to Actions */}
@@ -67,8 +66,7 @@ function Hero() {
       <div className="max-w-lg w-full rounded-xl sm:rounded-2xl border border-border bg-card overflow-hidden transition-transform duration-300 z-10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 p-3 sm:p-4 font-mono text-xs sm:text-sm text-foreground">
         <span className="flex items-center gap-2 sm:gap-3">
           <Terminal size={16} />
-          <span className="text-primary font-semibold">npx</span>{" "}
-          mcoli-ui@latest init
+          <span className="text-primary font-semibold">npx</span> mcoli-ui@latest init
         </span>
         <button
           onClick={copyToClipboard}

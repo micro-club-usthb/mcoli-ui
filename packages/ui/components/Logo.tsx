@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface LogoProps {
   className?: string;
@@ -15,7 +15,7 @@ export default function Logo({ className, height = 32 }: LogoProps) {
       viewBox="0 0 918 256"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={cn("shrink-0 transition-colors duration-300", className)}
+      className={cn('shrink-0 transition-colors duration-300', className)}
     >
       {/* Outer "M" Shape & "Mcoli" Text */}
       {/* Uses 'currentColor' to adapt instantly to Light/Dark mode text colors. */}

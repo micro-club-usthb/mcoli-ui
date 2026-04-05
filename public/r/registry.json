@@ -11,9 +11,7 @@
         "provider": "google",
         "import": "DM_Sans",
         "variable": "--font-dm-sans",
-        "subsets": [
-          "latin"
-        ]
+        "subsets": ["latin"]
       }
     },
     {
@@ -24,9 +22,7 @@
         "provider": "google",
         "import": "Plus_Jakarta_Sans",
         "variable": "--font-plus-jakarta-sans",
-        "subsets": [
-          "latin"
-        ]
+        "subsets": ["latin"]
       }
     },
     {
@@ -2163,9 +2159,7 @@
       "name": "mc-button",
       "title": "MicroClub Button",
       "description": "A button component for MicroClub UI",
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": ["@base-ui/react"],
       "files": [
         {
           "path": "src/registry/ui/mc-button.tsx",

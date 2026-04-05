@@ -1,8 +1,8 @@
-import * as React from "react";
-import { DocsLayout } from "fumadocs-ui/layouts/docs";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
-import { source } from "@/lib/source";
-import LogoIcon from "@/components/LogoIcon";
+import * as React from 'react';
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+import { source } from '@/lib/source';
+import LogoIcon from '@/components/LogoIcon';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -14,7 +14,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <LogoIcon />
           </div>
         ),
-        transparentMode: "top",
+        transparentMode: 'top',
         children: (
           <div className="mr-1">
             <ThemeSwitcher />

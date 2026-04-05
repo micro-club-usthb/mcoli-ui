@@ -1,49 +1,48 @@
-import Link from "next/link";
-import MCLogo from "@/components/MCLogo";
+import Link from 'next/link';
+import MCLogo from '@/components/MCLogo';
 
 const footerLinks = {
   product: {
-    title: "Product",
+    title: 'Product',
     links: [
-      { label: "Get Started", href: "/docs/introduction" },
-      { label: "Themes", href: "/docs/theming" },
-      { label: "Components", href: "/docs/components" },
+      { label: 'Get Started', href: '/docs/introduction' },
+      { label: 'Themes', href: '/docs/theming' },
+      { label: 'Components', href: '/docs/components' },
     ],
   },
   resources: {
-    title: "Resources",
+    title: 'Resources',
     links: [
       {
-        label: "Changelog",
-        href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CHANGELOG.md",
+        label: 'Changelog',
+        href: 'https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CHANGELOG.md',
       },
       {
-        label: "Contributing",
-        href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CONTRIBUTING.md",
+        label: 'Contributing',
+        href: 'https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/CONTRIBUTING.md',
       },
     ],
   },
   legal: {
-    title: "Legal",
+    title: 'Legal',
     links: [
       {
-        label: "License",
-        href: "https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/LICENSE",
+        label: 'License',
+        href: 'https://github.com/MicroClub-USTHB/mcoli-ui/blob/main/LICENSE',
       },
     ],
   },
 };
 
 function FooterLink({ href, label }: { href: string; label: string }) {
-  const isExternal =
-    href.startsWith("http") || href.endsWith(".md") || href === "/LICENSE";
+  const isExternal = href.startsWith('http') || href.endsWith('.md') || href === '/LICENSE';
 
   if (isExternal) {
     return (
       <a
         href={href}
-        target={href.startsWith("http") ? "_blank" : undefined}
-        rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+        target={href.startsWith('http') ? '_blank' : undefined}
+        rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
         className="text-muted-foreground hover:text-foreground transition-colors text-sm"
       >
         {label}
@@ -70,10 +69,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
-            <Link
-              href="/"
-              className="flex items-center gap-2 transition-opacity hover:opacity-80"
-            >
+            <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
               <MCLogo size={40} />
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -84,16 +80,10 @@ function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([key, section]) => (
             <div key={key} className="flex flex-col gap-3">
-              <h3 className="font-semibold text-foreground text-sm">
-                {section.title}
-              </h3>
+              <h3 className="font-semibold text-foreground text-sm">{section.title}</h3>
               <div className="flex flex-col gap-2">
                 {section.links.map((link) => (
-                  <FooterLink
-                    key={link.href}
-                    href={link.href}
-                    label={link.label}
-                  />
+                  <FooterLink key={link.href} href={link.href} label={link.label} />
                 ))}
               </div>
             </div>
@@ -106,7 +96,7 @@ function Footer() {
             © {currentYear} Mcoli UI. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Built by{" "}
+            Built by{' '}
             <a
               href="https://microclub.info"
               target="_blank"

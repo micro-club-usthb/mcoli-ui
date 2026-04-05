@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { McInputOtp, InputOTPGroup, InputOTPSeparator, InputOTPSlot } 
-  from '@/registry/ui/mc-input-otp';
+import {
+  McInputOtp,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from '@/registry/ui/mc-input-otp';
 
 const meta: Meta<typeof McInputOtp> = {
   title: 'Components/McInputOtp',
@@ -40,24 +44,22 @@ export const Playground: Story = {
         </InputOTPGroup>
       </McInputOtp>
 
-       <McInputOtp maxLength={6}>
+      <McInputOtp maxLength={6}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />
           <InputOTPSlot index={1} />
-           </InputOTPGroup>
-           <InputOTPSeparator />
-           <InputOTPGroup>  
-           <InputOTPSlot index={2} />
+        </InputOTPGroup>
+        <InputOTPSeparator />
+        <InputOTPGroup>
+          <InputOTPSlot index={2} />
           <InputOTPSlot index={3} />
-          </InputOTPGroup>
-          <InputOTPSeparator />
-          <InputOTPGroup>
+        </InputOTPGroup>
+        <InputOTPSeparator />
+        <InputOTPGroup>
           <InputOTPSlot index={4} />
           <InputOTPSlot index={5} />
         </InputOTPGroup>
       </McInputOtp>
-
-
     </div>
   ),
 };

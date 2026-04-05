@@ -11,7 +11,7 @@ As part of the MicroClub library, this component is designed for **instant deplo
 
 ## Preview
 
-<Tabs items={["preview", "code"]}>
+<Tabs items={['preview', 'code']}>
   <Tab>
     <ComponentPreview name="mc-checkbox-demo" />
   </Tab>
@@ -24,12 +24,8 @@ As part of the MicroClub library, this component is designed for **instant deplo
 
 Deploy `mc-checkbox` directly to your `components/ui` directory:
 
-<Tabs items={["npm", "pnpm", "yarn", "bun"]}>
-  <Tab>
-  ```sh 
-  npx mcoli-ui@latest add mc-checkbox 
-  ```
-  </Tab>
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
+  <Tab>```sh npx mcoli-ui@latest add mc-checkbox ```</Tab>
 </Tabs>
 
 ### Manual Setup
@@ -40,12 +36,9 @@ If you prefer manual control:
 
 <Step>Install the core dependencies</Step>
 
-<Tabs items={["npm", "pnpm", "yarn", "bun"]}>
+<Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
-    ```sh
-    npm install clsx tailwind-merge @base-ui/react
-    class-variance-authority lucide-react 
-    ```
+    ```sh npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react ```
   </Tab>
 </Tabs>
 
@@ -62,7 +55,7 @@ Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
 ## Usage
 
 ```tsx
-import { McCheckbox } from "@/components/ui/mc-checkbox";
+import { McCheckbox } from '@/components/ui/mc-checkbox';
 
 export default function Example() {
   return <McCheckbox text="Remember me" />;
@@ -92,10 +85,7 @@ export default function Example() {
 ### With Support Text
 
 ```tsx
-<McCheckbox
-  text="Remember me"
-  supportText="Save my login details for next time."
-/>
+<McCheckbox text="Remember me" supportText="Save my login details for next time." />
 ```
 
 ### States
@@ -111,13 +101,13 @@ export default function Example() {
 
 ### Props
 
-| Prop             | Type                                                                        | Default     | Description                                       |
-| ---------------- | --------------------------------------------------------------------------- | ----------- | ------------------------------------------------- |
-| `size`           | `"sm" \| "md"`                                                              | `"md"`      | The checkbox size                                 |
-| `text`           | `string`                                                                    | `undefined` | Main label displayed next to the checkbox         |
-| `supportText`    | `string`                                                                    | `undefined` | Secondary helper text under the main label        |
-| `checked`        | `boolean`                                                                   | `undefined` | Controlled checked state                          |
-| `disabled`       | `boolean`                                                                   | `false`     | Disables interactions and applies disabled styles |
-| `className`      | `string`                                                                    | `undefined` | Additional CSS classes for the checkbox root      |
+| Prop          | Type           | Default     | Description                                       |
+| ------------- | -------------- | ----------- | ------------------------------------------------- |
+| `size`        | `"sm" \| "md"` | `"md"`      | The checkbox size                                 |
+| `text`        | `string`       | `undefined` | Main label displayed next to the checkbox         |
+| `supportText` | `string`       | `undefined` | Secondary helper text under the main label        |
+| `checked`     | `boolean`      | `undefined` | Controlled checked state                          |
+| `disabled`    | `boolean`      | `false`     | Disables interactions and applies disabled styles |
+| `className`   | `string`       | `undefined` | Additional CSS classes for the checkbox root      |
 
 All other props from `@base-ui/react/checkbox` are supported.

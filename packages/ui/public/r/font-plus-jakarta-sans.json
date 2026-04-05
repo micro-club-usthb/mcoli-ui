@@ -7,8 +7,6 @@
     "provider": "google",
     "import": "Plus_Jakarta_Sans",
     "variable": "--font-plus-jakarta-sans",
-    "subsets": [
-      "latin"
-    ]
+    "subsets": ["latin"]
   }
 }

@@ -1,28 +1,28 @@
-import type { Meta, StoryObj } from "@storybook/nextjs";
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
-import { McCheckbox } from "@/registry/ui/mc-checkbox";
+import { McCheckbox } from '@/registry/ui/mc-checkbox';
 
 const meta: Meta<typeof McCheckbox> = {
-  title: "Components/McCheckbox",
+  title: 'Components/McCheckbox',
   component: McCheckbox,
   argTypes: {
     size: {
-      control: "select",
-      options: ["sm", "md"],
+      control: 'select',
+      options: ['sm', 'md'],
     },
-    disabled: { control: "boolean" },
-    defaultChecked: { control: "boolean" },
+    disabled: { control: 'boolean' },
+    defaultChecked: { control: 'boolean' },
     checked: {
-      control: "select",
+      control: 'select',
       options: [true, false],
     },
-    text: { control: "text" },
-    supportText: { control: "text" },
+    text: { control: 'text' },
+    supportText: { control: 'text' },
   },
   args: {
-    size: "md",
-    text: "Remember me",
-    supportText: "",
+    size: 'md',
+    text: 'Remember me',
+    supportText: '',
     disabled: false,
     defaultChecked: false,
   },
@@ -31,14 +31,14 @@ const meta: Meta<typeof McCheckbox> = {
 export default meta;
 type Story = StoryObj<typeof McCheckbox>;
 
-const themes = ["primary", "secondary", "game-dev", "robotics", "it"] as const;
-const modes = ["light", "dark"] as const;
+const themes = ['primary', 'secondary', 'game-dev', 'robotics', 'it'] as const;
+const modes = ['light', 'dark'] as const;
 
 export const Playground: Story = {
   args: {
-    text: "teste",
-    supportText: "teste",
-    size: "sm",
+    text: 'teste',
+    supportText: 'teste',
+    size: 'sm',
     defaultChecked: false,
     disabled: false,
   },
@@ -112,7 +112,7 @@ export const AllThemesLightDark: Story = {
         themes.map((theme) => (
           <div
             key={`${mode}-${theme}`}
-            className={mode === "dark" ? "dark" : ""}
+            className={mode === 'dark' ? 'dark' : ''}
             data-theme={theme}
           >
             <div className="space-y-3 rounded-xl border border-border bg-background p-4 text-foreground">
@@ -134,7 +134,7 @@ export const AllThemesLightDark: Story = {
               <McCheckbox text="Remember me" disabled />
             </div>
           </div>
-        )),
+        ))
       )}
     </div>
   ),

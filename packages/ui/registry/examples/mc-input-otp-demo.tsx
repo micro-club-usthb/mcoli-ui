@@ -1,9 +1,4 @@
-import {
-  McInputOtp,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "../ui/mc-input-otp";
+import { McInputOtp, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '../ui/mc-input-otp';
 export default function McInputOtpDemo() {
   return (
     <div className="flex items-center justify-center min-h-screen w-full bg-background">

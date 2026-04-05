@@ -8,5 +8,5 @@ export const ComponentSource: React.FC<{ name: string }> = ({ name }) => {
     return null;
   }
 
-  return <DynamicCodeBlock lang='tsx' code={value} />;
+  return <DynamicCodeBlock lang="tsx" code={value} />;
 };

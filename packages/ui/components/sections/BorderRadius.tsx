@@ -1,18 +1,16 @@
 function BorderRadius() {
   const radiuses = [
-    { name: "SM", class: "rounded-sm", var: "--radius-sm" },
-    { name: "MD", class: "rounded-md", var: "--radius-md" },
-    { name: "LG", class: "rounded-lg", var: "--radius-lg" },
-    { name: "XL", class: "rounded-xl", var: "--radius-xl" },
-    { name: "2XL", class: "rounded-2xl", var: "--radius-2xl" },
+    { name: 'SM', class: 'rounded-sm', var: '--radius-sm' },
+    { name: 'MD', class: 'rounded-md', var: '--radius-md' },
+    { name: 'LG', class: 'rounded-lg', var: '--radius-lg' },
+    { name: 'XL', class: 'rounded-xl', var: '--radius-xl' },
+    { name: '2XL', class: 'rounded-2xl', var: '--radius-2xl' },
   ];
 
   return (
     <section className="w-full max-w-[1200px] mx-auto space-y-6 sm:space-y-8 px-4">
       <div className="space-y-2 text-center sm:text-left mb-6">
-        <h2 className="header-sm md:header-md font-bold text-foreground">
-          Border Radius
-        </h2>
+        <h2 className="header-sm md:header-md font-bold text-foreground">Border Radius</h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
           Consistent curvature mapped to CSS variables
         </p>
@@ -31,9 +29,7 @@ function BorderRadius() {
             </div>
             <div className="text-center space-y-1">
               <p className="text-sm font-bold text-foreground">{r.name}</p>
-              <p className="text-[10px] font-mono text-muted-foreground">
-                {r.var}
-              </p>
+              <p className="text-[10px] font-mono text-muted-foreground">{r.var}</p>
             </div>
           </div>
         ))}

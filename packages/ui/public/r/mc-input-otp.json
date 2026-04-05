@@ -3,9 +3,7 @@
   "name": "mc-input-otp",
   "title": "MicroClub Input OTP",
   "description": "An OTP input component for MicroClub UI",
-  "dependencies": [
-    "input-otp"
-  ],
+  "dependencies": ["input-otp"],
   "files": [
     {
       "path": "registry/ui/mc-input-otp.tsx",

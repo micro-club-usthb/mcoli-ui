@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
 interface LogoIconProps {
   className?: string;
@@ -13,7 +13,7 @@ export default function LogoIcon({ className, size = 32 }: LogoIconProps) {
       width={size}
       height={size}
       fill="none"
-      className={cn("shrink-0 transition-colors duration-300", className)}
+      className={cn('shrink-0 transition-colors duration-300', className)}
     >
       <path
         d="M 16 79 V 31 A 22 22 0 0 1 60 31 A 22 22 0 0 1 104 31 V 79 M 60 31 V 79"

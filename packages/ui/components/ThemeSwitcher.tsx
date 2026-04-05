@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import { Check, Palette } from "lucide-react";
-import { useColorTheme, ThemePalette } from "./ColorThemeProvider";
+import * as React from 'react';
+import { Check, Palette } from 'lucide-react';
+import { useColorTheme, ThemePalette } from './ColorThemeProvider';
 
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+} from '@/components/ui/dropdown-menu';
+import { cn } from '@/lib/utils';
 
 const themes: { name: string; value: ThemePalette; color: string }[] = [
-  { name: "Primary", value: "primary", color: "bg-[#0006B1]" },
-  { name: "Secondary", value: "secondary", color: "bg-[#6A0DAD]" },
-  { name: "Game Dev", value: "game-dev", color: "bg-[#D04F99]" },
-  { name: "Robotics", value: "robotics", color: "bg-[#001EFF]" },
-  { name: "IT", value: "it", color: "bg-[#25C059]" },
+  { name: 'Primary', value: 'primary', color: 'bg-[#0006B1]' },
+  { name: 'Secondary', value: 'secondary', color: 'bg-[#6A0DAD]' },
+  { name: 'Game Dev', value: 'game-dev', color: 'bg-[#D04F99]' },
+  { name: 'Robotics', value: 'robotics', color: 'bg-[#001EFF]' },
+  { name: 'IT', value: 'it', color: 'bg-[#25C059]' },
 ];
 
 export function ThemeSwitcher() {
@@ -52,24 +52,19 @@ export function ThemeSwitcher() {
           >
             <div className="flex items-center gap-2.5">
               <div
-                className={cn(
-                  "size-3.5 rounded-full shadow-sm border border-border/50",
-                  t.color,
-                )}
+                className={cn('size-3.5 rounded-full shadow-sm border border-border/50', t.color)}
               />
               <span
                 className={
                   mounted && colorTheme === t.value
-                    ? "font-semibold"
-                    : "font-medium text-muted-foreground"
+                    ? 'font-semibold'
+                    : 'font-medium text-muted-foreground'
                 }
               >
                 {t.name}
               </span>
             </div>
-            {mounted && colorTheme === t.value && (
-              <Check className="size-4 text-primary" />
-            )}
+            {mounted && colorTheme === t.value && <Check className="size-4 text-primary" />}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>

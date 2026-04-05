@@ -13,10 +13,10 @@ As a part of the MicroClub library, this component is designed for **instant dep
 
 <Tabs items={['preview', 'code']}>
   <Tab>
-    <ComponentPreview name='mc-button-demo'/>
+    <ComponentPreview name="mc-button-demo" />
   </Tab>
   <Tab>
-    <ComponentSource name='mc-button-demo' />
+    <ComponentSource name="mc-button-demo" />
   </Tab>
 </Tabs>
 
@@ -25,11 +25,7 @@ As a part of the MicroClub library, this component is designed for **instant dep
 Deploy the `mc-button` directly to your `components/ui` directory:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
-  <Tab>
-    ```sh
-npx mcoli-ui@latest add mc-button
-    ```
-  </Tab>
+  <Tab>```sh npx mcoli-ui@latest add mc-button ```</Tab>
 </Tabs>
 
 ### Manual Setup
@@ -42,15 +38,13 @@ If you prefer manual control:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab>
-    ```sh
-npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react
-    ```
+    ```sh npm install clsx tailwind-merge @base-ui/react class-variance-authority lucide-react ```
   </Tab>
 </Tabs>
 
 <Step>Copy the source code</Step>
 
-<ComponentSource name='mc-button' />
+<ComponentSource name="mc-button" />
 
 <Step>Adjust import paths</Step>
 
@@ -61,10 +55,10 @@ Ensure your `@/lib/utils` or equivalent classname helper is correctly imported.
 ## Usage
 
 ```tsx
-import { McButton } from "@/components/ui/mc-button"
+import { McButton } from '@/components/ui/mc-button';
 
 export default function Example() {
-  return <McButton variant="primary">Click me</McButton>
+  return <McButton variant="primary">Click me</McButton>;
 }
 ```
 
@@ -136,15 +130,15 @@ The `link` variant automatically includes a `LinkIcon` when an icon mode is sele
 
 ### Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `variant` | `"primary" \| "secondary" \| "tertiary" \| "link"` | `"primary"` | The visual style of the button |
-| `size` | `"sm" \| "md" \| "lg" \| "xl"` | `"md"` | The size of the button |
-| `icon` | `"none" \| "leading" \| "trailing" \| "dot" \| "only"` | `"none"` | The placement mode for icons |
-| `iconDefinition` | `ReactNode` | `undefined` | The icon to render (except for "dot" mode) |
-| `destructive` | `boolean` | `false` | Applies a destructive theme to the current variant |
-| `isLoading` | `boolean` | `false` | Shows a spinner and disables interactions |
-| `render` | `ReactElement \| ((props: HTMLProps) => ReactElement)` | `undefined` | Polymorphic render prop from Base UI |
-| `className` | `string` | `undefined` | Additional CSS classes |
+| Prop             | Type                                                   | Default     | Description                                        |
+| ---------------- | ------------------------------------------------------ | ----------- | -------------------------------------------------- |
+| `variant`        | `"primary" \| "secondary" \| "tertiary" \| "link"`     | `"primary"` | The visual style of the button                     |
+| `size`           | `"sm" \| "md" \| "lg" \| "xl"`                         | `"md"`      | The size of the button                             |
+| `icon`           | `"none" \| "leading" \| "trailing" \| "dot" \| "only"` | `"none"`    | The placement mode for icons                       |
+| `iconDefinition` | `ReactNode`                                            | `undefined` | The icon to render (except for "dot" mode)         |
+| `destructive`    | `boolean`                                              | `false`     | Applies a destructive theme to the current variant |
+| `isLoading`      | `boolean`                                              | `false`     | Shows a spinner and disables interactions          |
+| `render`         | `ReactElement \| ((props: HTMLProps) => ReactElement)` | `undefined` | Polymorphic render prop from Base UI               |
+| `className`      | `string`                                               | `undefined` | Additional CSS classes                             |
 
 All other props from `@base-ui/react/button` are supported.

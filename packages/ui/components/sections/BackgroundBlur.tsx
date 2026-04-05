@@ -1,18 +1,16 @@
 function BackgroundBlur() {
   const blurs = [
-    { name: "None", class: "backdrop-blur-none", var: "blur-none" },
-    { name: "SM", class: "backdrop-blur-sm", var: "var(--blur-sm)" },
-    { name: "MD", class: "backdrop-blur-md", var: "var(--blur-md)" },
-    { name: "LG", class: "backdrop-blur-lg", var: "var(--blur-lg)" },
-    { name: "XL", class: "backdrop-blur-xl", var: "var(--blur-xl)" },
+    { name: 'None', class: 'backdrop-blur-none', var: 'blur-none' },
+    { name: 'SM', class: 'backdrop-blur-sm', var: 'var(--blur-sm)' },
+    { name: 'MD', class: 'backdrop-blur-md', var: 'var(--blur-md)' },
+    { name: 'LG', class: 'backdrop-blur-lg', var: 'var(--blur-lg)' },
+    { name: 'XL', class: 'backdrop-blur-xl', var: 'var(--blur-xl)' },
   ];
 
   return (
     <section className="w-full max-w-[1200px] mx-auto space-y-6 sm:space-y-8 px-4">
       <div className="space-y-2 text-center sm:text-left mb-6">
-        <h2 className="header-sm md:header-md font-bold text-foreground">
-          Background Blur
-        </h2>
+        <h2 className="header-sm md:header-md font-bold text-foreground">Background Blur</h2>
         <p className="paragraph-sm sm:paragraph-md text-muted-foreground font-dm-sans px-2 sm:px-0">
           Frosted glassmorphism utilities for surfaces and overlays
         </p>
@@ -41,9 +39,7 @@ function BackgroundBlur() {
               {/* Inner Pill for Text Legibility */}
               <div className="flex flex-col items-center gap-1 bg-background/80 px-4 py-2 rounded-lg border border-border/50 shadow-sm">
                 <p className="text-sm font-bold text-foreground">{b.name}</p>
-                <p className="text-[10px] font-mono text-muted-foreground">
-                  {b.var}
-                </p>
+                <p className="text-[10px] font-mono text-muted-foreground">{b.var}</p>
               </div>
             </div>
           ))}
