@@ -49,7 +49,7 @@ const iconMap = {
 
 export const Playground: Story = {
   args: {
-    children: 'Interactive Button',
+    children: 'Button CTA',
   },
   render: ({ iconDefinition, ...args }) => (
     <McButton {...args} iconDefinition={iconMap[iconDefinition as keyof typeof iconMap]} />

@@ -1,31 +1,32 @@
 'use client';
 
-import { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox';
-import { cn } from '@/lib/utils';
-import { CheckIcon } from 'lucide-react';
 import * as React from 'react';
+import { Checkbox as CheckboxPrimitive } from '@base-ui/react/checkbox';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { CheckIcon } from 'lucide-react';
+
+import { cn } from '@/lib/utils';
 
 const checkboxVariants = cva(
-  'peer relative flex shrink-0 items-center justify-center rounded-[4px] border border-input bg-background text-primary-foreground transition-colors outline-none disabled:pointer-events-none disabled:opacity-50',
+  'peer relative flex shrink-0 items-center justify-center rounded-[4px] border transition-colors outline-none disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       size: {
         sm: 'size-4 [&_[data-slot=checkbox-indicator]>svg]:size-3',
-        md: 'size-5 [&_[data-slot=checkbox-indicator]>svg]:size-4',
+        md: 'size-5 [&_[data-slot=checkbox-indicator]>svg]:size-3.5',
       },
     },
     defaultVariants: {
-      size: 'md',
+      size: 'sm',
     },
   }
 );
 
-const labelTextVariants = cva('font-semibold', {
+const textVariants = cva('font-medium transition-colors', {
   variants: {
     size: {
-      sm: 'text-[14px] leading-[14px]',
-      md: 'text-[16px] leading-[16px]',
+      sm: 'text-sm',
+      md: 'text-base',
     },
     disabled: {
       true: 'text-muted-foreground',
@@ -33,20 +34,20 @@ const labelTextVariants = cva('font-semibold', {
     },
   },
   defaultVariants: {
-    size: 'md',
+    size: 'sm',
     disabled: false,
   },
 });
 
-const helperTextVariants = cva('text-xs', {
+const supportTextVariants = cva('font-regular', {
   variants: {
-    disabled: {
-      true: 'text-muted-foreground',
-      false: 'text-muted-foreground',
+    size: {
+      sm: 'text-sm',
+      md: 'text-base',
     },
   },
   defaultVariants: {
-    disabled: false,
+    size: 'sm',
   },
 });
 
@@ -58,64 +59,68 @@ export interface McCheckboxProps
 
 function McCheckbox({
   className,
-  size,
+  size = 'sm',
   text,
   supportText,
   id,
   disabled,
-  ...restProps
+  checked,
+  onCheckedChange,
+  ...props
 }: McCheckboxProps) {
-  const generatedId = React.useId();
-  const checkboxId = id ?? generatedId;
-  const helperText = supportText;
-  const labelId = text ? `${checkboxId}-label` : undefined;
-  const descriptionId = helperText ? `${checkboxId}-description` : undefined;
+  const checkboxId = React.useId();
+  const finalId = id ?? checkboxId;
+  const labelId = text ? `${finalId}-label` : undefined;
+  const descriptionId = supportText ? `${finalId}-description` : undefined;
 
   return (
     <label
-      htmlFor={checkboxId}
+      htmlFor={finalId}
       className={cn(
-        'inline-flex gap-2.5',
-        helperText ? 'items-start' : 'items-center',
-        disabled ? 'cursor-not-allowed' : 'cursor-pointer'
+        'inline-flex',
+        size === 'sm' ? 'gap-2' : 'gap-3',
+        supportText ? 'items-start' : 'items-center',
+        disabled ? 'cursor-not-allowed' : 'cursor-pointer',
+        className
       )}
     >
       <CheckboxPrimitive.Root
-        id={checkboxId}
+        id={finalId}
         data-slot="checkbox"
         className={cn(
           checkboxVariants({ size }),
-          'border-muted-foreground text-muted-foreground hover:border-primary data-checked:border-primary data-checked:text-primary',
-          'relative rounded-[4px] bg-background outline-none transition-colors',
-          'focus-visible:ring-3 focus-visible:ring-ring/50',
-          'active:ring-4 active:ring-ring/50',
-          'disabled:cursor-not-allowed disabled:pointer-events-none disabled:border-muted-foreground disabled:bg-muted/30 disabled:text-muted-foreground disabled:hover:border-muted-foreground disabled:focus-visible:ring-0 disabled:focus-visible:ring-transparent disabled:active:ring-0 data-disabled:cursor-not-allowed data-disabled:pointer-events-none data-disabled:border-muted-foreground data-disabled:bg-muted/30 data-disabled:text-muted-foreground data-disabled:hover:border-muted-foreground data-disabled:focus-visible:ring-0 data-disabled:focus-visible:ring-transparent data-disabled:active:ring-0',
-          className
+          'bg-primary-foreground border-muted-foreground',
+          'hover:border-primary',
+          'focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring',
+          'focus-within:outline-none focus-within:ring-4 focus-within:ring-ring',
+          'data-disabled:border-muted-foreground data-disabled:hover:border-muted-foreground',
+          'data-checked:border-primary'
         )}
+        checked={checked}
+        onCheckedChange={onCheckedChange}
+        disabled={disabled}
         aria-labelledby={labelId}
         aria-describedby={descriptionId}
-        disabled={disabled}
-        {...restProps}
+        {...props}
       >
         <CheckboxPrimitive.Indicator
           data-slot="checkbox-indicator"
-          className="absolute inset-0 grid place-items-center text-current opacity-100 transition-none"
+          className="flex items-center justify-center text-current data-disabled:text-muted-foreground"
         >
-          <CheckIcon className="translate-x-[0.5px] translate-y-[0.5px]" />
+          <CheckIcon className="stroke-3" />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
 
-      {(text || helperText) && (
-        <span className="flex min-w-0 flex-col gap-0">
+      {(text || supportText) && (
+        <span className={cn('flex flex-col', size === 'sm' ? 'gap-0' : 'gap-0.5')}>
           {text && (
-            <span id={labelId} className={labelTextVariants({ size, disabled: !!disabled })}>
+            <span id={labelId} className={textVariants({ size, disabled: !!disabled })}>
               {text}
             </span>
           )}
-
-          {helperText && (
-            <span id={descriptionId} className={helperTextVariants({ disabled: !!disabled })}>
-              {helperText}
+          {supportText && (
+            <span id={descriptionId} className={supportTextVariants({ size })}>
+              {supportText}
             </span>
           )}
         </span>

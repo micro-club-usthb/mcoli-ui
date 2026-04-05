@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
+import * as React from 'react';
 
 import { McCheckbox } from '@/registry/ui/mc-checkbox';
 
@@ -11,62 +12,66 @@ const meta: Meta<typeof McCheckbox> = {
       options: ['sm', 'md'],
     },
     disabled: { control: 'boolean' },
-    defaultChecked: { control: 'boolean' },
-    checked: {
-      control: 'select',
-      options: [true, false],
-    },
+    checked: { control: 'boolean' },
     text: { control: 'text' },
     supportText: { control: 'text' },
   },
   args: {
-    size: 'md',
+    size: 'sm',
     text: 'Remember me',
-    supportText: '',
     disabled: false,
-    defaultChecked: false,
+    checked: false,
   },
 };
 
 export default meta;
 type Story = StoryObj<typeof McCheckbox>;
 
-const themes = ['primary', 'secondary', 'game-dev', 'robotics', 'it'] as const;
-const modes = ['light', 'dark'] as const;
-
 export const Playground: Story = {
   args: {
-    text: 'teste',
-    supportText: 'teste',
-    size: 'sm',
-    defaultChecked: false,
-    disabled: false,
+    checked: undefined,
+    text: 'Remember me',
+    supportText: 'Save my login details for next time.',
+  },
+  render: (args) => {
+    const [checked, setChecked] = React.useState(false);
+
+    return <McCheckbox {...args} checked={checked} onCheckedChange={setChecked} />;
   },
 };
 
 export const Sizes: Story = {
   render: (args) => (
-    <div className="space-y-4">
-      <McCheckbox {...args} size="sm" text="Remember me" />
-      <McCheckbox {...args} size="md" text="Remember me" />
+    <div className="flex items-center gap-4">
+      <McCheckbox {...args} size="sm" />
+      <McCheckbox {...args} size="md" />
     </div>
   ),
 };
 
 export const States: Story = {
   render: (args) => (
-    <div className="space-y-4">
-      <McCheckbox {...args} checked={false} text="Remember me" />
-      <McCheckbox {...args} checked text="Remember me" />
-      <McCheckbox {...args} disabled text="Remember me" />
-      <McCheckbox {...args} checked disabled text="Remember me" />
+    <div className="flex flex-wrap gap-4">
+      <McCheckbox {...args} checked={false} />
+      <McCheckbox {...args} checked />
+      <McCheckbox {...args} disabled />
+      <McCheckbox {...args} checked disabled />
+    </div>
+  ),
+};
+
+export const WithText: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-4">
+      <McCheckbox {...args} size="sm" text="Small checkbox" />
+      <McCheckbox {...args} size="md" text="Medium checkbox" />
     </div>
   ),
 };
 
 export const WithSupportText: Story = {
   render: (args) => (
-    <div className="space-y-4">
+    <div className="flex flex-col gap-4">
       <McCheckbox
         {...args}
         text="Remember me"
@@ -78,12 +83,6 @@ export const WithSupportText: Story = {
         text="Remember me"
         supportText="Save my login details for next time."
         checked
-      />
-      <McCheckbox
-        {...args}
-        text="Remember me"
-        supportText="Save my login details for next time."
-        checked={false}
       />
       <McCheckbox
         {...args}
@@ -102,40 +101,61 @@ export const WithSupportText: Story = {
   ),
 };
 
-export const AllThemesLightDark: Story = {
-  parameters: {
-    controls: { disable: true },
-  },
-  render: () => (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {modes.map((mode) =>
-        themes.map((theme) => (
-          <div
-            key={`${mode}-${theme}`}
-            className={mode === 'dark' ? 'dark' : ''}
-            data-theme={theme}
-          >
-            <div className="space-y-3 rounded-xl border border-border bg-background p-4 text-foreground">
-              <p className="text-sm font-medium capitalize">
-                {theme} - {mode}
-              </p>
-              <McCheckbox text="Remember me" checked={false} />
-              <McCheckbox text="Remember me" checked />
-              <McCheckbox
-                text="Remember me"
-                supportText="Save my login details for next time."
-                checked={false}
-              />
-              <McCheckbox
-                text="Remember me"
-                supportText="Save my login details for next time."
-                checked
-              />
-              <McCheckbox text="Remember me" disabled />
-            </div>
-          </div>
-        ))
-      )}
+export const AllSizesWithAllStates: Story = {
+  render: (args) => (
+    <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium">Small</span>
+        <div className="flex flex-wrap gap-4">
+          <McCheckbox {...args} size="sm" text="Unchecked" checked={false} />
+          <McCheckbox {...args} size="sm" text="Checked" checked />
+          <McCheckbox {...args} size="sm" text="Disabled unchecked" disabled />
+          <McCheckbox {...args} size="sm" text="Disabled checked" checked disabled />
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium">Medium</span>
+        <div className="flex flex-wrap gap-4">
+          <McCheckbox {...args} size="md" text="Unchecked" checked={false} />
+          <McCheckbox {...args} size="md" text="Checked" checked />
+          <McCheckbox {...args} size="md" text="Disabled unchecked" disabled />
+          <McCheckbox {...args} size="md" text="Disabled checked" checked disabled />
+        </div>
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium">Small with support text</span>
+        <McCheckbox
+          {...args}
+          size="sm"
+          text="Remember me"
+          supportText="Save my login details for next time."
+          checked={false}
+        />
+        <McCheckbox
+          {...args}
+          size="sm"
+          text="Remember me"
+          supportText="Save my login details for next time."
+          checked
+        />
+      </div>
+      <div className="flex flex-col gap-2">
+        <span className="text-sm font-medium">Medium with support text</span>
+        <McCheckbox
+          {...args}
+          size="md"
+          text="Remember me"
+          supportText="Save my login details for next time."
+          checked={false}
+        />
+        <McCheckbox
+          {...args}
+          size="md"
+          text="Remember me"
+          supportText="Save my login details for next time."
+          checked
+        />
+      </div>
     </div>
   ),
 };

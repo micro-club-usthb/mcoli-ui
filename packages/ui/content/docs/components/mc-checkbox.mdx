@@ -7,7 +7,7 @@ description: A control that allows the user to toggle between checked and not ch
 
 The `mc-checkbox` is a core form control of the MicroClub UI library. Built on the **@base-ui/react** checkbox primitive, it provides accessible state handling and keyboard interactions while keeping MicroClub styling and theme tokens.
 
-As part of the MicroClub library, this component is designed for **instant deployment into your codebase**, with full control over behavior and appearance.
+As a part of the MicroClub library, this component is designed for **instant deployment into your codebase**, giving you full ownership of its look and behavior.
 
 ## Preview
 
@@ -22,7 +22,7 @@ As part of the MicroClub library, this component is designed for **instant deplo
 
 ## Add to Your Project
 
-Deploy `mc-checkbox` directly to your `components/ui` directory:
+Deploy the `mc-checkbox` directly to your `components/ui` directory:
 
 <Tabs items={['npm', 'pnpm', 'yarn', 'bun']}>
   <Tab value="npm">npx mcoli-ui@latest add mc-checkbox</Tab>
@@ -83,17 +83,6 @@ export default function Example() {
 <McCheckbox size="md" text="Medium checkbox" />
 ```
 
-### Intents
-
-```tsx
-<McCheckbox intent="default" text="Default" />
-<McCheckbox intent="primary" text="Primary" />
-<McCheckbox intent="secondary" text="Secondary" />
-<McCheckbox intent="game-dev" text="Game Dev" />
-<McCheckbox intent="robotics" text="Robotics" />
-<McCheckbox intent="it" text="IT" />
-```
-
 ### With Support Text
 
 ```tsx
@@ -109,17 +98,34 @@ export default function Example() {
 <McCheckbox text="Disabled checked" checked disabled />
 ```
 
+### Controlled
+
+Manage the checked state programmatically with `checked` and `onCheckedChange`.
+
+```tsx
+import { useState } from 'react';
+import { McCheckbox } from '@/components/ui/mc-checkbox';
+
+export default function Example() {
+  const [checked, setChecked] = useState(false);
+
+  return <McCheckbox text="I agree to the terms" checked={checked} onCheckedChange={setChecked} />;
+}
+```
+
 ## API Reference
 
 ### Props
 
-| Prop          | Type           | Default     | Description                                       |
-| ------------- | -------------- | ----------- | ------------------------------------------------- |
-| `size`        | `"sm" \| "md"` | `"md"`      | The checkbox size                                 |
-| `text`        | `string`       | `undefined` | Main label displayed next to the checkbox         |
-| `supportText` | `string`       | `undefined` | Secondary helper text under the main label        |
-| `checked`     | `boolean`      | `undefined` | Controlled checked state                          |
-| `disabled`    | `boolean`      | `false`     | Disables interactions and applies disabled styles |
-| `className`   | `string`       | `undefined` | Additional CSS classes for the checkbox root      |
+| Prop              | Type                                   | Default     | Description                                       |
+| ----------------- | -------------------------------------- | ----------- | ------------------------------------------------- |
+| `size`            | `"sm" \| "md"`                         | `"sm"`      | The checkbox size                                 |
+| `text`            | `string`                               | `undefined` | Main label displayed next to the checkbox         |
+| `supportText`     | `string`                               | `undefined` | Secondary helper text under the main label        |
+| `checked`         | `boolean`                              | `undefined` | Controlled checked state                          |
+| `onCheckedChange` | `(boolean \| "indeterminate") => void` | `undefined` | Callback when checked state changes               |
+| `disabled`        | `boolean`                              | `false`     | Disables interactions and applies disabled styles |
+| `id`              | `string`                               | `undefined` | Custom ID for the checkbox input                  |
+| `className`       | `string`                               | `undefined` | Additional CSS classes for the checkbox root      |
 
 All other props from `@base-ui/react/checkbox` are supported.
