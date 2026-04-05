@@ -20,11 +20,60 @@ pnpm run storybook
 
 # Build the registry (required before submitting PR)
 pnpm run build:registry
+
+# Format code (required before submitting PR)
+pnpm run format
+
+# Check code formatting
+pnpm run format:check
+```
+
+## Commit Conventions
+
+We use **Conventional Commits** for all commit messages. This enables automated changelog generation and semantic versioning.
+
+### Format
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+```
+
+### Types
+
+| Type       | Description                                                                    |
+| ---------- | ------------------------------------------------------------------------------ |
+| `feat`     | A new feature                                                                  |
+| `fix`      | A bug fix                                                                      |
+| `docs`     | Documentation only changes                                                     |
+| `style`    | Changes that don't affect code meaning (formatting, missing semi-colons, etc.) |
+| `refactor` | Code change that neither fixes a bug nor adds a feature                        |
+| `perf`     | A code change that improves performance                                        |
+| `test`     | Adding or correcting tests                                                     |
+| `chore`    | Changes to build process, dependencies, or auxiliary tools                     |
+| `ci`       | Changes to CI configuration files and scripts                                  |
+
+### Breaking Changes
+
+Add `!` after type/scope or include `BREAKING CHANGE:` in footer:
+
+```
+feat!: remove legacy API
+
+BREAKING CHANGE: The old API endpoint has been removed.
+```
+
+### Examples
+
+```bash
+git commit -m "feat: add mc-button component"
+git commit -m "fix: resolve input focus issue"
+git commit -m "docs: update mc-button documentation"
+git commit -m "refactor: simplify button styles"
 ```
 
 ## Testing CLI Locally
-
-To test the CLI with your locally built registry (localhost:3000):
 
 ```bash
 # First, run the dev server
@@ -203,6 +252,7 @@ When adding a new item, you will create/edit these files:
 
 # Important Notes
 
+- **Format Before Committing**: Always run `pnpm run format` before committing your changes.
 - **Distribution First**: Remember that this code will be copied into user's projects. Keep it clean and self-contained.
 - **Figma First**: Always refer to the designs in Figma for colors, spacing, and variants.
 - **Prefix Everything**: All registry items MUST use the `mc-` prefix.
