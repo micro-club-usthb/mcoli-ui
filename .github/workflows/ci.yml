@@ -158,7 +158,7 @@ jobs:
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          storybookBuildDir: ./packages/ui/storybook-static
+          storybookBuildDir: ./packages/web/storybook-static
 
   chromatic-skip:
     name: Skip Chromatic
