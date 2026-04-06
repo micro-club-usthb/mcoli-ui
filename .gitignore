@@ -15,12 +15,12 @@ coverage/
 
 # next.js
 /.next/
-/packages/ui/.next/
-/packages/ui/out/
+/packages/web/.next/
+/packages/web/out/
 
 # production
-/packages/ui/build
-/packages/ui/dist
+/packages/web/build
+/packages/web/dist
 
 # misc
 .DS_Store
@@ -48,10 +48,10 @@ next-env.d.ts
 # storybook
 *storybook.log
 storybook-static/
-/packages/ui/storybook-static/
+/packages/web/storybook-static/
 
 # build outputs
-/packages/ui/.next/
-/packages/ui/out/
-/packages/ui/build/
-/packages/ui/dist/
+/packages/web/.next/
+/packages/web/out/
+/packages/web/build/
+/packages/web/dist/

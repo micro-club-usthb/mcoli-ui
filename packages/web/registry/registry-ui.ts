@@ -25,7 +25,7 @@ export const ui: Registry['items'] = [
         type: 'registry:component',
       },
     ],
-    dependencies: ['input-otp'],
+    dependencies: ['input-otp', 'lucide-react'],
   },
   {
     name: 'mc-checkbox',
