@@ -63,17 +63,19 @@ function Hero() {
       </div>
 
       {/* High-End Terminal CLI Snippet */}
-      <div className="max-w-lg w-full rounded-xl sm:rounded-2xl border border-border bg-card overflow-hidden transition-transform duration-300 z-10 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 p-3 sm:p-4 font-mono text-xs sm:text-sm text-foreground">
-        <span className="flex items-center gap-2 sm:gap-3">
-          <Terminal size={16} />
-          <span className="text-primary font-semibold">npx</span> mcoli-ui@latest init
-        </span>
-        <button
-          onClick={copyToClipboard}
-          className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-md hover:bg-accent self-end sm:self-auto"
-        >
-          {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
-        </button>
+      <div className="max-w-lg w-full rounded-xl sm:rounded-2xl border border-border bg-card overflow-hidden transition-transform duration-300 z-10 p-3 sm:p-4">
+        <div className="flex items-center justify-between gap-3">
+          <span className="flex items-center gap-2 sm:gap-3 font-mono text-xs sm:text-sm text-foreground min-w-0">
+            <Terminal size={16} className="shrink-0" />
+            <span className="text-primary font-semibold truncate">npx mcoli-ui@latest init</span>
+          </span>
+          <button
+            onClick={copyToClipboard}
+            className="text-muted-foreground hover:text-foreground transition-colors p-2 rounded-md hover:bg-accent shrink-0"
+          >
+            {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
+          </button>
+        </div>
       </div>
     </section>
   );

@@ -199,20 +199,20 @@ function Colors() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {/* Core Ramps */}
         {colorRamps.map((ramp) => (
           <div
             key={ramp.name}
-            className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4"
+            className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-3 sm:p-4"
           >
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="text-sm font-semibold text-foreground">{ramp.name}</h3>
-              <span className="text-[10px] font-mono text-muted-foreground">
+            <div className="flex items-center justify-between mb-2 sm:mb-3">
+              <h3 className="text-xs sm:text-sm font-semibold text-foreground">{ramp.name}</h3>
+              <span className="text-[8px] sm:text-[10px] font-mono text-muted-foreground">
                 {ramp.isSpecial ? 'accent-*-50' : `--${ramp.prefix}-*`}
               </span>
             </div>
-            <div className="flex w-full h-10 rounded-md overflow-hidden border border-border/50">
+            <div className="flex w-full h-8 sm:h-10 rounded-md overflow-hidden border border-border/50">
               {ramp.steps.map((step) => {
                 const tailwindClass = colorClassMap[ramp.prefix][step];
                 return (
@@ -260,10 +260,10 @@ function Colors() {
         </div>
 
         {/* Semantic Colors */}
-        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-4 lg:col-span-3">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-sm font-semibold text-foreground">Semantic</h3>
-            <span className="text-[10px] font-mono text-muted-foreground">
+        <div className="flex flex-col rounded-xl border border-border bg-card shadow-sm overflow-hidden p-3 sm:p-4 sm:col-span-2 lg:col-span-3">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-xs sm:text-sm font-semibold text-foreground">Semantic</h3>
+            <span className="text-[8px] sm:text-[10px] font-mono text-muted-foreground">
               --success, --warning, --destructive, --info
             </span>
           </div>

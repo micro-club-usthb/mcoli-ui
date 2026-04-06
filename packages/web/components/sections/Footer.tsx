@@ -65,12 +65,12 @@ function Footer() {
 
   return (
     <footer className="w-full border-t border-border/50 bg-card/50 backdrop-blur-xl">
-      <div className="container mx-auto max-w-screen-2xl px-4 md:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-12">
+      <div className="container mx-auto max-w-screen-2xl px-4 md:px-8 py-10 md:py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1 flex flex-col gap-4">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-1 flex flex-col gap-4">
             <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80">
-              <MCLogo size={40} />
+              <MCLogo size={32} />
             </Link>
             <p className="text-sm text-muted-foreground">
               Stop building from scratch. Elevate your UI with MicroClub DNA
