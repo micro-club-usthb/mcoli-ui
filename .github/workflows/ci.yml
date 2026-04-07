@@ -2,9 +2,13 @@ name: CI
 
 on:
   push:
-    branches: [main, dev]
+    branches:
+      - main
+      - dev
   pull_request:
-    branches: [main, dev]
+    branches:
+      - main
+      - dev
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -109,7 +113,6 @@ jobs:
   chromatic-filter:
     name: Detect Storybook Changes
     runs-on: ubuntu-latest
-    if: github.event_name == 'push'
     outputs:
       changed: ${{ steps.filter.outputs.stories }}
 
@@ -123,15 +126,14 @@ jobs:
         with:
           filters: |
             stories:
-              - 'stories/**'
-              - '**/*.stories.{js,jsx,ts,tsx}'
+              - 'packages/web/registry/ui/**'
+              - 'packages/web/stories/**'
               - '**/.storybook/**'
-              - '**/storybook/**'
 
   chromatic:
     name: Chromatic
     runs-on: ubuntu-latest
-    needs: [build, chromatic-filter]
+    needs: [lint, format, typecheck, chromatic-filter]
     if: needs.chromatic-filter.outputs.changed == 'true'
 
     steps:

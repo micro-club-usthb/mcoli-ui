@@ -212,10 +212,10 @@ When adding a new item, you will create/edit these files:
 | Component            | Design State | Dev State |
 | -------------------- | ------------ | --------- |
 | `mc-button`          | ✅           | ✅        |
-| `mc-input`           | ✅           | ✅        |
-| `mc-textarea`        | ✅           | ✅        |
-| `mc-input-otp`       | ✅           |           |
-| `mc-checkbox`        | ✅           |           |
+| `mc-input`           | ✅           |           |
+| `mc-textarea`        | ✅           |           |
+| `mc-input-otp`       | ✅           | ✅        |
+| `mc-checkbox`        | ✅           | ✅        |
 | `mc-radio-group`     | ✅           |           |
 | `mc-card`            | ✅           |           |
 | `mc-select`          | ✅           |           |
